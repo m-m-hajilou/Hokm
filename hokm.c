@@ -3,6 +3,8 @@
 #include<time.h>
 #include<limits.h>
 int getRandomsNumber(int, int);
+int divideCard();
+void shuffleCard();
 
 
 char card [52][5]={"D.1","D.2","D.3","D.4","D.5","D.6","D.7","D.8","D.9","D.10","D.11","D.12","D.13",
@@ -18,14 +20,25 @@ char foe1Card[13][5];
 char foe2Card[13][5];
 char palCard[13][5];
 char meCard[13][5];
+int levelDivideCard=0;//for select hokm by king
 
 int divideCard()
 {
-  shuffle();
+  shuffleCard();
+  if(levelDivideCard==1)
+  {
+    for(int x=0;x<5;x++)//divide five card between players
+    {
+    foe1Card[x][5]=cardCopy[x][5]
+    foe2Card[x+5][5]=cardCopy[x+5][5]
+    palCard[x+10][5]=cardCopy[x+10][5]
+    meCard[x+15][5]=cardCopy[x+15 ][5]
+    }
+  }
 
 }
 
-void shuffle()
+void shuffleCard()
 {
   srand(time(0));//for set new number for rand()
   int j;
@@ -33,13 +46,17 @@ void shuffle()
   {
     for(int i=0;i<52;i++)
     {
-      j=getRandomsNumber(0,52);
+      j=getRandomsNumber(0,51);
       if(i!=j)
       {
         cardCopy[i][5]=cardCopy[j][5];
 
       }
     }
+  }
+  for(int i=0;i<52;i++)
+  {
+    printf("%s  %d\n",cardCopy[i],i );
   }
 }
 
@@ -55,6 +72,6 @@ int getRandomsNumber(int low, int up)
 
 int main(int argc, char const *argv[])
 {
-  divideRandomCard();
+  divideCard();
   return 0;
 }

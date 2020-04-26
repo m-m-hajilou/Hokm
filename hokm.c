@@ -29,19 +29,20 @@ int divideCard()
   {
     for(int x=0;x<5;x++)//divide five card between players
     {
-    foe1Card[x-1][5]=cardCopy[x][5];
-    foe2Card[x-1][5]=cardCopy[x+5][5];
-    palCard[x-1][5]=cardCopy[x+10][5];
-    meCard[x-1][5]=cardCopy[x+15 ][5];
+
+    foe1Card[x][5]=cardCopy[x][5];
+    foe2Card[x][5]=cardCopy[x+5][5];
+    palCard[x][5]=cardCopy[x+10][5];
+    meCard[x][5]=cardCopy[x+15 ][5];
 
     }
     int j=0;
     for(int y=0;y<5;y++)//divide five card between players
     {
-      printf(" foe1Card  * %s  %d\n",foe1Card[y] ,j++);
-      printf(" foe2Card  * %s  %d\n",foe2Card[y] ,++j);
-      printf(" palCard   * %s  %d\n",palCard[y] ,++j);
-      printf(" meCard    * %s  %d\n",meCard[y] ,++j);
+      printf(" foe1Card1=   %s  %d\n",foe1Card[y] ,j++);
+  //    printf(" foe2Card  * %s  %d\n",foe2Card[y] ,j++);
+    //  printf(" palCard   * %s  %d\n",palCard[y] ,j++);
+      //printf(" meCard    * %s  %d\n",meCard[y] ,j++);
 
     }
   }
@@ -55,13 +56,13 @@ void shuffleCard()
   char changeCard1;
   char changeCard2;
 
-    for(int i=0;i<52;i++)
+    for(int i=0;i<100;i++)//each loop one card random shuffle
     {
-      randLoc1=getRandomsNumber(0,50);
-      randLoc2=getRandomsNumber(0,50);
+      randLoc1=getRandomsNumber(0,51);
+      randLoc2=getRandomsNumber(0,51);
 
-      changeCard1=cardCopy[randLoc1][5];
-      changeCard2=cardCopy[randLoc2][5];
+      changeCard1=cardCopy[randLoc1 - 1][5];
+      changeCard2=cardCopy[randLoc2 - 1][5];
 
       cardCopy[randLoc1][5]=changeCard2;
       cardCopy[randLoc2][5]=changeCard1;

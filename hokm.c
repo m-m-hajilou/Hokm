@@ -9,7 +9,8 @@ void shuffleCard();
 int showGame();
 int showCard();
 int showCardPal();
-int showCardfoe();
+int showCardFoe();
+int showCardMe();
 
 
 char card [52][5]={"D.1","D.2","D.3","D.4","D.5","D.6","D.7","D.8","D.9","D.10","D.11","D.12","D.13",
@@ -89,13 +90,13 @@ int showGame()
 int showCard()
 {
   showCardPal();
-  showCardfoe();
+  showCardFoe();
+  showCardMe();
 }
 
 int showCardPal()
 {
   int endCard=0;
-
 
   if(levelDivideCard==0)
   {
@@ -105,13 +106,13 @@ int showCardPal()
     {
       endCard=13;
     }
-
-    printf("\t\t\t\t");//for set card on center small window sheel
+    printf("\t\t\t\t\t\t  card Pal \n\n ");
+    printf("\t\t\t\t\t");//for set card on center window shell
     for (int i = 0; i <endCard; i++)
     {
-      printf("   %s",palCard[i]);
+      printf(" %s ",palCard[i]);
     }
-    printf("\n\n");//for delete % in end of print
+    printf("\n\n\n");//for delete % in end of print and ture location foeCard 1,2
 
 }
 
@@ -119,7 +120,6 @@ int showCardFoe()
 {
   int endCard=0;
 
-
   if(levelDivideCard==0)
   {
     endCard=5;
@@ -128,11 +128,17 @@ int showCardFoe()
     {
       endCard=13;
     }
-
-    printf("\t\t\t\t");//for set card on center small window sheel
+    printf("\t\t\t  card Foe 1 \t\t\t\t\t card Foe 2 \n\n ");
+    printf("\t\t");//for set card on center window shell
     for (int i = 0; i <endCard; i++)
     {
-      printf("   %s",palCard[i]);
+      printf(" %s ",foe1Card[i]);
+    }
+
+    printf("\t\t\t");//for set card on center window shell
+    for (int x = 0; x <endCard; x++)
+    {
+      printf(" %s ",foe2Card[x]);
     }
     printf("\n\n");//for delete % in end of print
 

@@ -80,7 +80,7 @@ void shuffleCard()
   //for (int x = 0; x < 52; x++)
   //{
     //printf("%s  %d , ",cardCopy[x],x+1 );
-  //}
+  //} 
 }
 
 

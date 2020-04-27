@@ -6,6 +6,10 @@
 int getRandomsNumber(int, int);
 int divideCard();
 void shuffleCard();
+int showGame();
+int showCard();
+int showCardPal();
+int showCardfoe();
 
 
 char card [52][5]={"D.1","D.2","D.3","D.4","D.5","D.6","D.7","D.8","D.9","D.10","D.11","D.12","D.13",
@@ -31,11 +35,20 @@ int scoreWe=0;// sum score me + pal
 char players[4]={'A','B','C','D'};
 
 int divideCard()
-{ char data1;
+{
+  char data1;
   shuffleCard();
+  int endCard=0;
   if(levelDivideCard==0)
   {
-    for(int x=0;x<5;x++)//divide five card between players
+    endCard=5;
+  }
+    else if(levelDivideCard==1)
+    {
+      endCard=13;
+    }
+
+    for(int x=0;x<endCard;x++)//divide five card between players
     {
 
     strcpy(foe1Card[x],cardCopy[x]);
@@ -43,8 +56,6 @@ int divideCard()
     strcpy(palCard[x],cardCopy[x+10]);
     strcpy(meCard[x],cardCopy[x+15]);
     }
-  }
-
 }
 
 void shuffleCard()
@@ -55,35 +66,90 @@ void shuffleCard()
   char changeCard2;
   char temp1[5],temp2[5];
 
-    for(int i=0;i<100;i++)//In each card ring, the location changes randomly (in the test: 100 rings were good)
-    {
-      randLoc1=getRandomsNumber(0,50);
-      randLoc2=getRandomsNumber(0,50);
-
-      strcpy(temp1,cardCopy[randLoc1]);
-      strcpy(temp2,cardCopy[randLoc2]);
-      strcpy(cardCopy[randLoc1],temp2);
-      strcpy(cardCopy[randLoc2],temp1);
-      }
-
-  for(int i=0;i<52;i++)
+  for(int i=0;i<100;i++)//In each card ring, the location changes randomly (in the test: 100 rings were good)
   {
-    printf("%s  %d\n",cardCopy[i],i );
+    randLoc1=getRandomsNumber(0,50);
+    randLoc2=getRandomsNumber(0,50);
+    strcpy(temp1,cardCopy[randLoc1]);
+    strcpy(temp2,cardCopy[randLoc2]);
+    strcpy(cardCopy[randLoc1],temp2);
+    strcpy(cardCopy[randLoc2],temp1);
   }
+
 }
 
-int copyArraye()
+/*this is part of show game*/
+
+int showGame()
 {
+  showCard();
 
 }
+
+int showCard()
+{
+  showCardPal();
+  showCardfoe();
+}
+
+int showCardPal()
+{
+  int endCard=0;
+
+
+  if(levelDivideCard==0)
+  {
+    endCard=5;
+  }
+    else if(levelDivideCard==1)
+    {
+      endCard=13;
+    }
+
+    printf("\t\t\t\t");//for set card on center small window sheel
+    for (int i = 0; i <endCard; i++)
+    {
+      printf("   %s",palCard[i]);
+    }
+    printf("\n\n");//for delete % in end of print
+
+}
+
+int showCardFoe()
+{
+  int endCard=0;
+
+
+  if(levelDivideCard==0)
+  {
+    endCard=5;
+  }
+    else if(levelDivideCard==1)
+    {
+      endCard=13;
+    }
+
+    printf("\t\t\t\t");//for set card on center small window sheel
+    for (int i = 0; i <endCard; i++)
+    {
+      printf("   %s",palCard[i]);
+    }
+    printf("\n\n");//for delete % in end of print
+
+}
+
+
 
 int getRandomsNumber(int low, int up)
 {
    return rand()% (up+low+1)+low;
 }
 
+
+
 int main(int argc, char const *argv[])
 {
   divideCard();
+  showGame();
   return 0;
 }

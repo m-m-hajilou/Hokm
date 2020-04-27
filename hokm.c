@@ -62,7 +62,7 @@ int divideCard()
 void shuffleCard()
 {
   srand(time(0));//for set new number for rand()
-  int j,randLoc1,randLoc2;
+  int randLoc1,randLoc2;
   char changeCard1;
   char changeCard2;
   char temp1[5],temp2[5];
@@ -77,10 +77,14 @@ void shuffleCard()
     strcpy(cardCopy[randLoc2],temp1);
   }
 
+  //for (int x = 0; x < 52; x++)
+  //{
+    //printf("%s  %d , ",cardCopy[x],x+1 );
+  //}
 }
 
-/*this is part of show game*/
 
+/*This is the section for displaying the game*/
 int showGame()
 {
   showCard();
@@ -106,13 +110,16 @@ int showCardPal()
     {
       endCard=13;
     }
+
+    /* This section: Set the location of the cards*/
     printf("\t\t\t\t\t\t  card Pal \n\n ");
-    printf("\t\t\t\t\t");//for set card on center window shell
+    printf("\t\t\t\t\t");
+
     for (int i = 0; i <endCard; i++)
     {
       printf(" %s ",palCard[i]);
     }
-    printf("\n\n\n");//for delete % in end of print and ture location foeCard 1,2
+    printf("\n");//for delete % in end of print and ture location foeCard 1,2
 
 }
 
@@ -128,8 +135,11 @@ int showCardFoe()
     {
       endCard=13;
     }
+    /* This section: Set the location of the cards*/
+    printf("\n\n");
     printf("\t\t\t  card Foe 1 \t\t\t\t\t card Foe 2 \n\n ");
-    printf("\t\t");//for set card on center window shell
+    printf("\t\t");
+
     for (int i = 0; i <endCard; i++)
     {
       printf(" %s ",foe1Card[i]);
@@ -140,9 +150,36 @@ int showCardFoe()
     {
       printf(" %s ",foe2Card[x]);
     }
-    printf("\n\n");//for delete % in end of print
+    printf("\n");//for delete % in end of print
 
 }
+
+int showCardMe()
+{
+  int endCard=0;
+
+  if(levelDivideCard==0)
+  {
+    endCard=5;
+  }
+    else if(levelDivideCard==1)
+    {
+      endCard=13;
+    }
+
+    /* This section: Set the location of the cards*/
+    printf("\n\n");
+    printf("\t\t\t\t\t\t  card me \n\n ");
+    printf("\t\t\t\t\t");
+
+    for (int i = 0; i <endCard; i++)
+    {
+      printf(" %s ",meCard[i]);
+    }
+    printf("\n");//for delete % in end of print and ture location foeCard 1,2
+
+}
+
 
 
 

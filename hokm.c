@@ -3,6 +3,8 @@
 #include<time.h>
 #include<limits.h>
 #include <string.h>
+
+int gameManagement();
 int getRandomsNumber(int, int);
 int divideCard();
 void shuffleCard();
@@ -28,12 +30,21 @@ char foe2Card[13][5];
 char palCard[13][5];
 char meCard[13][5];
 
+int ruler;//To determine who starts the game and sets the rules of the game.The number can be between 0 and 3)(0=me,1=foe2,2=pal,3=foe1)
+
 int levelDivideCard=0;//for select hokm by king
 
 int scoreFoe=0;//sum score foe 1+foe 2
 int scoreWe=0;// sum score me + pal
 
 char players[4]={'A','B','C','D'};
+
+
+int gameManagement()
+{
+  divideCard();
+  showGame();
+}
 
 int divideCard()
 {
@@ -80,7 +91,7 @@ void shuffleCard()
   //for (int x = 0; x < 52; x++)
   //{
     //printf("%s  %d , ",cardCopy[x],x+1 );
-  //} 
+  //}
 }
 
 
@@ -192,7 +203,6 @@ int getRandomsNumber(int low, int up)
 
 int main(int argc, char const *argv[])
 {
-  divideCard();
-  showGame();
+
   return 0;
 }

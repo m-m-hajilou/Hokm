@@ -15,7 +15,7 @@ int showCardFoe();
 int showCardMe();
 void determiningRuler();
 int determiningRul();
-int cardSeparatorAndRank(char*,int*);
+int cardSeparatorAndRank(int*,char*);
 
 char card [52][5]={"D.1","D.2","D.3","D.4","D.5","D.6","D.7","D.8","D.9","D.10","D.11","D.12","D.13",
 "G.1","G.2","G.3","G.4","G.5","G.6","G.7","G.8","G.9","G.10","G.11","G.12","G.13",
@@ -52,27 +52,29 @@ int gameManagement()
 void determiningRuler()
 {
   ruler=getRandomsNumber(0,3);
+  determiningRul();
 }
+
+
 
 int determiningRul()
 {
-  int d,g,p,k;
+  char tempCard[1];
+  int tempRank=0;
+  int d,g,p,k,a;
   d=g=p=k=0;
-switch (ruler)
-{
-  case 0:
-  {
-
-  }
-}
+  strcpy(tempCard,cardCopy[0]);
+  a=cardSeparatorAndRank(&tempRank,&tempCard);
+  printf("%s   ,%d\n",tempCard,tempRank);
 
 }
 
-int cardSeparatorAndRank(char *card,int *rank)  // d.1 ===>  d  ,   1
+int cardSeparatorAndRank(int *rank,char *card)  // d.1 ===>  d  ,   1
 {
-  char temp=card;//strtok changes the string
-  *card = strtok(temp, ".");
-  *rank = strtok(NULL, ".");
+  char *tempCard=*card;
+  card = strtok(tempCard, ".");
+  rank = strtok(NULL, ".");
+  return 0;
 }
 
 int divideCard()

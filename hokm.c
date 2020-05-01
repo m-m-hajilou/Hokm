@@ -16,6 +16,7 @@
   void determiningRuler();
   int determiningRul();
   int cardSeparatorAndRank(char*,char*);
+  int determiningPointStartCard();
 
   char card [52][5]={"D.2","D.3","D.4","D.5","D.6","D.7","D.8","D.9","D.10","D.11","D.12","D.13","D.14",
   "G.2","G.3","G.4","G.5","G.6","G.7","G.8","G.9","G.10","G.11","G.12","G.13","G.14",
@@ -45,26 +46,30 @@
   int gameManagement()
   {
     determiningRuler();
+    determiningRul();
     divideCard();
     showGame();
   }
 
-  void determiningRuler()
+  void determiningRuler()//diffreny to determiningRul
   {
     ruler=getRandomsNumber(0,3);
-    determiningRul();
   }
 
-  char *orginalRank;
+  char *orginalRank;//When :rankCard:  returned. The result was a mistake and I didn't know how to fix it
 
   int determiningRul()
   {
+    int pointStartCard=0;
+
     char tempCard[5];
     char tempRank[5];
+
     strcpy(tempCard,cardCopy[0]);
     cardSeparatorAndRank(&tempRank[0],&tempCard[0]);
     strcpy(tempRank,orginalRank);
-    printf("%s   ,%s\n",tempCard,tempRank);
+
+    pointStartCard = determiningPointStartCard();
 
   }
 
@@ -78,7 +83,40 @@
     orginalRank=rank;//**
     return 0;
   }
+  int determiningPointStartCard()
+  {
+    switch(ruler)
+    {
+      case 0:
+      {
+        return 0;
+        break;
+      }
 
+      case 1:
+      {
+        return 5;
+        break;
+      }
+
+      case 2:
+      {
+        return 10;
+        break;
+      }
+
+      case 3:
+      {
+        return 15;
+        break;
+      }
+      default:
+      {
+      return 102;
+      break;
+    }
+  }
+ }
   int divideCard()
   {
     char data1;

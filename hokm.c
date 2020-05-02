@@ -71,6 +71,7 @@
 
     pointStartCard = determiningPointStartCard();
 
+
   }
 
   int cardSeparatorAndRank(char *rank,char *cards)  // d.1 ===>  d  ,   1

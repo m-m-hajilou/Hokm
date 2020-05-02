@@ -17,7 +17,7 @@
   int determiningRul();
   int cardSeparatorAndRank(char*,char*);
   int determiningPointStartCard();
-  int cardTypeCounter(int*,int*,int*,int*,int)
+  int cardTypeCounter(int*,int*,int*,int*,int);
 
   char card [52][5]={"D.2","D.3","D.4","D.5","D.6","D.7","D.8","D.9","D.10","D.11","D.12","D.13","D.14",
   "G.2","G.3","G.4","G.5","G.6","G.7","G.8","G.9","G.10","G.11","G.12","G.13","G.14",
@@ -62,31 +62,22 @@
   int determiningRul()
   {
     int pointStartCard=0;
-    int d,g,p,k;//To count card types
-    d=g=p=k=0;
+    int D,G,P,K;//To count card types
+    D=G=P=K=0;
     char tempCard[5];
     char tempRank[5];
 
     strcpy(tempCard,cardCopy[0]);
-    cardSeparatorAndRank(&tempRank[0],&tempCard[0]);
+    cardSeparatorAndRank(&tempCard[0] ,&tempRank[0]);
     strcpy(tempRank,orginalRank);
 
     pointStartCard = determiningPointStartCard();
-    cardTypeCounter(&d,&g,&p,&k,pointStartCard);
+    cardTypeCounter(&D,&P,&G,&K,pointStartCard);
 
 
   }
 
-  int cardSeparatorAndRank(char *rank,char *cards)  // d.1 ===>  d  ,   1
-  {
-    char *tempCard;
-    char deilam[]=".";
-    tempCard= strtok(cards, deilam);
-    rank = strtok(NULL, deilam);
-    cards=tempCard;
-    orginalRank=rank;//**
-    return 0;
-  }
+
   int determiningPointStartCard()
   {
     switch(ruler)
@@ -122,9 +113,61 @@
   }
  }
 
- int cardTypeCounter(int *d,int *g,int *p,int *k,int pointStartCard)
+ int cardTypeCounter(int *D,int *G,int *P,int *K,int pointStartCard)
  {
+   char tempCard[5],tempRank[5];
 
+   for (size_t i =pointStartCard; i < pointStartCard+5 ; i++)
+    {
+      strcpy(tempCard,cardCopy[i]);
+      cardSeparatorAndRank(&tempCard[0] ,&tempRank[0]);
+
+      switch (tempCard[0])
+      {
+        case 'D':
+        {
+          D++;
+          break;
+        }
+
+        case 'G':
+        {
+          G++;
+          break;
+        }
+
+        case 'P':
+        {
+          P++;
+          break;
+        }
+
+        case 'K':
+        {
+          K++;
+          break;
+        }
+        default:
+        {
+          return 102;
+          break;
+        }
+
+      }
+    }
+
+
+ }
+
+ int cardSeparatorAndRank(char *cards,char *rank)  // d.1 ===>  d  ,   1
+ {
+   char *tempCard;
+   char deilam[]=".";
+   tempCard= strtok(cards, deilam);
+   rank = strtok(NULL, deilam);
+   cards=tempCard;
+   orginalRank=rank;//**
+   return 0;
  }
 
 

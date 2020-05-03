@@ -88,7 +88,8 @@
     char tempCard[5];
     char tempRank[5];
 
-    int scoreCardD,scoreCardG,scoreCardP,scoreCardK;
+    int tempscore=0;//for change string to int
+    int scoreCardD,scoreCardG,scoreCardP,scoreCardK;//to collect card score.Which  by comparing the score of the  card  is determined rule
     scoreCardD=scoreCardG=scoreCardP=scoreCardK=0;
     int d,g,p,k;//To count card types
     d=g=p=k=0;
@@ -117,10 +118,45 @@
     {
       for (int i=pointStartCard; i <(pointStartCard+5); i++)
       {
+        strcpy(tempCard,cardCopy[i]);
         cardSeparatorAndRank(&tempCard[0] ,&tempRank[0]);
         switch (tempCard[0])
         {
-          case :
+          case 'D':
+          {
+            sscanf(orginalRank,"%d",tempscore)
+            scoreCardD+=tempscore;
+
+            printf("%d*d\n",*d);
+            break;
+          }
+
+          case 'G':
+          {
+            *g+=1;
+            printf("%d*g\n",*g);
+            break;
+          }
+
+          case 'P':
+          {
+            *p+=1;
+            printf("%d*p\n",*p);
+            break;
+          }
+
+          case 'K':
+          {
+            *k+=1;
+            printf("%d*k\n",*k);
+            break;
+          }
+          default:
+          {
+            return 102;
+            break;
+          }
+
         }
 
 

@@ -57,6 +57,7 @@
   void determiningRuler()//diffreny to determiningRul
   {
     ruler=getRandomsNumber(0,3);
+    printf("ruler = %d\n",ruler );
   }
 
   char *orginalRank;//When rankCard  returned. The result was a mistake and I didn't know how to fix it
@@ -84,6 +85,11 @@
 
   int countCardAndRankForDeterminingRul(int pointStartCard)
   {
+    char tempCard[5];
+    char tempRank[5];
+
+    int scoreCardD,scoreCardG,scoreCardP,scoreCardK;
+    scoreCardD=scoreCardG=scoreCardP=scoreCardK=0;
     int d,g,p,k;//To count card types
     d=g=p=k=0;
     cardTypeCounter(&d,&g,&p,&k,pointStartCard);
@@ -111,7 +117,14 @@
     {
       for (int i=pointStartCard; i <(pointStartCard+5); i++)
       {
-        
+        cardSeparatorAndRank(&tempCard[0] ,&tempRank[0]);
+        switch (tempCard[0])
+        {
+          case :
+        }
+
+
+
       }
     }
   }

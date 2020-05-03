@@ -19,6 +19,7 @@
   int determiningPointStartCard();
   int cardTypeCounter(int*,int*,int*,int*,int);
   int countCardAndRankForDeterminingRul(int);
+  int calculateCardRank(int);
 
   char card [52][5]={"D.2","D.3","D.4","D.5","D.6","D.7","D.8","D.9","D.10","D.11","D.12","D.13","D.14",
   "G.2","G.3","G.4","G.5","G.6","G.7","G.8","G.9","G.10","G.11","G.12","G.13","G.14",
@@ -85,12 +86,6 @@
 
   int countCardAndRankForDeterminingRul(int pointStartCard)
   {
-    char tempCard[5];
-    char tempRank[5];
-
-    int tempscore=0;//for change string to int
-    int scoreCardD,scoreCardG,scoreCardP,scoreCardK;//to collect card score.Which  by comparing the score of the  card  is determined rule
-    scoreCardD=scoreCardG=scoreCardP=scoreCardK=0;
     int d,g,p,k;//To count card types
     d=g=p=k=0;
     cardTypeCounter(&d,&g,&p,&k,pointStartCard);
@@ -116,56 +111,70 @@
     }
     else if (d<2 ||g<2 ||p<2 ||k<2)
     {
-      for (int i=pointStartCard; i <(pointStartCard+5); i++)
+       calculateCardRank(pointStartCard);
+    }
+  }
+
+int calculateCardRank(int pointStartCard)
+{
+
+    char tempCard[5];
+    char tempRank[5];
+
+    int tempscore=0;//for change string to int
+    int totalCardRankD,totalCardRankG,totalCardRankP,totalCardRankK;//to collect card score.Which  by comparing the score of the  card  is determined rule
+    totalCardRankD=totalCardRankG=totalCardRankP=totalCardRankK=0;
+
+  for (int i=pointStartCard; i <(pointStartCard+5); i++)
+  {
+    strcpy(tempCard,cardCopy[i]);
+    cardSeparatorAndRank(&tempCard[0] ,&tempRank[0]);
+    switch (tempCard[0])
+    {
+      case 'D':
       {
-        strcpy(tempCard,cardCopy[i]);
-        cardSeparatorAndRank(&tempCard[0] ,&tempRank[0]);
-        switch (tempCard[0])
-        {
-          case 'D':
-          {
-            sscanf(orginalRank,"%d",tempscore)
-            scoreCardD+=tempscore;
-            printf("%d*d\n",scoreCardD);
-            break;
-          }
-
-          case 'G':
-          {
-            *g+=1;
-            printf("%d*g\n",*g);
-            break;
-          }
-
-          case 'P':
-          {
-            *p+=1;
-            printf("%d*p\n",*p);
-            break;
-          }
-
-          case 'K':
-          {
-            *k+=1;
-            printf("%d*k\n",*k);
-            break;
-          }
-          default:
-          {
-            return 102;
-            break;
-          }
-
-        }
-
-
-
+        sscanf(orginalRank,"%d",&tempscore);
+        totalCardRankD+=tempscore;
+        printf(" totalCardRankD= %d\n",totalCardRankD);
+        break;
       }
+
+      case 'G':
+      {
+        sscanf(orginalRank,"%d",&tempscore);
+        totalCardRankG+=tempscore;
+        printf(" totalCardRankG= %d\n",totalCardRankG);
+        break;
+      }
+
+      case 'P':
+      {
+        sscanf(orginalRank,"%d",&tempscore);
+        totalCardRankP+=tempscore;
+        printf(" totalCardRankP= %d\n",totalCardRankP);
+        break;
+      }
+
+      case 'K':
+      {
+        sscanf(orginalRank,"%d",&tempscore);
+        totalCardRankK+=tempscore;
+        printf(" totalCardRankK= %d\n",totalCardRankK);
+        break;
+      }
+      default:
+      {
+        return 102;
+        break;
+      }
+
     }
   }
 
 
-  int determiningPointStartCard()
+}
+
+int determiningPointStartCard()
   {
     switch(ruler)
     {

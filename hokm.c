@@ -46,9 +46,9 @@
 
   int gameManagement()
   {
+    divideCard();
     determiningRuler();
     determiningRul();
-    divideCard();
     showGame();
   }
 
@@ -136,7 +136,7 @@
 
         case 'G':
         {
-          *g+=;
+          *g+=1;
           printf("%d*g\n",*g);
           break;
         }

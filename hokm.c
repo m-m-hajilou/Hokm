@@ -62,8 +62,8 @@
   int determiningRul()
   {
     int pointStartCard=0;
-    int D,G,P,K;//To count card types
-    D=G=P=K=0;
+    int d,g,p,k;//To count card types
+    d=g=p=k=0;
     char tempCard[5];
     char tempRank[5];
 
@@ -72,7 +72,8 @@
     strcpy(tempRank,orginalRank);
 
     pointStartCard = determiningPointStartCard();
-    cardTypeCounter(&D,&P,&G,&K,pointStartCard);
+    cardTypeCounter(&d,&p,&g,&k,pointStartCard);
+    p++;
 
 
   }
@@ -113,8 +114,10 @@
   }
  }
 
- int cardTypeCounter(int *D,int *G,int *P,int *K,int pointStartCard)
+ int cardTypeCounter(int *d,int *g,int *p,int *k,int pointStartCard)
  {
+   int tempD,tempG,tempP,tempK;
+   tempD=tempG=tempP=tempK=0;
    char tempCard[5],tempRank[5];
 
    for (size_t i =pointStartCard; i < pointStartCard+5 ; i++)
@@ -126,25 +129,29 @@
       {
         case 'D':
         {
-          D++;
+          *d+=1;
+          printf("%d*d\n",*d);
           break;
         }
 
         case 'G':
         {
-          G++;
+          *g+=;
+          printf("%d*g\n",*g);
           break;
         }
 
         case 'P':
         {
-          P++;
+          *p+=1;
+          printf("%d*p\n",*p);
           break;
         }
 
         case 'K':
         {
-          K++;
+          *k+=1;
+          printf("%d*k\n",*k);
           break;
         }
         default:
@@ -155,8 +162,7 @@
 
       }
     }
-
-
+    return 0;
  }
 
  int cardSeparatorAndRank(char *cards,char *rank)  // d.1 ===>  d  ,   1

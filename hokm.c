@@ -18,6 +18,7 @@
   int cardSeparatorAndRank(char*,char*);
   int determiningPointStartCard();
   int cardTypeCounter(int*,int*,int*,int*,int);
+  char countCardForDeterminingRul(int);
 
   char card [52][5]={"D.2","D.3","D.4","D.5","D.6","D.7","D.8","D.9","D.10","D.11","D.12","D.13","D.14",
   "G.2","G.3","G.4","G.5","G.6","G.7","G.8","G.9","G.10","G.11","G.12","G.13","G.14",
@@ -33,6 +34,7 @@
   char foe2Card[13][5];
   char palCard[13][5];
   char meCard[13][5];
+  char rul[2];
 
   int ruler;//To determine who starts the game and sets the rules of the game.The number can be between 0 and 3)(0=me,1=foe2,2=pal,3=foe1)
 
@@ -73,7 +75,34 @@
 
     pointStartCard = determiningPointStartCard();
     cardTypeCounter(&d,&p,&g,&k,pointStartCard);
-    p++;
+    countCardForDeterminingRul(pointStartCard);
+    printf("rul= %s\n", rul);
+
+
+  }
+
+  char countCardAndRankForDeterminingRul(int pointStartCard)
+  {
+    if(d>2 ||g>2 ||p>2 ||k>2)
+    {
+      if(d>2)
+      {
+        strcpy(rul[0],'d');
+      }
+      if(g>2)
+      {
+        strcpy(rul[0],'g');
+      }
+      if(p>2)
+      {
+        strcpy(rul[0],'p');
+      }
+      if(k>2)
+      {
+        strcpy(rul[0],'k');
+      }
+    }
+
 
 
   }
@@ -166,7 +195,7 @@
  }
 
  int cardSeparatorAndRank(char *cards,char *rank)  // d.1 ===>  d  ,   1
- {
+ {tempCard,cardCopy[i]
    char *tempCard;
    char deilam[]=".";
    tempCard= strtok(cards, deilam);
@@ -175,6 +204,7 @@
    orginalRank=rank;//**
    return 0;
  }
+
 
 
   int divideCard()

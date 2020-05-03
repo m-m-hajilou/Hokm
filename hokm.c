@@ -126,8 +126,7 @@
           {
             sscanf(orginalRank,"%d",tempscore)
             scoreCardD+=tempscore;
-
-            printf("%d*d\n",*d);
+            printf("%d*d\n",scoreCardD);
             break;
           }
 

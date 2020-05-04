@@ -37,7 +37,7 @@
   char meCard[13][5];
   char rul[5];
 
-  int ruler;//To determine who starts the game and sets the rules of the game.The number can be between 0 and 3)(0=me,1=foe2,2=pal,3=foe1)
+  int ruler;//To determine who starts the game and sets the rules of the game.The number can be between 1 and 4)(1=me,2=foe2,3=pal,4=foe1)
 
   int levelDivideCard=0;//for select hokm by king
 
@@ -57,7 +57,7 @@
 
   void determiningRuler()//diffreny to determiningRul
   {
-    ruler=getRandomsNumber(0,3);
+    ruler=getRandomsNumber(1,4);
     printf("ruler = %d\n",ruler );
   }
 
@@ -201,25 +201,25 @@ int determiningPointStartCard()
   {
     switch(ruler)
     {
-      case 0:
+      case 1:
       {
         return 0;
         break;
       }
 
-      case 1:
+      case 2:
       {
         return 5;
         break;
       }
 
-      case 2:
+      case 3:
       {
         return 10;
         break;
       }
 
-      case 3:
+      case 4:
       {
         return 15;
         break;

@@ -18,7 +18,7 @@
   int cardSeparatorAndRank(char*,char*);
   int determiningPointStartCard();
   int cardTypeCounter(int*,int*,int*,int*,int);
-  int determiningRulByCountCardRank(int);
+  int determiningRulByCountCardOrTotalRank(int);
   int calculateTotalCardRank(int);
 
   char card [52][5]={"D.2","D.3","D.4","D.5","D.6","D.7","D.8","D.9","D.10","D.11","D.12","D.13","D.14",
@@ -76,7 +76,7 @@
     strcpy(tempRank,orginalRank);
 
     pointStartCard = determiningPointStartCard();
-    determiningRulByCountCardRank(pointStartCard);
+    determiningRulByCountCardOrTotalRank(pointStartCard);
     char test[5];
     strcpy(test,rul);
     printf("rul= %s\n", rul);
@@ -84,7 +84,7 @@
 
   }
 
-  int determiningRulByCountCardRank(int pointStartCard)
+  int determiningRulByCountCardOrTotalRank(int pointStartCard)
   {
     int d,g,p,k;//To count card types
     d=g=p=k=0;
@@ -93,19 +93,19 @@
     {
       if(d>2)
       {
-        rul[0]='d';
+        rul[0]='D';
       }
       else if(g>2)
       {
-        rul[0]='g';
+        rul[0]='G';
       }
       else if(p>2)
       {
-        rul[0]='p';
+        rul[0]='P';
       }
       else if(k>2)
       {
-        rul[0]='k';
+        rul[0]='K';
       }
       return 1;
     }
@@ -122,7 +122,8 @@ int calculateTotalCardRank(int pointStartCard)
     char tempRank[5];
 
     int tempscore=0;//for change string to int
-    int totalCardRankD,totalCardRankG,totalCardRankP,totalCardRankK;//to collect card score.Which  by comparing the score of the  card  is determined rule
+    int maxScore=0;
+    int totalCardRankD , totalCardRankG , totalCardRankP , totalCardRankK ;//to collect card score.Which  by comparing the score of the  card  is determined rule
     totalCardRankD=totalCardRankG=totalCardRankP=totalCardRankK=0;
 
   for (int i=pointStartCard; i <(pointStartCard+5); i++)
@@ -135,6 +136,11 @@ int calculateTotalCardRank(int pointStartCard)
       {
         sscanf(orginalRank,"%d",&tempscore);
         totalCardRankD+=tempscore;
+        if(maxScore<totalCardRankD)
+        {
+          maxScore=totalCardRankD;
+          rul[0]='D';
+        }
         printf(" totalCardRankD= %d\n",totalCardRankD);
         break;
       }
@@ -143,6 +149,11 @@ int calculateTotalCardRank(int pointStartCard)
       {
         sscanf(orginalRank,"%d",&tempscore);
         totalCardRankG+=tempscore;
+        if(maxScore<totalCardRankG)
+        {
+          maxScore=totalCardRankG;
+          rul[0]='G';
+        }
         printf(" totalCardRankG= %d\n",totalCardRankG);
         break;
       }
@@ -151,6 +162,11 @@ int calculateTotalCardRank(int pointStartCard)
       {
         sscanf(orginalRank,"%d",&tempscore);
         totalCardRankP+=tempscore;
+        if(maxScore<totalCardRankP)
+        {
+          maxScore=totalCardRankP;
+          rul[0]='P';
+        }
         printf(" totalCardRankP= %d\n",totalCardRankP);
         break;
       }
@@ -159,6 +175,11 @@ int calculateTotalCardRank(int pointStartCard)
       {
         sscanf(orginalRank,"%d",&tempscore);
         totalCardRankK+=tempscore;
+        if(maxScore<totalCardRankK)
+        {
+          maxScore=totalCardRankK;
+          rul[0]='K';
+        }
         printf(" totalCardRankK= %d\n",totalCardRankK);
         break;
       }
@@ -170,6 +191,7 @@ int calculateTotalCardRank(int pointStartCard)
 
     }
   }
+  printf("rul end %s\n",rul );
 
 
 }

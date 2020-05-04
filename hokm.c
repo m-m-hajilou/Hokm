@@ -3,9 +3,9 @@
   #include<time.h>
   #include<limits.h>
   #include <string.h>
+  #include "hajilou.h"
 
   int gameManagement();
-  int getRandomsNumber(int, int);
   int divideCard();
   void shuffleCard();
   int showGame();
@@ -46,7 +46,7 @@
 
   int pointStartCardRuler1=0;//me
   int pointStartCardRuler2=13;//foe2
-  int pointStartCardRuler2=26;//pal
+  int pointStartCardRuler3=26;//pal
   int pointStartCardRuler4=39;//foe1
 
 
@@ -207,25 +207,25 @@ int determiningPointStartCard()
     {
       case 1:
       {
-        return 0;
+        return pointStartCardRuler1;
         break;
       }
 
       case 2:
       {
-        return 5;
+        return pointStartCardRuler2;
         break;
       }
 
       case 3:
       {
-        return 10;
+        return pointStartCardRuler3;
         break;
       }
 
       case 4:
       {
-        return 15;
+        return pointStartCardRuler4;
         break;
       }
       default:
@@ -334,18 +334,18 @@ int determiningPointStartCard()
 
     for(int i=0;i<100;i++)//In each card ring, the location changes randomly (in the test: 100 rings were good)
     {
-      randLoc1=getRandomsNumber(0,50);
-      randLoc2=getRandomsNumber(0,50);
+      randLoc1=getRandomsNumber(0,51);
+      randLoc2=getRandomsNumber(0,51);
       strcpy(temp1,cardCopy[randLoc1]);
       strcpy(temp2,cardCopy[randLoc2]);
       strcpy(cardCopy[randLoc1],temp2);
       strcpy(cardCopy[randLoc2],temp1);
     }
 
-    //for (int x = 0; x < 52; x++)
-    //{
-      //printf("%s  %d , ",cardCopy[x],x+1 );
-    //}
+    for (int x = 0; x < 52; x++)
+    {
+      printf("%s  %d \n",cardCopy[x],x+1 );
+    }
   }
 
 
@@ -444,16 +444,6 @@ int determiningPointStartCard()
       printf("\n");//for delete % in end of print and ture location foeCard 1,2
 
   }
-
-
-
-
-  int getRandomsNumber(int low, int up)
-  {
-     return rand()% (up+low+1)+low;
-  }
-
-
 
   int main(int argc, char const *argv[])
   {

@@ -78,15 +78,11 @@
 
   int determiningRulByCountCardOrTotalRank(int pointStartCard)
   {
-    if(determiningRulByCountNumberCard(pointStartCard)==0)
+    if(determiningRulByCountNumberCard(pointStartCard)==0)// Determine the number of cards. If not, then the verdict will be determined by the total rank of the cards
     {
       calculateTotalCardRank(pointStartCard);
     }
-    else
-    {
-      return 102;
-    }
-
+    return 0;
   }
 
   int determiningRulByCountNumberCard(int pointStartCard)

@@ -44,7 +44,11 @@
   int scoreFoe=0;//sum score foe 1+foe 2
   int scoreWe=0;// sum score me + pal
 
-  char players[4]={'A','B','C','D'};
+  int pointStartCardRuler1=0;//me
+  int pointStartCardRuler2=13;//foe2
+  int pointStartCardRuler2=26;//pal
+  int pointStartCardRuler4=39;//foe1
+
 
 
   int gameManagement()
@@ -313,10 +317,10 @@ int determiningPointStartCard()
       for(int x=0;x<endCard;x++)//divide five card between players
       {
 
-      strcpy(foe1Card[x],cardCopy[x]);
-      strcpy(foe2Card[x],cardCopy[x+5]);
-      strcpy(palCard[x],cardCopy[x+10]);
-      strcpy(meCard[x],cardCopy[x+15]);
+        strcpy(meCard[x],cardCopy[(pointStartCardRuler1 + x)]);
+      strcpy(foe1Card[x],cardCopy[(pointStartCardRuler2 + x)]);
+      strcpy(palCard[x],cardCopy[(pointStartCardRuler3 + x)]);
+      strcpy(foe2Card[x],cardCopy[(pointStartCardRuler4 + x)]);
       }
   }
 

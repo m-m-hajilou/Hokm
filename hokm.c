@@ -18,9 +18,9 @@
   int cardSeparatorAndRank(char*,char*);
   int determiningPointStartCard();
   int cardTypeCounter(int*,int*,int*,int*,int);
-  int determiningRulByCountCardOrTotalRank(int);
+  int determiningRulByCountNumberCard(int);
   int calculateTotalCardRank(int);
-
+  int determiningRulByCountCardOrTotalRank(int );
   char card [52][5]={"D.2","D.3","D.4","D.5","D.6","D.7","D.8","D.9","D.10","D.11","D.12","D.13","D.14",
   "G.2","G.3","G.4","G.5","G.6","G.7","G.8","G.9","G.10","G.11","G.12","G.13","G.14",
   "P.2","P.3","P.4","P.5","P.6","P.7","P.8","P.9","P.10","P.11","P.12","P.13","P.14",
@@ -66,25 +66,26 @@
   int determiningRul()
   {
     int pointStartCard=0;
-    int d,g,p,k;//To count card types
-    d=g=p=k=0;
-    char tempCard[5];
-    char tempRank[5];
-
-    strcpy(tempCard,cardCopy[0]);
-    cardSeparatorAndRank(&tempCard[0] ,&tempRank[0]);
-    strcpy(tempRank,orginalRank);
-
     pointStartCard = determiningPointStartCard();
+
     determiningRulByCountCardOrTotalRank(pointStartCard);
-    char test[5];
-    strcpy(test,rul);
     printf("rul= %s\n", rul);
-
-
   }
 
   int determiningRulByCountCardOrTotalRank(int pointStartCard)
+  {
+    if(determiningRulByCountNumberCard(pointStartCard)==0)
+    {
+      calculateTotalCardRank(pointStartCard);
+    }
+    else
+    {
+      return 102;
+    }
+
+  }
+
+  int determiningRulByCountNumberCard(int pointStartCard)
   {
     int d,g,p,k;//To count card types
     d=g=p=k=0;
@@ -111,7 +112,7 @@
     }
     else if (d<2 ||g<2 ||p<2 ||k<2)
     {
-       calculateTotalCardRank(pointStartCard);
+      return 0;
     }
   }
 

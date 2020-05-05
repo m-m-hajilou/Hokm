@@ -38,11 +38,12 @@
   char meCard[13][5];
   char rul[5];
 
-  int ruler;//To determine who starts the game and sets the rules of the game.The number can be between 1 and 4)(1=me,2=foe2,3=pal,4=foe1)
+  int ruler;//To determine who starts the game and sets the rules of the game.The number can be between 1 and 4(1=me,2=foe2,3=pal,4=foe1)
 
   int levelDivideCard=0;//for select hokm by king
 
-  int downerCard=0//To determine who starts the game for down card .The number can be between 1 and 4)(1=me,2=foe2,3=pal,4=foe1)
+  int downerCard//To determine who starts the game for down card .At first the game. It is equal to the ruler.The number can be between 1 and 4(1=me,2=foe2,3=pal,4=foe1)
+  int countDownCard;//To determine the number of cards down. The number can be between 1 and 13(Number of player cards)
 
   int scoreFoe=0;//sum score foe 1+foe 2
   int scoreWe=0;// sum score me + pal
@@ -349,7 +350,7 @@ int determiningPointStartCard()
 
   int howDownCard()
   {
-    
+
   }
 
 

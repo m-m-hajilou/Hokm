@@ -41,6 +41,8 @@
 
   int levelDivideCard=0;//for select hokm by king
 
+  int downerCard=0//To determine who starts the game for down card .The number can be between 1 and 4)(1=me,2=foe2,3=pal,4=foe1)
+
   int scoreFoe=0;//sum score foe 1+foe 2
   int scoreWe=0;// sum score me + pal
 

@@ -22,6 +22,7 @@
   int calculateTotalCardRank(int);
   int determiningRulByCountCardOrTotalRank(int );
   int howDownCard();
+  int minusMinusNumbertDownCard();
   char card [52][5]={"D.2","D.3","D.4","D.5","D.6","D.7","D.8","D.9","D.10","D.11","D.12","D.13","D.14",
   "G.2","G.3","G.4","G.5","G.6","G.7","G.8","G.9","G.10","G.11","G.12","G.13","G.14",
   "P.2","P.3","P.4","P.5","P.6","P.7","P.8","P.9","P.10","P.11","P.12","P.13","P.14",
@@ -43,7 +44,7 @@
   int levelDivideCard=0;//for select hokm by king
 
   int downerCard;//To determine who starts the game for down card .At first the game. It is equal to the ruler.The number can be between 1 and 4(1=me,2=foe2,3=pal,4=foe1)
-  int countDownCard=13;//To determine the number of cards down. The number can be between 1 and 13(Number of player cards)
+  int numberDownCard=13;//To determine the number of cards down. The number can be between 1 and 13(Number of player cards)
 
   int scoreFoe=0;//sum score foe 1+foe 2
   int scoreWe=0;// sum score me + pal
@@ -62,6 +63,7 @@
     howDownCard();
     determiningRul();
     showGame();
+    minusMinusNumbertDownCard();//*مکانش  انتهای هر پایین گذاشتن 4 برگه شود
   }
 
   void determiningRuler()//diffreny to determiningRul
@@ -351,7 +353,7 @@ int determiningPointStartCard()
 
   int howDownCard()
   {
-    if(countDownCard==13)
+    if(numberDownCard==13)
     {
       downerCard=ruler;
       return 1;
@@ -368,6 +370,12 @@ int determiningPointStartCard()
       }
     return 102;
 
+  }
+
+  int minusMinusNumbertDownCard()
+  {
+    numberDownCard--;
+    return 1;
   }
 
 

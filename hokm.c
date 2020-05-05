@@ -313,10 +313,10 @@ int determiningPointStartCard()
       for(int x=0;x<endCard;x++)//divide five card between players
       {
 
-        strcpy(meCard[x],cardCopy[(pointStartCardRuler1 + x)]);
-      strcpy(foe1Card[x],cardCopy[(pointStartCardRuler2 + x)]);
+      strcpy(meCard[x],cardCopy[(pointStartCardRuler1 + x)]);
+      strcpy(foe2Card[x],cardCopy[(pointStartCardRuler2 + x)]);
       strcpy(palCard[x],cardCopy[(pointStartCardRuler3 + x)]);
-      strcpy(foe2Card[x],cardCopy[(pointStartCardRuler4 + x)]);
+      strcpy(foe1Card[x],cardCopy[(pointStartCardRuler4 + x)]);
       }
   }
 

@@ -54,10 +54,10 @@
   int pointStartCardRuler3=26;//pal
   int pointStartCardRuler4=39;//foe1
 
-  int scoreWinMe=0
-  int scoreWinFoe2=0
-  int scoreWinPal=0
-  int scoreWinFoe1=0
+  int scoreWinMe=0;//To determine how much the player has win the game. The number can be between 0 and 7
+  int scoreWinFoe2=0;
+  int scoreWinPal=0;
+  int scoreWinFoe1=0;
 
   int gameManagement()
   {

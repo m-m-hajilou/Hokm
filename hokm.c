@@ -41,6 +41,7 @@
   char rul[5];
 
   int ruler;//To determine who starts the game and sets the rules of the game.The number can be between 1 and 4(1=me,2=foe2,3=pal,4=foe1)
+  enum player{me=1,foe2,pal,foe1};
 
   int levelDivideCard=0;//for select hokm by king
 
@@ -72,8 +73,31 @@
 
   void determiningRuler()//diffreny to determiningRul
   {
-    ruler=getRandomsNumber(1,4);
-    printf("ruler = %d\n",ruler );
+    int temp=getRandomsNumber(1,4);
+    printf("ruler = %d\n",temp );
+    switch (temp) {
+      case 1:
+      {
+        return me;
+      }
+      case 2:
+      {
+        return foe2;
+      }
+      case 3:
+      {
+        return pal;
+      }
+      case 4:
+      {
+        return foe1;
+      }
+      default:
+      {
+        return 102;
+        break;
+      }
+    }
   }
 
   char *orginalRank;//When rankCard  returned. The result was a mistake and I didn't know how to fix it
@@ -384,10 +408,34 @@ int determiningPointStartCard()
 
   int addScoreWinPlayr(int player);
   {
-    switch (player) {
-      case /* value */:
+    switch (player)
+    {
+      case me:
+      {
+        me++;
+        break;
+      }
+      case foe2:
+      {
+        foe2++;
+        break;
+      }
+      case pal:
+      {
+        pal++;
+        break;
+      }
+      case foe1:
+      {
+        foe1++;
+        break;
+      }
+      default:
+      {
+        return 102;
+        break;
+      }
     }
-
   }
 
   /*This is the section for displaying the game*/

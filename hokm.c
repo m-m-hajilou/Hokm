@@ -37,6 +37,7 @@
   "K.2","K.3","K.4","K.5","K.6","K.7","K.8","K.9","K.10","K.11","K.12","K.13","K.14"};
 
   char cardCenter[4][5];//Includes cards that down with  player
+  int indexCardCenter=0;
 
   char foe1Card[13][5];
   char foe2Card[13][5];
@@ -448,7 +449,6 @@ int determiningPointStartCard()
 
   int insertCardToCardCenter(char *cardPlayer)
   {
-    static int indexCardCenter=0;
     if(indexCardCenter>0  && indexCardCenter<3)
     {
       strcpy(cardCenter[indexCardCenter],cardPlayer);
@@ -518,8 +518,8 @@ int determiningPointStartCard()
       }
       /* This section: Set the location of the cards*/
       printf("\n\n\n\n");
-      printf("\t\t  card Foe 1 \t\t\t\t\t\t\t card Foe 2 \n ");
-      printf("\t\t\t\t\t\t\t\t\t\t %s", );
+      printf("\t\t  card Foe 1 \t\t\t%s\t\t\t card Foe 2 \n ",cardCenter[indexCardCenter]);
+      //printf("\t\t\t\t\t\t\t\t\t\t %s", );
       printf("\t");
 
       for (int i = 0; i <endCard; i++)

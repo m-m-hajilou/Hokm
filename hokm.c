@@ -470,14 +470,15 @@ int determiningPointStartCard()
 
   int increaserIndexShowCardCenter()
   {
+    int temp=indexCardCenter;
     if(indexCardShowCenter>=0  && indexCardShowCenter<4)
     {
-      indexCardCenter++;
+      indexCardShowCenter++;
       return 1;
     }
     else if(indexCardCenter>4)
     {
-      indexCardCenter=0;
+      indexCardShowCenter=0;
       return 1;
     }
     return 102;
@@ -553,6 +554,7 @@ int determiningPointStartCard()
       printf("\t\t %s",cardCenter[indexCardShowCenter]);//for set card foe2 on center window shell
       increaserIndexShowCardCenter();
       printf("\t\t%s\t\t",cardCenter[indexCardShowCenter]);
+      increaserIndexShowCardCenter();
       for (int x = 0; x <endCard; x++)
       {
         printf(" %s ",foe2Card[x]);
@@ -577,9 +579,6 @@ int determiningPointStartCard()
       {
         endCard=13;
       }
-
-      /* This section: Set the location of the cards*/
-      increaserIndexShowCardCenter();
       printf("\t\t\t\t\t\t       card me \n\n ");
       printf("\t\t\t\t\t      ");
 

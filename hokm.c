@@ -74,10 +74,6 @@
     determiningRuler();
     determiningRul();
     howDownCard();
-    insertCardToCardCenter(meCard[0]);
-    insertCardToCardCenter(meCard[1]);
-    insertCardToCardCenter(meCard[2]);
-    insertCardToCardCenter(meCard[3]);
     showGame();
     minusMinusNumbertDownCard();//*مکانش  انتهای هر پایین گذاشتن 4 برگه شود
   }

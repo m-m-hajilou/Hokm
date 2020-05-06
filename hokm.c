@@ -34,6 +34,8 @@
   "P.2","P.3","P.4","P.5","P.6","P.7","P.8","P.9","P.10","P.11","P.12","P.13","P.14",
   "K.2","K.3","K.4","K.5","K.6","K.7","K.8","K.9","K.10","K.11","K.12","K.13","K.14"};
 
+  char cardCenter[4][5];//Includes cards that down with  player
+  
   char foe1Card[13][5];
   char foe2Card[13][5];
   char palCard[13][5];

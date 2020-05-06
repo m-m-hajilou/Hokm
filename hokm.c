@@ -27,12 +27,12 @@
   char card [52][5]={"D.2","D.3","D.4","D.5","D.6","D.7","D.8","D.9","D.10","D.11","D.12","D.13","D.14",
   "G.2","G.3","G.4","G.5","G.6","G.7","G.8","G.9","G.10","G.11","G.12","G.13","G.14",
   "P.2","P.3","P.4","P.5","P.6","P.7","P.8","P.9","P.10","P.11","P.12","P.13","P.14",
-  "K.2","K.3","K.4","K.5","K.6","K.7","K.8","K.9","K.10","K.11","K.12","K.13","k.14"};
+  "K.2","K.3","K.4","K.5","K.6","K.7","K.8","K.9","K.10","K.11","K.12","K.13","K.14"};
 
   char cardCopy [52][5]={"D.2","D.3","D.4","D.5","D.6","D.7","D.8","D.9","D.10","D.11","D.12","D.13","D.14",
   "G.2","G.3","G.4","G.5","G.6","G.7","G.8","G.9","G.10","G.11","G.12","G.13","G.14",
   "P.2","P.3","P.4","P.5","P.6","P.7","P.8","P.9","P.10","P.11","P.12","P.13","P.14",
-  "K.2","K.3","K.4","K.5","K.6","K.7","K.8","K.9","K.10","K.11","K.12","K.13","k.14"};
+  "K.2","K.3","K.4","K.5","K.6","K.7","K.8","K.9","K.10","K.11","K.12","K.13","K.14"};
 
   char foe1Card[13][5];
   char foe2Card[13][5];
@@ -41,7 +41,7 @@
   char rul[5];
 
   int ruler;//To determine who starts the game and sets the rules of the game.The number can be between 1 and 4(1=me,2=foe2,3=pal,4=foe1)
-  enum player{me=1,foe2,pal,foe1};
+  //enum player{me=1,foe2,pal,foe1};
 
   int levelDivideCard=0;//for select hokm by king
 
@@ -73,28 +73,32 @@
 
   void determiningRuler()//diffreny to determiningRul
   {
+    enum player{me=1,foe2,pal,foe1};
     int temp=getRandomsNumber(1,4);
     printf("ruler = %d\n",temp );
     switch (temp) {
       case 1:
       {
-        return me;
+        ruler= me;
+        break;
       }
       case 2:
       {
-        return foe2;
+        ruler= foe2;
+        break;
       }
       case 3:
       {
-        return pal;
+        ruler= pal;
+        break;
       }
       case 4:
       {
-        return foe1;
+        ruler= foe1;
+        break;
       }
       default:
       {
-        return 102;
         break;
       }
     }
@@ -406,36 +410,9 @@ int determiningPointStartCard()
     return 1;
   }
 
-  int addScoreWinPlayr(int player);
+  int addScoreWinPlayr(int player)
   {
-    switch (player)
-    {
-      case me:
-      {
-        me++;
-        break;
-      }
-      case foe2:
-      {
-        foe2++;
-        break;
-      }
-      case pal:
-      {
-        pal++;
-        break;
-      }
-      case foe1:
-      {
-        foe1++;
-        break;
-      }
-      default:
-      {
-        return 102;
-        break;
-      }
-    }
+
   }
 
   /*This is the section for displaying the game*/

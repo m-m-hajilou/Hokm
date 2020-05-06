@@ -41,7 +41,7 @@
   char rul[5];
 
   int ruler;//To determine who starts the game and sets the rules of the game.The number can be between 1 and 4(1=me,2=foe2,3=pal,4=foe1)
-  //enum player{me=1,foe2,pal,foe1};
+  enum player{me=1,foe2,pal,foe1};
 
   int levelDivideCard=0;//for select hokm by king
 
@@ -73,7 +73,6 @@
 
   void determiningRuler()//diffreny to determiningRul
   {
-    enum player{me=1,foe2,pal,foe1};
     int temp=getRandomsNumber(1,4);
     printf("ruler = %d\n",temp );
     switch (temp) {
@@ -412,6 +411,34 @@ int determiningPointStartCard()
 
   int addScoreWinPlayr(int player)
   {
+    switch (player)
+    {
+      case me:
+      {
+        scoreWinMe++;
+        break;
+      }
+      case foe2:
+      {
+        scoreWinFoe2++;
+        break;
+      }
+      case pal:
+      {
+        scoreWinPal++;
+        break;
+      }
+      case foe1:
+      {
+        scoreWinFoe1++;
+        break;
+      }
+      default:
+      {
+        return 102;
+        break;
+      }
+    }
 
   }
 

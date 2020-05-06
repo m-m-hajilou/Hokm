@@ -510,15 +510,15 @@ int determiningPointStartCard()
       }
 
       /* This section: Set the location of the cards*/
-      printf("\t\t\t\t\t\t  card Pal \n\n ");
-      printf("\t\t\t\t\t");
+      printf("\t\t\t\t\t\t      card Pal \n\n ");
+      printf("\t\t\t\t\t     ");
 
       for (int i = 0; i <endCard; i++)
       {
         printf(" %s ",palCard[i]);
       }
       printf("\n\n");
-      printf("\t\t\t\t\t\t Score Win: %d  ",scoreWinPal);
+      printf("\t\t\t\t\t\t     Score Win: %d  ",scoreWinPal);
       printf("\n");//for delete % in end of print and ture location foeCard 1,2
 
   }
@@ -537,11 +537,8 @@ int determiningPointStartCard()
       }
       /* This section: Set the location of the cards*/
       printf("\n\n\n\n");
-      printf("\t\t  card Foe 1 \t\t\t\t\t\t\t card Foe 2 \n ");
-
-      printf("\t\t\t\t\t %s",cardCenter[indexCardShowCenter]);
+      printf("\t\tcard Foe 1  \t\t\t\t%s\t\t\t\tcard Foe 2 \n ",cardCenter[indexCardShowCenter]);
       increaserIndexShowCardCenter();
-
       printf("\n");
       printf("\t");
 
@@ -550,13 +547,16 @@ int determiningPointStartCard()
         printf(" %s ",foe1Card[i]);
       }
 
-      printf("\t\t\t\t\t");//for set card on center window shell
+      printf("\t\t %s",cardCenter[indexCardShowCenter]);//for set card foe2 on center window shell
+      increaserIndexShowCardCenter();
+      printf("\t\t%s\t\t",cardCenter[indexCardShowCenter]);
       for (int x = 0; x <endCard; x++)
       {
         printf(" %s ",foe2Card[x]);
       }
       printf("\n\n");
-      printf("\t\t  Score Win: %d \t\t\t\t\t\t\t Score Win: %d \n\n ",scoreWinFoe1,scoreWinFoe2);
+      printf("\t\tScore Win: %d   \t\t\t\t%s\t\t\t\t Score Win: %d \n\n ",scoreWinFoe1,cardCenter[indexCardShowCenter],scoreWinFoe2);
+      increaserIndexShowCardCenter();
       printf("\n");//for delete % in end of print
 
 
@@ -576,16 +576,16 @@ int determiningPointStartCard()
       }
 
       /* This section: Set the location of the cards*/
-      printf("\n\n");
-      printf("\t\t\t\t\t\t  card me \n\n ");
-      printf("\t\t\t\t\t");
+      increaserIndexShowCardCenter();
+      printf("\t\t\t\t\t\t       card me \n\n ");
+      printf("\t\t\t\t\t      ");
 
       for (int i = 0; i <endCard; i++)
       {
         printf(" %s ",meCard[i]);
       }
       printf("\n\n");
-      printf("\t\t\t\t\t         Score Win: %d \n\n ",scoreWinMe);
+      printf("\t\t\t\t\t             Score Win: %d \n\n ",scoreWinMe);
       printf("\n");
 
   }

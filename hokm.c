@@ -75,6 +75,9 @@
     determiningRul();
     howDownCard();
     insertCardToCardCenter(meCard[0]);
+    insertCardToCardCenter(meCard[1]);
+    insertCardToCardCenter(meCard[2]);
+    insertCardToCardCenter(meCard[3]);
     showGame();
     minusMinusNumbertDownCard();//*مکانش  انتهای هر پایین گذاشتن 4 برگه شود
   }
@@ -451,13 +454,13 @@ int determiningPointStartCard()
 
   int insertCardToCardCenter(char *cardPlayer)
   {
-    if(indexCardCenter>=0  && indexCardCenter<3)
+    if(indexCardCenter>=0  && indexCardCenter<4)
     {
       strcpy(cardCenter[indexCardCenter],cardPlayer);
       indexCardCenter++;
       return 1;
     }
-    else if(indexCardCenter>3)
+    else if(indexCardCenter>4)
     {
       indexCardCenter=0;
       return 1;
@@ -467,12 +470,12 @@ int determiningPointStartCard()
 
   int increaserIndexShowCardCenter()
   {
-    if(indexCardShowCenter>=0  && indexCardShowCenter<3)
+    if(indexCardShowCenter>=0  && indexCardShowCenter<4)
     {
       indexCardCenter++;
       return 1;
     }
-    else if(indexCardCenter>3)
+    else if(indexCardCenter>4)
     {
       indexCardCenter=0;
       return 1;

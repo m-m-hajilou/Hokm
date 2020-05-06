@@ -39,6 +39,7 @@
 
   char cardCenter[4][5];//Includes cards that down with  player
   int indexCardCenter=0;
+  int indexCardShowCenter=0;
 
   char foe1Card[13][5];
   char foe2Card[13][5];
@@ -467,7 +468,17 @@ int determiningPointStartCard()
 
   int increaserIndexShowCardCenter()
   {
-
+    if(indexCardShowCenter>0  && indexCardShowCenter<3)
+    {
+      indexCardCenter++;
+      return 1;
+    }
+    else if(indexCardCenter>3)
+    {
+      indexCardCenter=0;
+      return 1;
+    }
+    return 102;
   }
 
 

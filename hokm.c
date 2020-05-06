@@ -439,7 +439,7 @@ int determiningPointStartCard()
         break;
       }
     }
-
+ 
   }
 
   /*This is the section for displaying the game*/

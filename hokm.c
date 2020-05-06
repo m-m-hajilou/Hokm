@@ -11,7 +11,7 @@
   int showGame();
   int showCard();
   int showCardPal();
-  int showCardFoeAndCradCenter();
+  int showCardFoeAndCradCenterFoe2PalFoe1();
   int showCardMe();
   void determiningRuler();
   int determiningRul();
@@ -473,7 +473,7 @@ int determiningPointStartCard()
   int showCard()
   {
     showCardPal();
-    showCardFoeAndCradCenter();
+    showCardFoeAndCradCenterFoe2PalFoe1();
     showCardMe();
   }
 
@@ -504,7 +504,7 @@ int determiningPointStartCard()
 
   }
 
-  int showCardFoeAndCradCenter()
+  int showCardFoeAndCradCenterFoe2PalFoe1Foe2PalFoe1()
   {
     int endCard=0;
 
@@ -518,7 +518,8 @@ int determiningPointStartCard()
       }
       /* This section: Set the location of the cards*/
       printf("\n\n\n\n");
-      printf("\t\t  card Foe 1 \t\t\t\t\t\t\t card Foe 2 \n\n ");
+      printf("\t\t  card Foe 1 \t\t\t\t\t\t\t card Foe 2 \n ");
+      printf("\t\t\t\t\t\t\t\t\t\t %s", );
       printf("\t");
 
       for (int i = 0; i <endCard; i++)

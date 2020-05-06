@@ -25,7 +25,7 @@
   int minusMinusNumbertDownCard();
   int addScoreWinPlayr(int);
   int insertCardToCardCenter(char*);
-  int increaserIndexCardCenter();
+  int increaserIndexShowCardCenter();
 
   char card [52][5]={"D.2","D.3","D.4","D.5","D.6","D.7","D.8","D.9","D.10","D.11","D.12","D.13","D.14",
   "G.2","G.3","G.4","G.5","G.6","G.7","G.8","G.9","G.10","G.11","G.12","G.13","G.14",
@@ -75,7 +75,7 @@
     howDownCard();
     insertCardToCardCenter(meCard[0]);
     showGame();
-    increaserIndexCardCenter()//order this funtion for show cardCenter
+    increaserIndexShowCardCenter()//order this funtion for show cardCenter
     minusMinusNumbertDownCard();//*مکانش  انتهای هر پایین گذاشتن 4 برگه شود
   }
 
@@ -451,14 +451,9 @@ int determiningPointStartCard()
 
   int insertCardToCardCenter(char *cardPlayer)
   {
-      strcpy(cardCenter[indexCardCenter],cardPlayer);
-      return 1;
-  }
-
-  int increaserIndexCardCenter()
-  {
     if(indexCardCenter>0  && indexCardCenter<3)
     {
+      strcpy(cardCenter[indexCardCenter],cardPlayer);
       indexCardCenter++;
       return 1;
     }
@@ -468,6 +463,11 @@ int determiningPointStartCard()
       return 1;
     }
     return 102;
+  }
+
+  int increaserIndexShowCardCenter()
+  {
+
   }
 
 

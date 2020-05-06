@@ -11,7 +11,7 @@
   int showGame();
   int showCard();
   int showCardPal();
-  int showCardFoe();
+  int showCardFoeAndCradCenter();
   int showCardMe();
   void determiningRuler();
   int determiningRul();
@@ -473,7 +473,7 @@ int determiningPointStartCard()
   int showCard()
   {
     showCardPal();
-    showCardFoe();
+    showCardFoeAndCradCenter();
     showCardMe();
   }
 
@@ -504,7 +504,7 @@ int determiningPointStartCard()
 
   }
 
-  int showCardFoe()
+  int showCardFoeAndCradCenter()
   {
     int endCard=0;
 

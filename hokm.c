@@ -75,18 +75,18 @@
       divideCard();
     }
 
-    while(scoreWinMe!=7 ||scoreWinFoe2!=7 ||scoreWinPal!=7 ||scoreWinfoe1!=7 )
+    while(scoreWinMe!=7 ||scoreWinFoe2!=7 ||scoreWinPal!=7 ||scoreWinFoe1!=7 )
     {
       if(levelDivideCard==1)
       {
         divideCard();
       }
       determiningRuler();
-      ruler=me;// after delete just for test *-*-*-*
+      ruler=Me;// after delete just for test *-*-*-*
       determiningRul();
       howDownCard();
       showGame();
-      if(downerCard==me)
+      if(downerCard==Me)
       {
 
       }

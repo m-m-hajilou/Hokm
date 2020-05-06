@@ -70,12 +70,25 @@
 
   int gameManagement()
   {
-    divideCard();
-    determiningRuler();
-    determiningRul();
-    howDownCard();
-    showGame();
-    minusMinusNumbertDownCard();//*مکانش  انتهای هر پایین گذاشتن 4 برگه شود
+    if(levelDivideCard==0)
+    {
+      divideCard();
+    }
+
+    while(scoreWinMe!=7 ||scoreWinFoe2!=7 ||scoreWinPal!=7 ||scoreWinfoe1!=7 )
+    {
+      if(divideCard)
+      if(levelDivideCard==1)
+      {
+        levelDivideCard();
+      }
+      divideCard();
+      determiningRuler();
+      determiningRul();
+      howDownCard();
+      showGame();
+      minusMinusNumbertDownCard();//*مکانش  انتهای هر پایین گذاشتن 4 برگه شود
+    }
   }
 
   void determiningRuler()//diffreny to determiningRul
@@ -349,6 +362,7 @@ int determiningPointStartCard()
     if(levelDivideCard==0)
     {
       endCard=5;
+      levelDivideCard++;
     }
       else if(levelDivideCard==1)
       {

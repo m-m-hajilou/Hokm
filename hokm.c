@@ -22,7 +22,7 @@
   int calculateTotalCardRank(int);
   int determiningRulByCountCardOrTotalRank(int );
   int howDownCard();
-  int minusMinusNumbertDownCard();
+  int minusMinusNumberDownCard();
   int addScoreWinPlayr(int);
   int insertCardToCardCenter(char*);
   int increaserIndexShowCardCenter();
@@ -77,17 +77,22 @@
 
     while(scoreWinMe!=7 ||scoreWinFoe2!=7 ||scoreWinPal!=7 ||scoreWinfoe1!=7 )
     {
-      if(divideCard)
       if(levelDivideCard==1)
       {
-        levelDivideCard();
+        divideCard();
       }
-      divideCard();
       determiningRuler();
+      ruler=me;// after delete just for test *-*-*-*
       determiningRul();
       howDownCard();
       showGame();
-      minusMinusNumbertDownCard();//*مکانش  انتهای هر پایین گذاشتن 4 برگه شود
+      if(downerCard==me)
+      {
+
+      }
+
+
+      minusMinusNumberDownCard();//*مکانش  انتهای هر پایین گذاشتن 4 برگه شود
     }
   }
 
@@ -424,7 +429,7 @@ int determiningPointStartCard()
 
   }
 
-  int minusMinusNumbertDownCard()
+  int minusMinusNumberDownCard()
   {
     numberDownCard--;
     return 1;

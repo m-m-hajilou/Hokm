@@ -76,7 +76,6 @@
     howDownCard();
     insertCardToCardCenter(meCard[0]);
     showGame();
-    increaserIndexShowCardCenter()//order this funtion for show cardCenter
     minusMinusNumbertDownCard();//*مکانش  انتهای هر پایین گذاشتن 4 برگه شود
   }
 
@@ -452,7 +451,7 @@ int determiningPointStartCard()
 
   int insertCardToCardCenter(char *cardPlayer)
   {
-    if(indexCardCenter>0  && indexCardCenter<3)
+    if(indexCardCenter>=0  && indexCardCenter<3)
     {
       strcpy(cardCenter[indexCardCenter],cardPlayer);
       indexCardCenter++;
@@ -468,7 +467,7 @@ int determiningPointStartCard()
 
   int increaserIndexShowCardCenter()
   {
-    if(indexCardShowCenter>0  && indexCardShowCenter<3)
+    if(indexCardShowCenter>=0  && indexCardShowCenter<3)
     {
       indexCardCenter++;
       return 1;
@@ -540,7 +539,8 @@ int determiningPointStartCard()
       printf("\n\n\n\n");
       printf("\t\t  card Foe 1 \t\t\t\t\t\t\t card Foe 2 \n ");
 
-      printf("\t\t\t\t\t\t\t\t\t\t %s",cardCenter[indexCardCenter]);
+      printf("\t\t\t\t\t %s",cardCenter[indexCardShowCenter]);
+      increaserIndexShowCardCenter();
 
       printf("\n");
       printf("\t");

@@ -439,7 +439,7 @@ int determiningPointStartCard()
         break;
       }
     }
- 
+
   }
 
   /*This is the section for displaying the game*/
@@ -477,6 +477,8 @@ int determiningPointStartCard()
       {
         printf(" %s ",palCard[i]);
       }
+      printf("\n\n");
+      printf("\t\t\t\t\t\t Score Win: %d  ",scoreWinPal);
       printf("\n");//for delete % in end of print and ture location foeCard 1,2
 
   }
@@ -494,21 +496,24 @@ int determiningPointStartCard()
         endCard=13;
       }
       /* This section: Set the location of the cards*/
-      printf("\n\n");
-      printf("\t\t\t  card Foe 1 \t\t\t\t\t card Foe 2 \n\n ");
-      printf("\t\t");
+      printf("\n\n\n\n");
+      printf("\t\t  card Foe 1 \t\t\t\t\t\t\t card Foe 2 \n\n ");
+      printf("\t");
 
       for (int i = 0; i <endCard; i++)
       {
         printf(" %s ",foe1Card[i]);
       }
 
-      printf("\t\t\t");//for set card on center window shell
+      printf("\t\t\t\t\t");//for set card on center window shell
       for (int x = 0; x <endCard; x++)
       {
         printf(" %s ",foe2Card[x]);
       }
+      printf("\n\n");
+      printf("\t\t  Score Win: %d \t\t\t\t\t\t\t Score Win: %d \n\n ",scoreWinFoe1,scoreWinFoe2);
       printf("\n");//for delete % in end of print
+
 
   }
 
@@ -534,7 +539,9 @@ int determiningPointStartCard()
       {
         printf(" %s ",meCard[i]);
       }
-      printf("\n");//for delete % in end of print and ture location foeCard 1,2
+      printf("\n\n");
+      printf("\t\t\t\t\t         Score Win: %d \n\n ",scoreWinMe);
+      printf("\n");
 
   }
 

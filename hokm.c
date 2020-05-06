@@ -41,7 +41,7 @@
   char rul[5];
 
   int ruler;//To determine who starts the game and sets the rules of the game.The number can be between 1 and 4(1=me,2=foe2,3=pal,4=foe1)
-  enum player{me=1,foe2,pal,foe1};
+  enum player{Me=1,Foe2,Pal,Foe1};
 
   int levelDivideCard=0;//for select hokm by king
 
@@ -78,22 +78,22 @@
     switch (temp) {
       case 1:
       {
-        ruler= me;
+        ruler= Me;
         break;
       }
       case 2:
       {
-        ruler= foe2;
+        ruler= Foe2;
         break;
       }
       case 3:
       {
-        ruler= pal;
+        ruler= Pal;
         break;
       }
       case 4:
       {
-        ruler= foe1;
+        ruler= Foe1;
         break;
       }
       default:
@@ -413,22 +413,22 @@ int determiningPointStartCard()
   {
     switch (player)
     {
-      case me:
+      case Me:
       {
         scoreWinMe++;
         break;
       }
-      case foe2:
+      case Foe2:
       {
         scoreWinFoe2++;
         break;
       }
-      case pal:
+      case Pal:
       {
         scoreWinPal++;
         break;
       }
-      case foe1:
+      case Foe1:
       {
         scoreWinFoe1++;
         break;

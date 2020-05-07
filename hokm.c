@@ -507,10 +507,21 @@ int determiningPointStartCard()
   int getCardUser()
   {
     char temp[1][5];
+    int trueInput=0;
+    while(trueInput==0)
+    {
     scanf("%[^\n]%*c",temp[0] );
-    printf("%s\n",*temp );
-
-
+    if(searchInArrayString2D(52,5,cardCopy,*temp)==1)// in hajilou .h: number homes array , length homes array . array , word search
+    {
+      strcpy(*cardUser,*temp);
+      trueInput=1;
+    }
+      else
+      {
+        printf("%s is not ture *Please try enter true card (true card: Capital lettersDOT2to14(example:D.2))*\n",*temp );
+      }
+    }
+    return 102;
   }
 
 

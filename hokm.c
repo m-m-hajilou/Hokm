@@ -505,8 +505,9 @@ int determiningPointStartCard()
   int getCardUser()
   {
     char temp[1][5];
-    scanf("select your card %s\n",&temp[0] );
-    
+    scanf("select your card %4s\n",temp[0] );
+    printf("%s\n",*temp );
+
 
   }
 

@@ -80,14 +80,20 @@
 
     while(scoreWinMe!=7 ||scoreWinFoe2!=7 ||scoreWinPal!=7 ||scoreWinFoe1!=7 )
     {
+      determiningRuler();
+      ruler=Me;// after delete just for test *-*-*-*
+      if (ruler==Me)
+      {
+        if(numberDownCard==13)//all player not down card
+        {
+          determiningRul();
+        }
+      }
+      howDownCard();//defult in firt == ruler
       if(levelDivideCard==1)
       {
         divideCard();
       }
-      determiningRuler();
-      ruler=Me;// after delete just for test *-*-*-*
-      determiningRul();
-      howDownCard();
       showGame();
       if(downerCard==Me)
       {

@@ -82,12 +82,12 @@
     while(scoreWinMe!=7 ||scoreWinFoe2!=7 ||scoreWinPal!=7 ||scoreWinFoe1!=7 )
     {
       determiningRuler();
+      showGame();
       ruler=Me;// after delete just for test *-*-*-*
       if (ruler==Me)
       {
         if(numberDownCard==13)//all player not down card
         {
-          showGame();
           determiningRulWithMe();
         }
       }

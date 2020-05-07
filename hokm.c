@@ -27,7 +27,7 @@
   int addScoreWinPlayr(int);
   int insertCardToCardCenter(char*);
   int increaserIndexShowCardCenter();
-  int getCardUser(int,int,char);
+  //int getCardUser(int,int,char);
 
   char card [52][5]={"D.2","D.3","D.4","D.5","D.6","D.7","D.8","D.9","D.10","D.11","D.12","D.13","D.14",
   "G.2","G.3","G.4","G.5","G.6","G.7","G.8","G.9","G.10","G.11","G.12","G.13","G.14",
@@ -87,6 +87,7 @@
       {
         if(numberDownCard==13)//all player not down card
         {
+          showGame();
           determiningRulWithMe();
         }
       }
@@ -95,7 +96,7 @@
       {
         divideCard();
       }
-      showGame();
+
       minusMinusNumberDownCard();//*مکانش  انتهای هر پایین گذاشتن 4 برگه شود
       break;
     }
@@ -104,6 +105,7 @@
   int determiningRulWithMe()
   {
     getCardUser(13,5,meCard);
+    strcpy(rul,cardUser[0]);
   }
 
   void determiningRuler()//diffreny to determiningRul
@@ -511,19 +513,20 @@ int determiningPointStartCard()
 
   int getCardUser(int numberHomeArray,int lengthArray,char arraySearch[][lengthArray] )
   {
-    char temp[1][5];
+    char wordSearch[1][5];
     int trueInput=0;
     while(trueInput==0)
     {
-    scanf("%[^\n]%*c",temp[0] );
-    if(searchInArrayString2D(numberHomeArray,lengthArray,arraySearch,wordSearch)==1)// in hajilou .h: numberhomesarray , length homes array . array , word search
+    scanf("%[^\n]%*c",wordSearch[0] );
+    if(searchInArrayString2D(numberHomeArray,lengthArray,arraySearch,wordSearch[0])==1)// in hajilou .h: numberhomesarray , length homes array . array , word search
     {
-      strcpy(*cardUser,*temp);
+      strcpy(*cardUser,*wordSearch);
       trueInput=1;
+      return 1;
     }
       else
       {
-        printf("%s is not ture *Please try enter true card (true card: Capital lettersDOT2to14(example:D.2))*\n",*temp );
+        printf("%s is not ture *Please try enter true card (true card: Capital lettersDOT2to14(example:D.2))*\n",*wordSearch );
       }
     }
     return 102;

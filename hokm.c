@@ -26,6 +26,7 @@
   int addScoreWinPlayr(int);
   int insertCardToCardCenter(char*);
   int increaserIndexShowCardCenter();
+  int getCardUser();
 
   char card [52][5]={"D.2","D.3","D.4","D.5","D.6","D.7","D.8","D.9","D.10","D.11","D.12","D.13","D.14",
   "G.2","G.3","G.4","G.5","G.6","G.7","G.8","G.9","G.10","G.11","G.12","G.13","G.14",
@@ -46,6 +47,8 @@
   char palCard[13][5];
   char meCard[13][5];
   char rul[5];
+
+  char cardUser[1][5];//Contains card player Me
 
   int ruler;//To determine who starts the game and sets the rules of the game.The number can be between 1 and 4(1=me,2=foe2,3=pal,4=foe1)
   enum player{Me=1,Foe2,Pal,Foe1};
@@ -497,6 +500,14 @@ int determiningPointStartCard()
       return 1;
     }
     return 102;
+  }
+
+  int getCardUser()
+  {
+    char temp[1][5];
+    scanf("select your card %s\n",&temp[0] );
+    
+
   }
 
 

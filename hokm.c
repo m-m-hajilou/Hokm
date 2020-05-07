@@ -91,11 +91,13 @@
       showGame();
       if(downerCard==Me)
       {
+        getCardUser();
 
       }
 
 
       minusMinusNumberDownCard();//*مکانش  انتهای هر پایین گذاشتن 4 برگه شود
+      break;
     }
   }
 
@@ -505,7 +507,7 @@ int determiningPointStartCard()
   int getCardUser()
   {
     char temp[1][5];
-    scanf("select your card %4s\n",temp[0] );
+    scanf("%[^\n]%*c",temp[0] );
     printf("%s\n",*temp );
 
 

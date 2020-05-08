@@ -511,7 +511,7 @@ int determiningPointStartCard()
     return 102;
   }
 
-  int getCardUser(int numberHomeArray,int lengthArray,char arraySearch [][lengthArray] )//**-*-* after numberHomeArray=numberDownCard
+  int getCardUser(int numberHomeArray,int lengthArray,char arraySearch [][lengthArray] )//**-*-* after numberHomeArray=numberDownCard*-*-*-
   {
     char wordSearch[1][5];
     int trueInput=0;

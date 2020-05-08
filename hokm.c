@@ -18,7 +18,7 @@
   int determiningRul();
   int cardSeparatorAndRank(char*,char*);
   int determiningPointStartCard();
-  int cardTypeCounter(int*,int*,int*,int*,int);
+  int cardTypeCounter(int*,int*,int*,int*,int,char (*)[]);
   int determiningRulByCountNumberCard(int);
   int calculateTotalCardRank(int);
   int determiningRulByCountCardOrTotalRank(int );
@@ -27,7 +27,7 @@
   int addScoreWinPlayr(int);
   int insertCardToCardCenter(char*);
   int increaserIndexShowCardCenter();
-  //int getCardUser(int,int,char);
+  int getCardUser(int,int,char (*)[]);
 
   char card [52][5]={"D.2","D.3","D.4","D.5","D.6","D.7","D.8","D.9","D.10","D.11","D.12","D.13","D.14",
   "G.2","G.3","G.4","G.5","G.6","G.7","G.8","G.9","G.10","G.11","G.12","G.13","G.14",
@@ -164,7 +164,7 @@
   {
     int d,g,p,k;//To count card types
     d=g=p=k=0;
-    cardTypeCounter(&d,&g,&p,&k,pointStartCard);
+    cardTypeCounter(&d,&g,&p,&k,5,meCard);
     if(d>2 ||g>2 ||p>2 ||k>2)
     {
       if(d>2)
@@ -307,15 +307,15 @@ int determiningPointStartCard()
   }
  }
 
- int cardTypeCounter(int *d,int *g,int *p,int *k,int pointStartCard)
+ int cardTypeCounter(int *d,int *g,int *p,int *k,int length,char arr [][length])
  {
    int tempD,tempG,tempP,tempK;
    tempD=tempG=tempP=tempK=0;
    char tempCard[5],tempRank[5];
 
-   for (size_t i =pointStartCard; i < pointStartCard+5 ; i++)
+   for (size_t i =0; i < 5 ; i++)
     {
-      strcpy(tempCard,cardCopy[i]);
+      strcpy(tempCard,arr[i]);
       cardSeparatorAndRank(&tempCard[0] ,&tempRank[0]);
 
       switch (tempCard[0])
@@ -511,7 +511,7 @@ int determiningPointStartCard()
     return 102;
   }
 
-  int getCardUser(int numberHomeArray,int lengthArray,char arraySearch[][lengthArray] )
+  int getCardUser(int numberHomeArray,int lengthArray,char arraySearch [][lengthArray] )
   {
     char wordSearch[1][5];
     int trueInput=0;

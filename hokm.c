@@ -84,6 +84,7 @@
       determiningRuler();
       showGame();
       ruler=Me;// after delete just for test *-*-*-*
+
       if (ruler==Me)
       {
         if(numberDownCard==13)//all player not down card
@@ -146,9 +147,15 @@
   {
     int pointStartCard=0;
     pointStartCard = determiningPointStartCard();
-
+    if(ruler==Me)
+    {
+      determiningRulWithMe();
+    }
+    else if(ruler!=Me)
+    {
     determiningRulByCountCardOrTotalRank(pointStartCard);
     printf("rul= %s\n", rul);
+    }
   }
 
   int determiningRulByCountCardOrTotalRank(int pointStartCard)

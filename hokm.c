@@ -175,7 +175,7 @@
   {
     int d,g,p,k;//To count card types
     d=g=p=k=0;
-    cardTypeCounter(&d,&g,&p,&k,5,meCard);
+    cardTypeCounter(&d,&g,&p,&k,5,arr);
     if(d>2 ||g>2 ||p>2 ||k>2)
     {
       if(d>2)

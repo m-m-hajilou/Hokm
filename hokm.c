@@ -82,8 +82,10 @@
     while(scoreWinMe!=7 ||scoreWinFoe2!=7 ||scoreWinPal!=7 ||scoreWinFoe1!=7 )
     {
       determiningRuler();
+      printf("ruler = %d\n",ruler );
       showGame();
       determiningRul();
+      printf("rul= %s\n", rul);
       howDownCard();//defult in firt == ruler
       if(levelDivideCard==1)
       {
@@ -104,7 +106,6 @@
   void determiningRuler()//diffreny to determiningRul
   {
     int temp=getRandomsNumber(1,4);
-    printf("ruler = %d\n",temp );
     switch (temp) {
       case 1:
       {
@@ -149,19 +150,19 @@
       case Foe2:
       {
         determiningRulByCountCardOrTotalRank(foe2Card);
-        printf("rul******= %s\n", rul);
+      //  printf("rul******= %s\n", rul);
         return 1;
       }
       case Pal:
       {
         determiningRulByCountCardOrTotalRank(palCard);
-        printf("rul******= %s\n", rul);
+      //  printf("rul******= %s\n", rul);
         return 1;
       }
       case Foe1:
       {
         determiningRulByCountCardOrTotalRank(foe1Card);
-        printf("rul******= %s\n", rul);
+        //printf("rul******= %s\n", rul);
         return 1;
       }
       default :
@@ -237,7 +238,7 @@ int determiningRulByCalculateTotalCardRank(char arr [][5])
           maxScore=totalCardRankD;
           rul[0]='D';
         }
-        printf(" totalCardRankD= %d\n",totalCardRankD);
+//        printf(" totalCardRankD= %d\n",totalCardRankD);
         break;
       }
 
@@ -250,7 +251,7 @@ int determiningRulByCalculateTotalCardRank(char arr [][5])
           maxScore=totalCardRankG;
           rul[0]='G';
         }
-        printf(" totalCardRankG= %d\n",totalCardRankG);
+        //printf(" totalCardRankG= %d\n",totalCardRankG);
         break;
       }
 
@@ -263,7 +264,7 @@ int determiningRulByCalculateTotalCardRank(char arr [][5])
           maxScore=totalCardRankP;
           rul[0]='P';
         }
-        printf(" totalCardRankP= %d\n",totalCardRankP);
+    //    printf(" totalCardRankP= %d\n",totalCardRankP);
         break;
       }
 
@@ -276,7 +277,7 @@ int determiningRulByCalculateTotalCardRank(char arr [][5])
           maxScore=totalCardRankK;
           rul[0]='K';
         }
-        printf(" totalCardRankK= %d\n",totalCardRankK);
+    //    printf(" totalCardRankK= %d\n",totalCardRankK);
         break;
       }
       default:
@@ -287,7 +288,7 @@ int determiningRulByCalculateTotalCardRank(char arr [][5])
 
     }
   }
-  printf("rul end %s\n",rul );
+//  printf("rul end %s\n",rul );
 
 
 }
@@ -343,28 +344,28 @@ int determiningPointStartCard()
         case 'D':
         {
           *d+=1;
-          printf("%d*d\n",*d);
+        //  printf("%d*d\n",*d);
           break;
         }
 
         case 'G':
         {
           *g+=1;
-          printf("%d*g\n",*g);
+        //  printf("%d*g\n",*g);
           break;
         }
 
         case 'P':
         {
           *p+=1;
-          printf("%d*p\n",*p);
+        //  printf("%d*p\n",*p);
           break;
         }
 
         case 'K':
         {
           *k+=1;
-          printf("%d*k\n",*k);
+      //    printf("%d*k\n",*k);
           break;
         }
         default:
@@ -436,7 +437,7 @@ int determiningPointStartCard()
 
     for (int x = 0; x < 52; x++)
     {
-      printf("%s  %d \n",cardCopy[x],x+1 );
+      //printf("%s  %d \n",cardCopy[x],x+1 );
     }
   }
 

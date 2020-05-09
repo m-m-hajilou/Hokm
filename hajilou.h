@@ -71,4 +71,3 @@ int searchInArrayString2D(int countArray,int lengthChar,char arr[][lengthChar],c
  }
  return 0;
 }
-

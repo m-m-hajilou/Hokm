@@ -164,6 +164,10 @@
         printf("rul******= %s\n", rul);
         return 1;
       }
+      default :
+      {
+        return 102;
+      }
     }
   }
 

@@ -21,7 +21,7 @@
   int cardTypeCounter(int*,int*,int*,int*,int,char (*)[]);
   int determiningRulByCountNumberCard(int);
   int calculateTotalCardRank(int);
-  int determiningRulByCountCardOrTotalRank(int );
+  int determiningRulByCountCardOrTotalRank(char(*)[5] );
   int howDownCard();
   int minusMinusNumberDownCard();
   int addScoreWinPlayr(int);
@@ -147,19 +147,23 @@
   {
     int pointStartCard=0;
     pointStartCard = determiningPointStartCard();
-    if(ruler==Me)
+    switch (ruler)
     {
-      determiningRulWithMe();
-    }
-    else if(ruler!=Me)
-    {
-    determiningRulByCountCardOrTotalRank(pointStartCard);
-    printf("rul= %s\n", rul);
+      case Me:
+      {
+        determiningRulWithMe();
+        return 1;
+      }
+      case Foe2:
+      {
+        determiningRulByCountCardOrTotalRank(foe2Card);
+        printf("rul= %s\n", rul);
+      }
     }
   }
 
-  int determiningRulByCountCardOrTotalRank(int pointStartCard)
-  {
+  int determiningRulByCountCardOrTotalRank(char arr[][5])
+  { int pointStartCard=0;
     if(determiningRulByCountNumberCard(pointStartCard)==0)// Determine the number of cards. If not, then the verdict will be determined by the total rank of the cards
     {
       calculateTotalCardRank(pointStartCard);

@@ -90,7 +90,7 @@
       printf("rul= %s\n", rul);
 
       howDownCard();//defult in firt == ruler
-       
+
       if(levelDivideCard==1)
       {
         divideCard();

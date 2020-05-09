@@ -83,15 +83,7 @@
     {
       determiningRuler();
       showGame();
-      ruler=Me;// after delete just for test *-*-*-*
-
-      if (ruler==Me)
-      {
-        if(numberDownCard==13)//all player not down card
-        {
-          determiningRulWithMe();
-        }
-      }
+      determiningRul();
       howDownCard();//defult in firt == ruler
       if(levelDivideCard==1)
       {
@@ -157,7 +149,20 @@
       case Foe2:
       {
         determiningRulByCountCardOrTotalRank(foe2Card);
-        printf("rul= %s\n", rul);
+        printf("rul******= %s\n", rul);
+        return 1;
+      }
+      case Pal:
+      {
+        determiningRulByCountCardOrTotalRank(palCard);
+        printf("rul******= %s\n", rul);
+        return 1;
+      }
+      case Foe1:
+      {
+        determiningRulByCountCardOrTotalRank(foe1Card);
+        printf("rul******= %s\n", rul);
+        return 1;
       }
     }
   }

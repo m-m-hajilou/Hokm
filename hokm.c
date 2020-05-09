@@ -19,7 +19,7 @@
   int cardSeparatorAndRank(char*,char*);
   int determiningPointStartCard();
   int cardTypeCounter(int*,int*,int*,int*,int,char (*)[]);
-  int determiningRulByCountNumberCard(int);
+  int determiningRulByCountNumberCard(char(*)[5]);
   int calculateTotalCardRank(int);
   int determiningRulByCountCardOrTotalRank(char(*)[5] );
   int howDownCard();
@@ -164,14 +164,14 @@
 
   int determiningRulByCountCardOrTotalRank(char arr[][5])
   { int pointStartCard=0;
-    if(determiningRulByCountNumberCard(pointStartCard)==0)// Determine the number of cards. If not, then the verdict will be determined by the total rank of the cards
+    if(determiningRulByCountNumberCard(arr)==0)// Determine the number of cards. If not, then the verdict will be determined by the total rank of the cards
     {
       calculateTotalCardRank(pointStartCard);
     }
     return 0;
   }
 
-  int determiningRulByCountNumberCard(int pointStartCard)
+  int determiningRulByCountNumberCard(char arr [][5])
   {
     int d,g,p,k;//To count card types
     d=g=p=k=0;

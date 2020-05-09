@@ -83,10 +83,14 @@
     {
       determiningRuler();
       printf("ruler = %d\n",ruler );
+
       showGame();
+
       determiningRul();
       printf("rul= %s\n", rul);
+
       howDownCard();//defult in firt == ruler
+       
       if(levelDivideCard==1)
       {
         divideCard();

@@ -80,7 +80,7 @@
 
   int gameManagement()
   {
-    whoGetCardMax();
+
     if(levelDivideCard==0)
     {
       divideCard();
@@ -571,6 +571,7 @@ int determiningPointStartCard()
     if(numberDownCardInCenter==0)
     {
       strcpy(cardMax[0],intToChar);
+      strcpy(cardMax[1],cardCenter[downerCard-1]);//because array start an 0  but downerCard statrt an 1
     }
   }
 

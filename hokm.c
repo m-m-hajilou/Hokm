@@ -29,6 +29,7 @@
   int increaserIndexShowCardCenter();
   int getCardUser(int,int,char (*)[]);
   int whoGetCardMax();
+  int intToChar(int);
 
   char card [52][5]={"D.2","D.3","D.4","D.5","D.6","D.7","D.8","D.9","D.10","D.11","D.12","D.13","D.14",
   "G.2","G.3","G.4","G.5","G.6","G.7","G.8","G.9","G.10","G.11","G.12","G.13","G.14",
@@ -571,6 +572,11 @@ int determiningPointStartCard()
     }
 
 
+  }
+
+  int intToChar(int number)
+  {
+    sprintf(intToChar,"%d"number)
   }
 
 

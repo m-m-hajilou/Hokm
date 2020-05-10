@@ -102,7 +102,7 @@
       {
         divideCard();
       }
-
+      whoGetCardMax();
       minusMinusNumberDownCard();//*مکانش  انتهای هر پایین گذاشتن 4 برگه شود
       break;
     }
@@ -147,7 +147,7 @@
 
   char *orginalRank;//When rankCard  returned. The result was a mistake and I didn't know how to fix it
   char *orginalCard;
-  int determiningRul()
+  int  determiningRul()
   {
     int pointStartCard=0;
     pointStartCard = determiningPointStartCard();
@@ -564,14 +564,15 @@ int determiningPointStartCard()
 
   int whoGetCardMax()
   {
-    int tempDownerCard;
+    char tempCard[5];
 
     convertIntToChar(downerCard);//out put in intToChar
     if(numberDownCardInCenter==0)
     {
       strcpy(cardMax[0],intToChar);
-      //cardSeparatorAndRank()
-      strcpy(cardMax[1],cardCenter[downerCard-1]);//because array start an 0  but downerCard statrt an 1
+      cardSeparatorAndRank(cardCenter[downerCard-1]);
+      strcpy(cardMax[1],orginalCard);//because array start an 0  but downerCard statrt an 1
+      printf("cardmax1 =%s\n",cardMax[1] );
     }
   }
 

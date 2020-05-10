@@ -567,10 +567,12 @@ int determiningPointStartCard()
   int whoGetCardMax()
   {
     int tempDownerCard;
+
     convertIntToChar(downerCard);//out put in intToChar
     if(numberDownCardInCenter==0)
     {
       strcpy(cardMax[0],intToChar);
+      //cardSeparatorAndRank()
       strcpy(cardMax[1],cardCenter[downerCard-1]);//because array start an 0  but downerCard statrt an 1
     }
   }

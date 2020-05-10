@@ -53,6 +53,8 @@
   char cardUser[1][5];//Contains card player Me
   char cardMax[4][5];//Whoever owns this card is the winner
 
+  char intToChar[5];
+
   int ruler;//To determine who starts the game and sets the rules of the game.The number can be between 1 and 4(1=me,2=foe2,3=pal,4=foe1)
   enum player{Me=1,Foe2,Pal,Foe1};
 
@@ -562,6 +564,11 @@ int determiningPointStartCard()
 
   int whoGetCardMax()
   {
+    int tempDownerCard;
+    if(numberDownCardInCenter==0)
+    {
+      cardMax[][]={"1","D.2","",""};
+    }
 
 
   }

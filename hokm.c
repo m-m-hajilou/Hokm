@@ -59,7 +59,8 @@
   int levelDivideCard=0;//for select hokm by king
 
   int downerCard;//To determine who starts the game for down card .At first the game. It is equal to the ruler.The number can be between 1 and 4(1=me,2=foe2,3=pal,4=foe1)
-  int numberDownCard=13;//To determine the number of cards down. The number can be between 1 and 13(Number of player cards)
+  int numberDownCard=13;//To determine the number of cards down players. The number can be between 1 and 13(Number of player cards)
+  int numberDownCardInCenter=0;//To determine the number of cards down in center for win.in Start each game starts at zero The number can be between 1 and 3(Number of player cards)
 
   int scoreFoe=0;//sum score foe 1+foe 2
   int scoreWe=0;// sum score me + pal
@@ -561,6 +562,7 @@ int determiningPointStartCard()
 
   int whoGetCardMax()
   {
+
 
   }
 

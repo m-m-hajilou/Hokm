@@ -80,6 +80,7 @@
 
   int gameManagement()
   {
+    whoGetCardMax();
     if(levelDivideCard==0)
     {
       divideCard();
@@ -566,12 +567,11 @@ int determiningPointStartCard()
   int whoGetCardMax()
   {
     int tempDownerCard;
+    convertIntToChar(downerCard);//out put in intToChar
     if(numberDownCardInCenter==0)
     {
-      //cardMax[][]={"1","D.2","",""};
+      strcpy(cardMax[0],intToChar);
     }
-
-
   }
 
   int convertIntToChar(int number)

@@ -102,6 +102,7 @@
       {
         divideCard();
       }
+      insertCardToCardCenter("D.20");
       whoGetCardMax();
       minusMinusNumberDownCard();//*مکانش  انتهای هر پایین گذاشتن 4 برگه شود
       break;

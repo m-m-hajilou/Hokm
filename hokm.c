@@ -16,7 +16,7 @@
   void determiningRuler();
   int determiningRulWithMe();
   int determiningRul();
-  int cardSeparatorAndRank(char*,char*);
+  int cardSeparatorAndRank(char[]);
   int determiningPointStartCard();
   int cardTypeCounter(int*,int*,int*,int*,int,char (*)[]);
   int determiningRulByCountNumberCard(char(*)[5]);
@@ -146,7 +146,7 @@
   }
 
   char *orginalRank;//When rankCard  returned. The result was a mistake and I didn't know how to fix it
-
+  char *orginalCard;
   int determiningRul()
   {
     int pointStartCard=0;
@@ -237,7 +237,7 @@ int determiningRulByCalculateTotalCardRank(char arr [][5])
   for (int i=0; i < 5; i++)
   {
     strcpy(tempCard,arr [i]);
-    cardSeparatorAndRank(&tempCard[0] ,&tempRank[0]);
+    cardSeparatorAndRank(tempCard);
     switch (tempCard[0])
     {
       case 'D':
@@ -348,7 +348,7 @@ int determiningPointStartCard()
    for (size_t i =0; i < 5 ; i++)
     {
       strcpy(tempCard,arr[i]);
-      cardSeparatorAndRank(&tempCard[0] ,&tempRank[0]);
+      cardSeparatorAndRank(tempCard );
 
       switch (tempCard[0])
       {
@@ -390,14 +390,12 @@ int determiningPointStartCard()
     return 0;
  }
 
- int cardSeparatorAndRank(char *cards,char *rank)  // d.1 ===>  d  ,   1
+ int cardSeparatorAndRank(char cards [5])  // d.1 ===>  d  ,   1
  {
-   char *tempCard;
+   char *tempCard=cards;//for strcpy(*neded to pointer,)
    char deilam[]=".";
-   tempCard= strtok(cards, deilam);
-   rank = strtok(NULL, deilam);
-   cards=tempCard;
-   orginalRank=rank;//**
+   orginalCard = strtok(tempCard, deilam);
+   orginalRank = strtok(NULL, deilam);
    return 0;
  }
 

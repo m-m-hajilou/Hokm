@@ -1,9 +1,9 @@
   #include<stdio.h>
-  #include <stdlib.h>
+  #include<stdlib.h>
   #include<time.h>
   #include<limits.h>
-  #include <string.h>
-  #include "hajilou.h"
+  #include<string.h>
+  #include"hajilou.h"
 
   int gameManagement();
   int divideCard();
@@ -30,7 +30,7 @@
   int getCardUser(int,int,char (*)[]);
   int whoGetCardMax();
   int convertIntToChar(int);
-
+  int charToint(char []);
   char card [52][5]={"D.2","D.3","D.4","D.5","D.6","D.7","D.8","D.9","D.10","D.11","D.12","D.13","D.14",
   "G.2","G.3","G.4","G.5","G.6","G.7","G.8","G.9","G.10","G.11","G.12","G.13","G.14",
   "P.2","P.3","P.4","P.5","P.6","P.7","P.8","P.9","P.10","P.11","P.12","P.13","P.14",
@@ -514,7 +514,7 @@ int determiningPointStartCard()
   {
     if(indexCardCenter>=0  && indexCardCenter<4)
     {
-      strcpy(cardCenter[indexCardCenter],cardPlayer);
+        strcpy(cardCenter[indexCardCenter],cardPlayer);
       indexCardCenter++;
       return 1;
     }
@@ -566,20 +566,34 @@ int determiningPointStartCard()
   int whoGetCardMax()
   {
     char tempCard[5];
-
+    int max;
+    cardSeparatorAndRank(cardCenter[indexCardCenter-1]);
     convertIntToChar(downerCard);//out put in intToChar
     if(numberDownCardInCenter==0)
     {
       strcpy(cardMax[0],intToChar);
-      cardSeparatorAndRank(cardCenter[downerCard-1]);
       strcpy(cardMax[1],orginalCard);//because array start an 0  but downerCard statrt an 1
-      printf("cardmax1 =%s\n",cardMax[1] );
+      strcpy(cardMax[2],orginalRank);
+      max=charToint(orginalRank);
     }
+      else if () 
+      {
+        /* code */
+      }
+
   }
 
   int convertIntToChar(int number)
   {
     sprintf(intToChar,"%d",number);
+  }
+
+  int charToint(char arr[])
+  {
+    int number;
+    const char *strPoint=arr;
+    sscanf(strPoint,"%d",&number);
+    return number;
   }
 
 

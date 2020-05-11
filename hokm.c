@@ -106,8 +106,10 @@
       }
       strcpy(rul,"D");
       insertCardToCardCenter("D.20");
+      increaserNumberDownCardInCenter();
       whoGetCardMax();
       insertCardToCardCenter("D.21");
+      increaserNumberDownCardInCenter();
       whoGetCardMax();
       minusMinusNumberDownCard();//*مکانش  انتهای هر پایین گذاشتن 4 برگه شود
       break;
@@ -576,7 +578,7 @@ int determiningPointStartCard()
     cardSeparatorAndRank(cardCenter[indexInsertCardCenter-1]);
     convertIntToChar(downerCard);//out put in intToChar
 
-    if(numberDownCardInCenter==0)
+    if(numberDownCardInCenter==1)
     {
       strcpy(cardMax[0],intToChar);
       strcpy(cardMax[1],orginalCard);//because array start an 0  but downerCard statrt an 1
@@ -586,7 +588,7 @@ int determiningPointStartCard()
       printf("%s\n",cardMax[1] );
       printf("%s\n",cardMax[2] );
     }
-      else if (numberDownCardInCenter!=0 && orginalCard==rul && cardCenter[0]== rul)
+      else if (numberDownCardInCenter!=1 && orginalCard==rul && cardCenter[0]== rul)
       {
         if (max < charToint(orginalRank))
         {

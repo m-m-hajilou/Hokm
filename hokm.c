@@ -572,9 +572,10 @@ int determiningPointStartCard()
 
   int whoGetCardMax()
   {
-    char tempCard[5];
+    char baseCard[5];//first card is down with card downer. That other players should follow as this card But If possible
     int max;
-
+    cardSeparatorAndRank(cardCenter[0]);
+    strcpy(baseCard,orginalCard);
     cardSeparatorAndRank(cardCenter[indexInsertCardCenter-1]);
     convertIntToChar(downerCard);//out put in intToChar
 
@@ -588,7 +589,7 @@ int determiningPointStartCard()
       printf("%s\n",cardMax[1] );
       printf("%s\n",cardMax[2] );
     }
-      else if (numberDownCardInCenter!=1 && orginalCard==rul && cardCenter[0]== rul)
+      else if (numberDownCardInCenter!=1  && strcmp(baseCard,rul)==0 && strcmp (orginalCard,rul)==0 )//strcmp if is true then return 0
       {
         if (max < charToint(orginalRank))
         {

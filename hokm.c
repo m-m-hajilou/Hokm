@@ -569,14 +569,17 @@ int determiningPointStartCard()
     }
     return 102;
   }
-
+  int max;//for save value when repet cakk whoGetCardMax()
   int whoGetCardMax()
   {
     char baseCard[5];//first card is down with card downer. That other players should follow as this card But If possible
-    int max;
-    cardSeparatorAndRank(cardCenter[0]);
+
+    char temp[5];//because cardSeparatorAndRank changes valuse. and this is temp that if valuses change not problem
+    strcpy(temp,cardCenter[0]);
+    cardSeparatorAndRank(temp);
     strcpy(baseCard,orginalCard);
-    cardSeparatorAndRank(cardCenter[indexInsertCardCenter-1]);
+    strcpy(temp,cardCenter[indexInsertCardCenter-1]);
+    cardSeparatorAndRank(temp);
     convertIntToChar(downerCard);//out put in intToChar
 
     if(numberDownCardInCenter==1)
@@ -589,8 +592,10 @@ int determiningPointStartCard()
       printf("%s\n",cardMax[1] );
       printf("%s\n",cardMax[2] );
     }
-      else if (numberDownCardInCenter!=1  && strcmp(baseCard,rul)==0 && strcmp (orginalCard,rul)==0 )//strcmp if is true then return 0
+      else if (numberDownCardInCenter!=1 )//strcmp if is true then return 0
       {
+        if( strcmp(baseCard,rul)==0)
+        if(strcmp (orginalCard,rul)==0 )
         if (max < charToint(orginalRank))
         {
           strcpy(cardMax[0],intToChar);

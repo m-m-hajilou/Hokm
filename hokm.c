@@ -104,7 +104,7 @@
       {
         divideCard();
       }
-      strcpy(rul,"P");
+      strcpy(rul,"D");
       insertCardToCardCenter("D.20");
       increaserNumberDownCardInCenter();
       whoGetCardMax();
@@ -114,7 +114,7 @@
       insertCardToCardCenter("G.21");
       increaserNumberDownCardInCenter();
       whoGetCardMax();
-      insertCardToCardCenter("G.24");
+      insertCardToCardCenter("D.24");
       increaserNumberDownCardInCenter();
       whoGetCardMax();
       minusMinusNumberDownCard();//*مکانش  انتهای هر پایین گذاشتن 4 برگه شود
@@ -594,9 +594,6 @@ int determiningPointStartCard()
       strcpy(cardMax[1],orginalCard);//because array start an 0  but downerCard statrt an 1
       strcpy(cardMax[2],orginalRank);
       max=charToint(orginalRank);
-      printf(" 0 %s\n",cardMax[0] );
-      printf("%s\n",cardMax[1] );
-      printf("%s\n",cardMax[2] );
     }
       else if (numberDownCardInCenter > 0 && strcmp(baseCard,rul)==0 && strcmp (orginalCard,rul)==0)//strcmp if is true then return 0
       {
@@ -606,9 +603,6 @@ int determiningPointStartCard()
           strcpy(cardMax[1],orginalCard);//because array start an 0  but downerCard statrt an 1
           strcpy(cardMax[2],orginalRank);
           max=charToint(orginalRank);
-          printf(" 1 %s\n",cardMax[0] );
-          printf("%s\n",cardMax[1] );
-          printf("%s\n",cardMax[2] );
         }
       }
       else if (numberDownCardInCenter > 0 && strcmp(baseCard,rul)!=0 && strcmp(orginalCard,rul)!=0 && strcmp(orginalCard,baseCard)==0 )
@@ -619,9 +613,6 @@ int determiningPointStartCard()
           strcpy(cardMax[1],orginalCard);//because array start an 0  but downerCard statrt an 1
           strcpy(cardMax[2],orginalRank);
           max=charToint(orginalRank);
-          printf(" 2 %s\n",cardMax[0] );
-          printf("%s\n",cardMax[1] );
-          printf("%s\n",cardMax[2] );
         }
       }
       else if (numberDownCardInCenter > 0 && strcmp(baseCard,rul)!=0 && strcmp(orginalCard,rul)==0)
@@ -630,9 +621,6 @@ int determiningPointStartCard()
         strcpy(cardMax[1],orginalCard);//because array start an 0  but downerCard statrt an 1
         strcpy(cardMax[2],orginalRank);
         max=charToint(orginalRank);
-        printf(" 3  %s\n",cardMax[0] );
-        printf("%s\n",cardMax[1] );
-        printf("%s\n",cardMax[2] );
         for (int  i = numberDownCardInCenter - 1; i != 0; i--) {
           strcpy(temp,cardCenter[i]);
           cardSeparatorAndRank(temp);
@@ -642,9 +630,6 @@ int determiningPointStartCard()
             strcpy(cardMax[1],orginalCard);//because array start an 0  but downerCard statrt an 1
             strcpy(cardMax[2],orginalRank);
             max=charToint(orginalRank);
-            printf(" 3  %s\n",cardMax[0] );
-            printf("%s\n",cardMax[1] );
-            printf("%s\n",cardMax[2] );
           }
         }
       }

@@ -618,6 +618,24 @@ int determiningPointStartCard()
           printf("%s\n",cardMax[2] );
         }
       }
+      else if (numberDownCardInCenter > 0 && strcmp(baseCard,rul)!=0 && strcmp(orginalCard,rul)==0)
+      {
+        strcpy(cardMax[0],intToChar);
+        strcpy(cardMax[1],orginalCard);//because array start an 0  but downerCard statrt an 1
+        strcpy(cardMax[2],orginalRank);
+        max=charToint(orginalRank);
+        for (int  i = numberDownCardInCenter+1; i < 5; i++) {
+          strcpy(temp,cardCenter[i]);
+          cardSeparatorAndRank(temp);
+          if (max < charToint(orginalRank))
+          {
+            strcpy(cardMax[0],intToChar);
+            strcpy(cardMax[1],orginalCard);//because array start an 0  but downerCard statrt an 1
+            strcpy(cardMax[2],orginalRank);
+            max=charToint(orginalRank);
+          }
+        }
+      }
 
   }
 

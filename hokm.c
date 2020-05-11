@@ -594,6 +594,8 @@ int determiningPointStartCard()
     }
       else if (numberDownCardInCenter > 0 && strcmp(baseCard,rul)==0 && strcmp (orginalCard,rul)==0)//strcmp if is true then return 0
       {
+        if (max < charToint(orginalRank))
+        {
           strcpy(cardMax[0],intToChar);//numbers player
           strcpy(cardMax[1],orginalCard);//because array start an 0  but downerCard statrt an 1
           strcpy(cardMax[2],orginalRank);
@@ -601,16 +603,20 @@ int determiningPointStartCard()
           printf("%s\n",cardMax[0] );
           printf("%s\n",cardMax[1] );
           printf("%s\n",cardMax[2] );
+        }
       }
-      else if (numberDownCardInCenter > 0 && orginalCard==cardCenter[0] )
+      else if (numberDownCardInCenter > 0 && strcmp(baseCard,rul)!=0 && strcmp(orginalCard,rul)!=0 && strcmp(orginalCard,baseCard)==0 )
       {
-        strcpy(cardMax[0],intToChar);
-        strcpy(cardMax[1],orginalCard);//because array start an 0  but downerCard statrt an 1
-        strcpy(cardMax[2],orginalRank);
-        max=charToint(orginalRank);
-        printf("%s\n",cardMax[0] );
-        printf("%s\n",cardMax[1] );
-        printf("%s\n",cardMax[2] );
+        if (max < charToint(orginalRank))
+        {
+          strcpy(cardMax[0],intToChar);
+          strcpy(cardMax[1],orginalCard);//because array start an 0  but downerCard statrt an 1
+          strcpy(cardMax[2],orginalRank);
+          max=charToint(orginalRank);
+          printf("%s\n",cardMax[0] );
+          printf("%s\n",cardMax[1] );
+          printf("%s\n",cardMax[2] );
+        }
       }
 
   }

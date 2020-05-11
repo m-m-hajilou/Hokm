@@ -42,7 +42,7 @@
   "K.2","K.3","K.4","K.5","K.6","K.7","K.8","K.9","K.10","K.11","K.12","K.13","K.14"};
 
   char cardCenter[4][5];//Includes cards that down with  player
-  int indexCardCenter=0;
+  int indexInsertCardCenter=0;
   int indexCardShowCenter=0;
 
   char foe1Card[13][5];
@@ -102,7 +102,10 @@
       {
         divideCard();
       }
+      strcpy(rul,"D");
       insertCardToCardCenter("D.20");
+      whoGetCardMax();
+      insertCardToCardCenter("D.21");
       whoGetCardMax();
       minusMinusNumberDownCard();//*مکانش  انتهای هر پایین گذاشتن 4 برگه شود
       break;
@@ -512,15 +515,15 @@ int determiningPointStartCard()
 
   int insertCardToCardCenter(char *cardPlayer)
   {
-    if(indexCardCenter>=0  && indexCardCenter<4)
+    if(indexInsertCardCenter>=0  && indexInsertCardCenter<4)
     {
-        strcpy(cardCenter[indexCardCenter],cardPlayer);
-      indexCardCenter++;
+        strcpy(cardCenter[indexInsertCardCenter],cardPlayer);
+      indexInsertCardCenter++;
       return 1;
     }
-    else if(indexCardCenter>4)
+    else if(indexInsertCardCenter>4)
     {
-      indexCardCenter=0;
+      indexInsertCardCenter=0;
       return 1;
     }
     return 102;
@@ -528,13 +531,13 @@ int determiningPointStartCard()
 
   int increaserIndexShowCardCenter()
   {
-    int temp=indexCardCenter;
+    int temp=indexInsertCardCenter;
     if(indexCardShowCenter>=0  && indexCardShowCenter<4)
     {
       indexCardShowCenter++;
       return 1;
     }
-    else if(indexCardCenter>4)
+    else if(indexInsertCardCenter>4)
     {
       indexCardShowCenter=0;
       return 1;
@@ -567,18 +570,32 @@ int determiningPointStartCard()
   {
     char tempCard[5];
     int max;
-    cardSeparatorAndRank(cardCenter[indexCardCenter-1]);
+
+    cardSeparatorAndRank(cardCenter[indexInsertCardCenter-1]);
     convertIntToChar(downerCard);//out put in intToChar
+
     if(numberDownCardInCenter==0)
     {
       strcpy(cardMax[0],intToChar);
       strcpy(cardMax[1],orginalCard);//because array start an 0  but downerCard statrt an 1
       strcpy(cardMax[2],orginalRank);
       max=charToint(orginalRank);
+      printf("%s\n",cardMax[0] );
+      printf("%s\n",cardMax[1] );
+      printf("%s\n",cardMax[2] );
     }
-      else if () 
+      else if (numberDownCardInCenter!=0 && orginalCard==rul && cardCenter[0]== rul)
       {
-        /* code */
+        if (max < charToint(orginalRank))
+        {
+          strcpy(cardMax[0],intToChar);
+          strcpy(cardMax[1],orginalCard);//because array start an 0  but downerCard statrt an 1
+          strcpy(cardMax[2],orginalRank);
+          max=charToint(orginalRank);
+          printf("%s\n",cardMax[0] );
+          printf("%s\n",cardMax[1] );
+          printf("%s\n",cardMax[2] );
+        }
       }
 
   }

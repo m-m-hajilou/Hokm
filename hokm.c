@@ -123,6 +123,7 @@
       whoGetCardMax();
       minusMinusNumberDownCard();//*مکانش  انتهای هر پایین گذاشتن 4 برگه شود
       increaserScoreWiner();
+      showGame();
       break;
     }
     determiningFinalWinner();

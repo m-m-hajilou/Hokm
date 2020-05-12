@@ -26,7 +26,7 @@
   int minusMinusNumberDownCard();
   int addScoreWinPlayr(int);
   int insertCardToCardCenter(char*);// And  this card is  down  then removed from the player's cards by decreaseCardPlayer()
-  int decreaseCardPlayer()// read above comment
+  int decreaseCardPlayer();// read above comment
   int increaserIndexShowCardCenter();
   int getCardUser(int,int,char (*)[]);
   int whoGetCardMax();
@@ -97,6 +97,7 @@
     {
       determiningRuler();
       printf("ruler = %d\n",ruler );
+      ruler=Me;
       showGame();
       determiningRul();
       printf("rul= %s\n", rul);
@@ -109,21 +110,12 @@
       }
 
       showGame();
-      strcpy(rul,"D");
-      insertCardToCardCenter("D.20");
-      increaserNumberDownCardInCenter();
-      whoGetCardMax();
-      insertCardToCardCenter("G.21");
-      increaserNumberDownCardInCenter();
-      whoGetCardMax();
-      insertCardToCardCenter("G.21");
-      increaserNumberDownCardInCenter();
-      whoGetCardMax();
-      insertCardToCardCenter("D.24");
-      increaserNumberDownCardInCenter();
-      whoGetCardMax();
+      getCardUser(numberDownCard,5,meCard);
+      insertCardToCardCenter(cardUser[0]);
+      //increaserNumberDownCardInCenter();
       minusMinusNumberDownCard();//*مکانش  انتهای هر پایین گذاشتن 4 برگه شود
       increaserScoreWiner();
+      increaserIndexShowCardCenter();
       showGame();
       break;
     }
@@ -539,12 +531,25 @@ int determiningPointStartCard()
       indexInsertCardCenter++;
       return 1;
     }
-    else if(indexInsertCardCenter>4)
+    else if(indexInsertCardCenter==4)
     {
       indexInsertCardCenter=0;
       return 1;
     }
     return 102;
+  }
+
+  int decreaseCardPlayer()
+  {
+    switch (downerCard)
+    {
+      case Me:
+      {
+        removeStringInArray(numberDownCard,5,meCard,cardCenter[indexInsertCardCenter-1]);//int removeStringInArray(int numberOfString,int maxSringSize,char  array[numberOfString][maxSringSize], char *string(for search in array) )
+        break;
+      }
+
+    }
   }
 
   int increaserIndexShowCardCenter()

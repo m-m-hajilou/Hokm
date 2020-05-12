@@ -99,7 +99,7 @@
       printf("ruler = %d\n",ruler );
       ruler=Me;
       showGame();
-      determiningRul();
+      determiningRulWithMe();
       printf("rul= %s\n", rul);
 
       howDownCard();//defult in firt == ruler
@@ -116,6 +116,7 @@
       minusMinusNumberDownCard();//*مکانش  انتهای هر پایین گذاشتن 4 برگه شود
       increaserScoreWiner();
       increaserIndexShowCardCenter();
+      decreaseCardPlayer();
       showGame();
       break;
     }

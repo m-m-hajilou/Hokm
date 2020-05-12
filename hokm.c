@@ -96,8 +96,8 @@
     while(scoreWinMe!=7 ||scoreWinFoe2!=7 ||scoreWinPal!=7 ||scoreWinFoe1!=7 )
     {
       determiningRuler();
-      printf("ruler = %d\n",ruler );
       ruler=Me;
+      printf("ruler = %d\n",ruler );
       showGame();
       determiningRulWithMe();
       printf("rul= %s\n", rul);
@@ -129,7 +129,7 @@
     char temp[1];
     while (ok!=1)
     {
-      scanf("%s",temp );
+      scanf("%[^\n]%*c",temp );
       switch (temp[0])
       {
         case 'D':

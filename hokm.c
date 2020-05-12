@@ -104,7 +104,7 @@
         divideCard();
       }
 
-      showGame();
+      showGame(); 
       strcpy(rul,"D");
       insertCardToCardCenter("D.20");
       increaserNumberDownCardInCenter();

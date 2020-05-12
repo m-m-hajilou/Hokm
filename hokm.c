@@ -124,8 +124,45 @@
 
   int determiningRulWithMe()
   {
-    getCardUser(13,5,meCard);
-    strcpy(rul,cardUser[0]);
+    int ok=0;
+    char temp[1];
+    while (ok!=1)
+    {
+      scanf("%s",temp );
+      switch (temp[0])
+      {
+        case 'D':
+        {
+          rul[0]='D';
+          ok=1;
+          break;
+        }
+        case 'G':
+        {
+          rul[0]='G';
+          ok=1;
+          break;
+        }
+        case 'P':
+        {
+          rul[0]='P';
+          ok=1;
+          break;
+        }
+        case 'K':
+        {
+          rul[0]='K';
+          ok=1;
+          break;
+        }
+        default:
+        {
+          printf(" is not ture *Please try enter true RUL (true RUL: D || P || K || G)(*upper word*)*\n" );
+          break;
+        }
+
+      }
+    }
   }
 
   void determiningRuler()//diffreny to determiningRul

@@ -72,13 +72,13 @@ int searchInArrayString2D(int countArray,int lengthChar,char arr[][lengthChar],c
  return 0;
 }
 
-int removeStringInArray(int numberOfString,int maxSringSize,char array[][maxSringSize], char *string )
+int removeStringInArray(int numberOfString,int maxSringSize,char  array[numberOfString][maxSringSize], char *string )
 {
-  for (int n=0;n<maxSringSize;n++)
+  for (int n=0;n<numberOfString;n++)
   {
     if(strcmp(array[n],string)==0)
     {
-      for(int x=n;x<maxSringSize;x++)
+      for(int x=n;x<numberOfString;x++)
       {
         strcpy(array[x],array[x+1]);
       }

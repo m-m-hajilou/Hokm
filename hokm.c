@@ -676,21 +676,25 @@ int determiningPointStartCard()
       case Me:
       {
         scoreWinMe++;
+        scoreWe++;
         break;
       }
       case Foe2:
       {
         scoreWinFoe2++;
+        scoreWinPal++;
         break;
       }
       case Pal:
       {
         scoreWinPal++;
+        scoreWe++;
         break;
       }
       case Foe1:
       {
         scoreWinFoe1++;
+        scoreWinPal++;
         break;
       }
       default:

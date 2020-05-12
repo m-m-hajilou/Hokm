@@ -33,6 +33,7 @@
   int charToint(char []);
   int increaserNumberDownCardInCenter();
   int increaserScoreWiner();
+  int determiningFinalWinner();
 
   char card [52][5]={"D.2","D.3","D.4","D.5","D.6","D.7","D.8","D.9","D.10","D.11","D.12","D.13","D.14",
   "G.2","G.3","G.4","G.5","G.6","G.7","G.8","G.9","G.10","G.11","G.12","G.13","G.14",
@@ -70,6 +71,7 @@
 
   int scoreFoe=0;//sum score foe 1+foe 2
   int scoreWe=0;// sum score me + pal
+  char finalWinner[3];
 
   int pointStartCardRuler1=0;//me
   int pointStartCardRuler2=13;//foe2
@@ -80,6 +82,7 @@
   int scoreWinFoe2=0;
   int scoreWinPal=0;
   int scoreWinFoe1=0;
+
 
   int gameManagement()
   {
@@ -104,7 +107,7 @@
         divideCard();
       }
 
-      showGame(); 
+      showGame();
       strcpy(rul,"D");
       insertCardToCardCenter("D.20");
       increaserNumberDownCardInCenter();

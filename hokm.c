@@ -71,7 +71,7 @@
 
   int scoreFoe=0;//sum score foe 1+foe 2
   int scoreWe=0;// sum score me + pal
-  char finalWinner[3];
+  char finalWinner[4];
 
   int pointStartCardRuler1=0;//me
   int pointStartCardRuler2=13;//foe2
@@ -122,8 +122,10 @@
       increaserNumberDownCardInCenter();
       whoGetCardMax();
       minusMinusNumberDownCard();//*مکانش  انتهای هر پایین گذاشتن 4 برگه شود
+      increaserScoreWiner();
       break;
     }
+    determiningFinalWinner();
   }
 
   int determiningRulWithMe()
@@ -703,6 +705,20 @@ int determiningPointStartCard()
       }
     }
   }
+
+  int determiningFinalWinner()
+  {
+    if(scoreWe==7)
+    {
+      strcpy(finalWinner,"Me");
+    }
+      else if(scoreFoe==7)
+        {
+          strcpy(finalWinner,"Foe");
+        }
+   }
+
+
 
   /*This is the section for displaying the game*/
   int showGame()

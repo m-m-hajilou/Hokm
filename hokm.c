@@ -515,19 +515,14 @@ int determiningPointStartCard()
 
   int howDownCardInStartGameAndIncreaseDownCardInGame()
   {
-    if(numberDownCard==13)
+    if(numberDownCard==13)//mean now game is start
     {
       downerCard=ruler;
       return 1;
     }
-      else if(downerCard>0 && downerCard<4)
+      else if(numberDownCard<13)
       {
-        downerCard++;
-        return 1;
-      }
-      else if(downerCard==4)
-      {
-        downerCard=1;
+        downerCard=charToint(cardMax[0]);
         return 1;
       }
     return 102;

@@ -100,11 +100,12 @@
       determiningRul();
       printf("rul= %s\n", rul);
       divideCard();
-      howDownCardInStartGameAndIncreaseDownCardInGame();//defult in firt == ruler
       for (int i = 0; i < 4; i++)
       {
+        howDownCardInStartGameAndIncreaseDownCardInGame();//defult in firt == ruler
         showGame();
         playerCardDowns();
+        increaserIndexShowCardCenter();
         whoGetCardMax();
 
       }
@@ -520,7 +521,17 @@ int determiningPointStartCard()
       downerCard=ruler;
       return 1;
     }
-      else if(numberDownCard<13)
+      else if (numberDownCardInCenter<4)
+      {
+        if(downerCard>=0 && downerCard<4)
+        {
+          downerCard++;
+        }
+          else if ( downerCard==4) {
+            downerCard=0;
+          }
+      }
+      else if(numberDownCardInCenter==4)
       {
         downerCard=charToint(cardMax[0]);
         return 1;

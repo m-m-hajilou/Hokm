@@ -5,6 +5,7 @@
   #include<string.h>
   #include"hajilou.h"
 
+
   int gameManagement();
   int divideCard();
   void shuffleCard();
@@ -171,7 +172,7 @@
     }
       else
       {
-        printf(" is not ture length *Please try enter true RUL (true RUL: D || P || K || G)(*upper word*)*\n" );
+        printf(" is not ture LENGHT *Please try enter true RUL (true RUL: D || P || K || G)(*upper word*)*\n" );
       }
     }
     return 1;

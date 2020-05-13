@@ -105,19 +105,12 @@
         howDownCardInStartGameAndIncreaseDownCardInGame();//defult in firt == ruler
         showGame();
         playerCardDowns();
+        increaserNumberDownCardInCenter();
         whoGetCardMax();
 
       }
-
-      showGame();
-      getCardUser(numberDownCard,5,meCard);
-      insertCardToCardCenter(cardUser[0]);
-      //increaserNumberDownCardInCenter();
       minusMinusNumberDownCard();//*مکانش  انتهای هر پایین گذاشتن 4 برگه شود
-      decreaseCardPlayer();
-      whoGetCardMax();
       increaserScoreWiner();//
-      showGame();
       break;
     }
     determiningFinalWinner();

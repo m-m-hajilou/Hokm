@@ -105,11 +105,8 @@
         showGame();
         howDownCardInStartGameAndIncreaseDownCardInGame();//defult in firt == ruler
         playerCardDowns();
+        whoGetCardMax();
 
-      }
-      if(levelDivideCard==1)
-      {
-        divideCard();
       }
 
       showGame();

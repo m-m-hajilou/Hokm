@@ -807,6 +807,7 @@ int determiningPointStartCard()
    int artificialIntelligenceCardDown(int lengthArray,int maxSringSize,char arr [lengthArray][maxSringSize])
    {
      insertCardToCardCenter(arr[0]);
+     removeStringInArray(lengthArray,maxSringSize,arr,arr[0]);
    }
 
 

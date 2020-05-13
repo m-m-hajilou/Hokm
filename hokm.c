@@ -126,15 +126,20 @@
   int determiningRulWithMe()
   {
     int ok=0;
-    char temp[1];
+    char temp[5];
     while (ok!=1)
     {
-      scanf("%[^\n]%*c",temp );
+      scanf("%5[^\n]%*c",temp );
+      printf("\n" );
+      if(strlen(temp)==1)
+      {
+
       switch (temp[0])
       {
         case 'D':
         {
-          rul[0]='D';
+          strcpy(rul,"D");
+          //rul[0]='D';
           ok=1;
           break;
         }
@@ -163,7 +168,14 @@
         }
 
       }
+      return 1;
     }
+      else
+      {
+        printf(" is not ture length *Please try enter true RUL (true RUL: D || P || K || G)(*upper word*)*\n" );
+      }
+    }
+    return 1;
   }
 
   void determiningRuler()//diffreny to determiningRul
@@ -612,7 +624,8 @@ int determiningPointStartCard()
     int trueInput=0;
     while(trueInput==0)
     {
-    scanf("%[^\n]%*c",wordSearch[0] );
+    scanf("%5[^\n]%*c",wordSearch[0] );
+    printf("\n" );
     if(searchInArrayString2D(numberHomeArray,lengthArray,arraySearch,wordSearch[0])==1)// in hajilou .h: numberhomesarray , length homes array . array , word search
     {
       strcpy(*cardUser,*wordSearch);
@@ -621,7 +634,7 @@ int determiningPointStartCard()
     }
       else
       {
-        printf("%s is not ture *Please try enter true card (true card: Capital lettersDOT2to14(example:D.2))*\n",*wordSearch );
+        printf("%s is not ture because no choose from your cards  or  enter not true card (true card: Capital lettersDOT2to14(example:D.2))*\n",*wordSearch );
       }
     }
     return 102;

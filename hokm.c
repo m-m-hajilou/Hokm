@@ -129,7 +129,7 @@
     char temp[5];
     while (ok!=1)
     {
-      scanf("%5[^\n]%*c",temp );
+      scanf(" %5[^\n]%*c",temp );
       printf("\n" );
       if(strlen(temp)==1)
       {
@@ -168,7 +168,6 @@
         }
 
       }
-      return 1;
     }
       else
       {
@@ -624,7 +623,7 @@ int determiningPointStartCard()
     int trueInput=0;
     while(trueInput==0)
     {
-    scanf("%5[^\n]%*c",wordSearch[0] );
+    scanf(" %5[^\n]%*c",wordSearch[0] );
     printf("\n" );
     if(searchInArrayString2D(numberHomeArray,lengthArray,arraySearch,wordSearch[0])==1)// in hajilou .h: numberhomesarray , length homes array . array , word search
     {

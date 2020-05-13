@@ -90,17 +90,12 @@
 
   int gameManagement()
   {
-
-    if(levelDivideCard==0)
-    {
-      divideCard();
-    }
-
     while(scoreWinMe!=7 ||scoreWinFoe2!=7 ||scoreWinPal!=7 ||scoreWinFoe1!=7 )
     {
       determiningRuler();
       ruler=Me;
       printf("ruler = %d\n",ruler );
+      divideCard();
       showGame();
       determiningRul();
       printf("rul= %s\n", rul);

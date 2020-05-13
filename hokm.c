@@ -104,6 +104,7 @@
       showGame();
       determiningRul();
       printf("rul= %s\n", rul);
+      divideCard();
       for (int i = 0; i < 4; i++)
       {
         showGame();

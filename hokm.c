@@ -100,10 +100,10 @@
       determiningRul();
       printf("rul= %s\n", rul);
       divideCard();
+      howDownCardInStartGameAndIncreaseDownCardInGame();//defult in firt == ruler
       for (int i = 0; i < 4; i++)
       {
         showGame();
-        howDownCardInStartGameAndIncreaseDownCardInGame();//defult in firt == ruler
         playerCardDowns();
         whoGetCardMax();
 

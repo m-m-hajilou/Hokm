@@ -101,6 +101,7 @@
       determiningRuler();
       ruler=Me;
       printf("ruler = %d\n",ruler );
+      showGame();
       determiningRul();
       printf("rul= %s\n", rul);
       for (int i = 0; i < 4; i++)
@@ -783,15 +784,41 @@ int determiningPointStartCard()
 
    int playerCardDowns()
    {
-     if (downerCard==Me)
+     switch (downerCard)
      {
-       getCardUser(numberDownCard,8,meCard);
+       case Me:
+       {
+         getCardUser(numberDownCard,5,meCard);
+         insertCardToCardCenter(cardUser);
+         removeStringInArray(numberDownCard,5,meCard,cardUser);
+         break;
+       }
+       case Foe2:
+       {
+         getCardUser(numberDownCard,5,foe2Card);
+         break;
+       }
+       case Pal:
+       {
+         getCardUser(numberDownCard,5,palCard);
+         break;
+       }
+       case Foe1:
+       {
+         getCardUser(numberDownCard,5,foe1Card);
+         break;
+       }
+       default:
+       {
+         return 102;
+       }
      }
+     return 1;
    }
 
-   int artificialIntelligenceCardDown(int lengthArray,char arraySearch [][lengthArray])
+   int artificialIntelligenceCardDown(int lengthArray,char arr [][lengthArray])
    {
-
+     insertCardToCardCenter(arr[0]);
    }
 
 

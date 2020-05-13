@@ -23,7 +23,7 @@
   int determiningRulByCountNumberCard(char(*)[5]);
   int determiningRulByCalculateTotalCardRank(char(*)[5]);
   int determiningRulByCountCardOrTotalRank(char(*)[5] );
-  int howDownCard();
+  int howDownCardInStartGameAndIncreaseDownCardInGame();
   int minusMinusNumberDownCard();
   int addScoreWinPlayr(int);
   int insertCardToCardCenter(char*);// And  this card is  down  then removed from the player's cards by decreaseCardPlayer()
@@ -103,7 +103,7 @@
       determiningRulWithMe();
       printf("rul= %s\n", rul);
 
-      howDownCard();//defult in firt == ruler
+      howDownCardInStartGameAndIncreaseDownCardInGame();//defult in firt == ruler
 
       if(levelDivideCard==1)
       {
@@ -115,9 +115,9 @@
       insertCardToCardCenter(cardUser[0]);
       //increaserNumberDownCardInCenter();
       minusMinusNumberDownCard();//*مکانش  انتهای هر پایین گذاشتن 4 برگه شود
-      increaserScoreWiner();
-      increaserIndexShowCardCenter();
       decreaseCardPlayer();
+      whoGetCardMax()
+      increaserScoreWiner();//
       showGame();
       break;
     }
@@ -514,7 +514,7 @@ int determiningPointStartCard()
     }
   }
 
-  int howDownCard()
+  int howDownCardInStartGameAndIncreaseDownCardInGame()
   {
     if(numberDownCard==13)
     {

@@ -856,6 +856,10 @@ int determiningPointStartCard()
       for (int i = 0; i <endCard; i++)
       {
         printf(" %s ",palCard[i]);
+          if(i==8)
+          {
+            printf("\n\t\t\t\t\t\t");
+          }
       }
       printf("\n\n");
       printf("\t\t\t\t\t\t     Score Win: %d  ",scoreWinPal);
@@ -885,15 +889,24 @@ int determiningPointStartCard()
       for (int i = 0; i <endCard; i++)
       {
         printf(" %s ",foe1Card[i]);
+        if(i==8)
+        {
+          printf("\n\t\t\t");
+        }
       }
 
       printf("\t\t %s",cardCenter[indexCardShowCenter]);//for set card foe2 on center window shell
       increaserIndexShowCardCenter();
       printf("\t\t%s\t\t",cardCenter[indexCardShowCenter]);
+
       increaserIndexShowCardCenter();
       for (int x = 0; x <endCard; x++)
       {
         printf(" %s ",foe2Card[x]);
+        if(x==8)
+        {
+          printf("\n\t\t\t\t\t\t\t\t\t\t\t\t\t");
+        }
       }
       printf("\n\n");
       printf("\t\tScore Win: %d   \t\t\t\t%s\t\t\t\t Score Win: %d \n\n ",scoreWinFoe1,cardCenter[indexCardShowCenter],scoreWinFoe2);
@@ -921,6 +934,10 @@ int determiningPointStartCard()
       for (int i = 0; i <endCard; i++)
       {
         printf(" %s ",meCard[i]);
+        if(i==8)
+        {
+          printf("\n\t\t\t\t\t\t\t\t");
+        }
       }
       printf("\n\n");
       printf("\t\t\t\t\t             Score Win: %d \n\n ",scoreWinMe);

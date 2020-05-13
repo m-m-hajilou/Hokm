@@ -99,12 +99,14 @@
       determiningRuler();
       ruler=Me;
       printf("ruler = %d\n",ruler );
-      showGame();
-      determiningRulWithMe();
+      determiningRul()
       printf("rul= %s\n", rul);
-
-      howDownCardInStartGameAndIncreaseDownCardInGame();//defult in firt == ruler
-
+      for (int i = 0; i < count; i++)
+      {
+        showGame();
+        howDownCardInStartGameAndIncreaseDownCardInGame();//defult in firt == ruler
+        
+      }
       if(levelDivideCard==1)
       {
         divideCard();

@@ -789,8 +789,8 @@ int determiningPointStartCard()
        case Me:
        {
          getCardUser(numberDownCard,5,meCard);
-         insertCardToCardCenter(cardUser);
-         removeStringInArray(numberDownCard,5,meCard,cardUser);
+         insertCardToCardCenter(cardUser[0]);
+         removeStringInArray(numberDownCard,5,meCard,cardUser[0]);
          break;
        }
        case Foe2:

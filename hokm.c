@@ -13,8 +13,8 @@
   int showCard();
   int showCardMe(int);
   int showCardFoe2(int);
-//  int showCardPal();
-//  int showCardFoe1();
+  int showCardPal(int);
+  int showCardFoe1(int);
   void determiningRuler();
   int determiningRulWithMe();
   int determiningRul();
@@ -843,9 +843,9 @@ int determiningPointStartCard()
         endCard=13;
       }
     showCardMe(endCard);
-//    showCardFoe2();
-  //  showCardPal();
-//    showCardFoe1();
+    showCardFoe2(endCard);
+    showCardPal(endCard);
+    showCardFoe1(endCard);
 
   }
 
@@ -863,6 +863,24 @@ int determiningPointStartCard()
     printf("Foe2 Card:\t" );
     for (int  i = 0; i <endCard; i++) {
       printf("%s ",meCard[i] );
+    }
+    printf("\n");
+  }
+
+  int showCardPal(int endCard)
+  {
+    printf("Pal Card:\t" );
+    for (int  i = 0; i <endCard; i++) {
+      printf("%s ",palCard[i] );
+    }
+    printf("\n");
+  }
+
+  int showCardFoe1(int endCard)
+  {
+    printf("Foe1 Card:\t" );
+    for (int  i = 0; i <endCard; i++) {
+      printf("%s ",foe1Card[i] );
     }
     printf("\n");
   }

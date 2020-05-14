@@ -11,9 +11,10 @@
   void shuffleCard();
   int showGame();
   int showCard();
-  int showCardPal();
-  int showCardFoeAndCradCenterFoe2PalFoe1();
-  int showCardMe();
+  int showCardMe(int);
+  int showCardFoe2(int);
+//  int showCardPal();
+//  int showCardFoe1();
   void determiningRuler();
   int determiningRulWithMe();
   int determiningRul();
@@ -831,13 +832,6 @@ int determiningPointStartCard()
 
   int showCard()
   {
-    showCardPal();
-    showCardFoeAndCradCenterFoe2PalFoe1();
-    showCardMe();
-  }
-
-  int showCardPal()
-  {
     int endCard=0;
 
     if(levelDivideCard==0)
@@ -848,122 +842,32 @@ int determiningPointStartCard()
       {
         endCard=13;
       }
-
-      /* This section: Set the location of the cards*/
-      printf("\t\t\t\t\t\t      card Pal \n\n ");
-      printf("\t\t\t\t\t     ");
-
-      for (int i = 0; i <endCard; i++)
-      {
-        printf(" %s ",palCard[i]);
-          if(i==8)
-          {
-            printf("\n\t\t\t\t\t\t");
-          }
-      }
-      printf("\n\n");
-      printf("\t\t\t\t\t\t     Score Win: %d  ",scoreWinPal);
-      printf("\n");//for delete % in end of print and ture location foeCard 1,2
+    showCardMe(endCard);
+//    showCardFoe2();
+  //  showCardPal();
+//    showCardFoe1();
 
   }
 
-  int showCardFoeAndCradCenterFoe2PalFoe1()
+  int showCardMe(int endCard)
   {
-    int endCard=0;
-
-    if(levelDivideCard==0)
-    {
-      endCard=5;
+    printf("Me Card:\t" );
+    for (int  i = 0; i <endCard; i++) {
+      printf("%s ",meCard[i] );
     }
-      else if(levelDivideCard==1)
-      {
-        endCard=13;
-      }
-      /* This section: Set the location of the cards*/
-      printf("\n\n\n\n");
-      printf("\t\tcard Foe 1  \t\t\t\t\t\t\t\tcard Foe 2  ");
-      if(downerCard==Pal)
-      {
-        printf("%s\n",cardCenter[indexCardShowCenter]);
-      }
-      increaserIndexShowCardCenter();
-      printf("\n");
-      printf("\t");
-
-      for (int i = 0; i <endCard; i++)
-      {
-        printf(" %s ",foe1Card[i]);
-        if(i==8)
-        {
-          printf("\n\t\t\t");
-        }
-      }
-
-      printf("\t\t");//for set card foe2 on center window shell
-      if(downerCard==Foe1)
-      {
-        printf("%s\n",cardCenter[indexCardShowCenter]);
-      }
-      increaserIndexShowCardCenter();
-      printf("\t\t\t\t");
-      if(downerCard==Foe2)
-      {
-        printf("%s\n",cardCenter[indexCardShowCenter]);
-      }
-
-      increaserIndexShowCardCenter();
-      for (int x = 0; x <endCard; x++)
-      {
-        printf(" %s ",foe2Card[x]);
-        if(x==8)
-        {
-          printf("\n\t\t\t\t\t\t\t\t\t\t\t\t\t");
-        }
-      }
-      printf("\n\n");
-      printf("\t\tScore Win: %d  \t\t\t\t ",scoreWinFoe1);
-      if(downerCard==Me)
-      {
-        printf("%s",cardCenter[indexCardShowCenter]);
-      }
-      printf("\t\t\t\t Score Win: %d\n\n  ", scoreWinFoe2);
-      increaserIndexShowCardCenter();
-      printf("\n");//for delete % in end of print
-
-
+    printf("\n");
   }
 
-  int showCardMe()
+  int showCardFoe2(int endCard)
   {
-    int endCard=0;
-
-    if(levelDivideCard==0)
-    {
-      endCard=5;
+    printf("Foe2 Card:\t" );
+    for (int  i = 0; i <endCard; i++) {
+      printf("%s ",meCard[i] );
     }
-      else if(levelDivideCard==1)
-      {
-        endCard=13;
-      }
-      printf("\t\t\t\t\t\t       card me \n\n ");
-      printf("\t\t\t\t\t      ");
-
-      for (int i = 0; i <endCard; i++)
-      {
-        printf(" %s ",meCard[i]);
-        if(i==8)
-        {
-          printf("\n\t\t\t\t\t\t\t\t");
-        }
-      }
-      printf("\n\n");
-      printf("\t\t\t\t\t             Score Win: %d \n\n ",scoreWinMe);
-      printf("\n");
-
+    printf("\n");
   }
 
-  int main(int argc, char const *argv[])
-  {
+  int main(int argc, char const *argv[]) {
     gameManagement();
     return 0;
   }

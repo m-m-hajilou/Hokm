@@ -10,11 +10,11 @@
   int divideCard();
   void shuffleCard();
   int showGame();
-  int showCard();
-  int showCardMe(int);
-  int showCardFoe2(int);
-  int showCardPal(int);
-  int showCardFoe1(int);
+  int showCardAndScoure();
+  int showCardMeAndScoure(int);
+  int showCardFoe2AndScoure(int);
+  int showCardPalAndScoure(int);
+  int showCardFoe1AndScoure(int);
   void determiningRuler();
   int determiningRulWithMe();
   int determiningRul();
@@ -826,12 +826,13 @@ int determiningPointStartCard()
   /*This is the section for displaying the game*/
   int showGame()
   {
-    showCard();
+    showCardAndScoure();
 
   }
 
-  int showCard()
+  int showCardAndScoure()
   {
+    printf("\n" );
     int endCard=0;
 
     if(levelDivideCard==0)
@@ -842,46 +843,54 @@ int determiningPointStartCard()
       {
         endCard=13;
       }
-    showCardMe(endCard);
-    showCardFoe2(endCard);
-    showCardPal(endCard);
-    showCardFoe1(endCard);
+    showCardMeAndScoure(endCard);
+    showCardFoe2AndScoure(endCard);
+    showCardPalAndScoure(endCard);
+    showCardFoe1AndScoure(endCard);
 
   }
 
-  int showCardMe(int endCard)
+  int showCardMeAndScoure(int endCard)
   {
     printf("Me Card:\t" );
     for (int  i = 0; i <endCard; i++) {
       printf("%s ",meCard[i] );
     }
+    printf("\tScore Win Me%d",scoreWinMe );
+    printf("\n");
     printf("\n");
   }
 
-  int showCardFoe2(int endCard)
+  int showCardFoe2AndScoure(int endCard)
   {
     printf("Foe2 Card:\t" );
     for (int  i = 0; i <endCard; i++) {
       printf("%s ",meCard[i] );
     }
+    printf("\tScore Win Foe2%d",scoreWinFoe2 );
+    printf("\n");
     printf("\n");
   }
 
-  int showCardPal(int endCard)
+  int showCardPalAndScoure(int endCard)
   {
     printf("Pal Card:\t" );
     for (int  i = 0; i <endCard; i++) {
       printf("%s ",palCard[i] );
     }
+    printf("\tScore Win Pal%d",scoreWinPal );
+    printf("\n");
     printf("\n");
   }
 
-  int showCardFoe1(int endCard)
+  int showCardFoe1AndScoure(int endCard)
   {
     printf("Foe1 Card:\t" );
     for (int  i = 0; i <endCard; i++) {
       printf("%s ",foe1Card[i] );
     }
+    printf("\tScore Win Foe1%d",scoreWinFoe1 );
+    printf("\n");
     printf("\n");
   }
 

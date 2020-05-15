@@ -116,6 +116,7 @@
       increaserLevelGame();
       for (int i = 0; i < 4; i++)
       {
+        levelGame=3;//because in loop level is ture(0<level<6)
         howDownCardInStartGameAndIncreaseDownCardInGame();//defult in firt == ruler
         increaserLevelGame();
         showGame();
@@ -884,7 +885,6 @@ int determiningPointStartCard()
     printf("\tScore Win Me :  %d",scoreWinMe );
     if(downerCard==Me && levelGame== 5 )
     {
-      strcpy(temp,cardCenter[indexCardShowCenter]);
       printf("\t\t%s\n",cardCenter[indexCardShowCenter] );
       increaserIndexShowCardCenter();
     }
@@ -899,6 +899,11 @@ int determiningPointStartCard()
       printf("%s ",foe2Card[i] );
     }
     printf("\tScore Win Foe2 :  %d",scoreWinFoe2 );
+    if(downerCard==Foe2 && levelGame== 5 )
+    {
+      printf("\t\t%s\n",cardCenter[indexCardShowCenter] );
+      increaserIndexShowCardCenter();
+    }
     printf("\n");
     printf("\n");
   }
@@ -910,6 +915,11 @@ int determiningPointStartCard()
       printf("%s ",palCard[i] );
     }
     printf("\tScore Win Pal :  %d",scoreWinPal );
+    if(downerCard==Pal && levelGame== 5 )
+    {
+      printf("\t\t%s\n",cardCenter[indexCardShowCenter] );
+      increaserIndexShowCardCenter();
+    }
     printf("\n");
     printf("\n");
   }
@@ -921,6 +931,11 @@ int determiningPointStartCard()
       printf("%s ",foe1Card[i] );
     }
     printf("\tScore Win Foe1 :  %d",scoreWinFoe1 );
+    if(downerCard==Foe1 && levelGame== 5 )
+    {
+      printf("\t\t%s\n",cardCenter[indexCardShowCenter] );
+      increaserIndexShowCardCenter();
+    }
     printf("\n");
     printf("\n");
   }

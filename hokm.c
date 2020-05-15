@@ -850,12 +850,14 @@ int determiningPointStartCard()
   /*This is the section for displaying the game*/
   int showGame()
   {
+    system("clear");
     showCardAndScoure();
 
   }
 
   int showCardAndScoure()
   {
+    indexCardShowCenter=0;
     printf("\n" );
     int endCard=0;
 
@@ -883,7 +885,7 @@ int determiningPointStartCard()
       printf("%s ",meCard[i] );
     }
     printf("\tScore Win Me :  %d",scoreWinMe );
-    if(downerCard==Me && levelGame== 5 )
+    if( levelGame== 5 )
     {
       printf("\t\t%s\n",cardCenter[indexCardShowCenter] );
       increaserIndexShowCardCenter();
@@ -899,7 +901,7 @@ int determiningPointStartCard()
       printf("%s ",foe2Card[i] );
     }
     printf("\tScore Win Foe2 :  %d",scoreWinFoe2 );
-    if(downerCard==Foe2 && levelGame== 5 )
+    if( levelGame== 5 )
     {
       printf("\t\t%s\n",cardCenter[indexCardShowCenter] );
       increaserIndexShowCardCenter();
@@ -915,7 +917,7 @@ int determiningPointStartCard()
       printf("%s ",palCard[i] );
     }
     printf("\tScore Win Pal :  %d",scoreWinPal );
-    if(downerCard==Pal && levelGame== 5 )
+    if( levelGame== 5 )
     {
       printf("\t\t%s\n",cardCenter[indexCardShowCenter] );
       increaserIndexShowCardCenter();
@@ -931,7 +933,7 @@ int determiningPointStartCard()
       printf("%s ",foe1Card[i] );
     }
     printf("\tScore Win Foe1 :  %d",scoreWinFoe1 );
-    if(downerCard==Foe1 && levelGame== 5 )
+    if( levelGame== 5 )
     {
       printf("\t\t%s\n",cardCenter[indexCardShowCenter] );
       increaserIndexShowCardCenter();

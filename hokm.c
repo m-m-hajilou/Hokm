@@ -104,6 +104,7 @@
     {
       levelGame=0;
       determiningRuler();
+      ruler=4;
       increaserLevelGame();
       printf("ruler = %d\n",ruler );
       divideCard();
@@ -615,7 +616,7 @@ int determiningPointStartCard()
       indexCardShowCenter++;
       return 1;
     }
-    else if(indexInsertCardCenter>4)
+    else if(indexInsertCardCenter==4)
     {
       indexCardShowCenter=0;
       return 1;
@@ -849,14 +850,14 @@ int determiningPointStartCard()
   /*This is the section for displaying the game*/
   int showGame()
   {
-    //system("clear");
+  //  system("clear");
     showCardAndScoure();
 
   }
 
   int showCardAndScoure()
   {
-    indexCardShowCenter=0;
+    indexCardShowCenter=downerCard-1;
     printf("\n" );
     int endCard=0;
 
@@ -868,41 +869,11 @@ int determiningPointStartCard()
       {
         endCard=13;
       }
-    switch (downerCard)
-    {
-      case Me:
-      {
+
         showCardMeAndScoure(endCard);
         showCardFoe2AndScoure(endCard);
         showCardPalAndScoure(endCard);
         showCardFoe1AndScoure(endCard);
-        break;
-      }
-      case Foe2:
-      {
-        showCardFoe2AndScoure(endCard);
-        showCardPalAndScoure(endCard);
-        showCardFoe1AndScoure(endCard);
-        showCardMeAndScoure(endCard);
-        break;
-      }
-      case Pal:
-      {
-        showCardPalAndScoure(endCard);
-        showCardFoe1AndScoure(endCard);
-        showCardMeAndScoure(endCard);
-        showCardFoe2AndScoure(endCard);
-        break;
-      }
-      case Foe1:
-      {
-        showCardFoe1AndScoure(endCard);
-        showCardMeAndScoure(endCard);
-        showCardFoe2AndScoure(endCard);
-        showCardPalAndScoure(endCard);
-        break;
-      }
-    }
 
 
   }

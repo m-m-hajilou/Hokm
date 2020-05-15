@@ -42,6 +42,12 @@
   int increaseIndexInsertCardCenter();
   int increaserLevelGame();
 
+
+
+  int levelGame=0;//for  determinging is ruler (level =1) , determinging is rul (level =2),divivide card (level =3),determinging Downer card(level =4),player downing card (level=5)
+
+
+
   char card [52][5]={"D.2","D.3","D.4","D.5","D.6","D.7","D.8","D.9","D.10","D.11","D.12","D.13","D.14",
   "G.2","G.3","G.4","G.5","G.6","G.7","G.8","G.9","G.10","G.11","G.12","G.13","G.14",
   "P.2","P.3","P.4","P.5","P.6","P.7","P.8","P.9","P.10","P.11","P.12","P.13","P.14",
@@ -71,7 +77,7 @@
   enum player{Me=1,Foe2,Pal,Foe1};
 
   int levelDivideCard=0;//for select hokm by king
-  int levelGame=0;//for  determinging is ruler (level =1) , determinging is rul (level =2),divivide card (level =3)
+
 
   int downerCard;//To determine who starts the game for down card .At first the game. It is equal to the ruler.The number can be between 1 and 4(1=me,2=foe2,3=pal,4=foe1)
   int numberDownCard=13;//To determine the number of cards down players. The number can be between 1 and 13(Number of player cards)
@@ -111,8 +117,10 @@
       for (int i = 0; i < 4; i++)
       {
         howDownCardInStartGameAndIncreaseDownCardInGame();//defult in firt == ruler
+        increaserLevelGame();
         showGame();
         playerCardDowns();
+        increaserLevelGame();
         showGame();
         increaserNumberDownCardInCenter();
         whoGetCardMax();
@@ -868,15 +876,14 @@ int determiningPointStartCard()
   int showCardMeAndScoure(int endCard)
   {
     char temp [5];
-    int a;
+    int a,b;
     printf("Me Card:\t" );
     for (int  i = 0; i <endCard; i++) {
       printf("%s ",meCard[i] );
     }
-    printf("\tScore Win Me%d",scoreWinMe );
-    if(downerCard==Me )
+    printf("\tScore Win Me :  %d",scoreWinMe );
+    if(downerCard==Me && levelGame== 5 )
     {
-      a=indexCardShowCenter;
       strcpy(temp,cardCenter[indexCardShowCenter]);
       printf("\t\t%s\n",cardCenter[indexCardShowCenter] );
       increaserIndexShowCardCenter();
@@ -891,7 +898,7 @@ int determiningPointStartCard()
     for (int  i = 0; i <endCard; i++) {
       printf("%s ",foe2Card[i] );
     }
-    printf("\tScore Win Foe2%d",scoreWinFoe2 );
+    printf("\tScore Win Foe2 :  %d",scoreWinFoe2 );
     printf("\n");
     printf("\n");
   }
@@ -902,7 +909,7 @@ int determiningPointStartCard()
     for (int  i = 0; i <endCard; i++) {
       printf("%s ",palCard[i] );
     }
-    printf("\tScore Win Pal%d",scoreWinPal );
+    printf("\tScore Win Pal :  %d",scoreWinPal );
     printf("\n");
     printf("\n");
   }
@@ -913,7 +920,7 @@ int determiningPointStartCard()
     for (int  i = 0; i <endCard; i++) {
       printf("%s ",foe1Card[i] );
     }
-    printf("\tScore Win Foe1%d",scoreWinFoe1 );
+    printf("\tScore Win Foe1 :  %d",scoreWinFoe1 );
     printf("\n");
     printf("\n");
   }

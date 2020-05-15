@@ -40,6 +40,7 @@
   int playerCardDowns();
   int artificialIntelligenceCardDown(int,int,char(*)[]);
   int increaseIndexInsertCardCenter();
+  int increaserLevelGame();
 
   char card [52][5]={"D.2","D.3","D.4","D.5","D.6","D.7","D.8","D.9","D.10","D.11","D.12","D.13","D.14",
   "G.2","G.3","G.4","G.5","G.6","G.7","G.8","G.9","G.10","G.11","G.12","G.13","G.14",
@@ -70,6 +71,7 @@
   enum player{Me=1,Foe2,Pal,Foe1};
 
   int levelDivideCard=0;//for select hokm by king
+  int levelGame=0;//for  determinging is ruler (level =1) , determinging is rul (level =2),divivide card (level =3)
 
   int downerCard;//To determine who starts the game for down card .At first the game. It is equal to the ruler.The number can be between 1 and 4(1=me,2=foe2,3=pal,4=foe1)
   int numberDownCard=13;//To determine the number of cards down players. The number can be between 1 and 13(Number of player cards)
@@ -95,13 +97,16 @@
     while(scoreWinMe!=7 ||scoreWinFoe2!=7 ||scoreWinPal!=7 ||scoreWinFoe1!=7 )
     {
       determiningRuler();
+      increaserLevelGame();
       ruler=Me;
       printf("ruler = %d\n",ruler );
       divideCard();
       showGame();
       determiningRul();
+      increaserLevelGame();
       printf("rul= %s\n", rul);
       divideCard();
+      increaserLevelGame();
       for (int i = 0; i < 4; i++)
       {
         howDownCardInStartGameAndIncreaseDownCardInGame();//defult in firt == ruler
@@ -822,6 +827,12 @@ int determiningPointStartCard()
          return 1;
        }
      return 102;
+   }
+
+   int increaserLevelGame()
+   {
+     levelGame++;
+     return 1;
    }
 
 

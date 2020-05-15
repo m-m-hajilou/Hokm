@@ -96,6 +96,7 @@
   {
     while(scoreWinMe!=7 ||scoreWinFoe2!=7 ||scoreWinPal!=7 ||scoreWinFoe1!=7 )
     {
+      levelGame=0;
       determiningRuler();
       increaserLevelGame();
       ruler=Me;

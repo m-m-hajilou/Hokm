@@ -107,6 +107,7 @@
         howDownCardInStartGameAndIncreaseDownCardInGame();//defult in firt == ruler
         showGame();
         playerCardDowns();
+        showGame();
         increaserNumberDownCardInCenter();
         whoGetCardMax();
 
@@ -773,6 +774,8 @@ int determiningPointStartCard()
        case Me:
        {
          getCardUser(numberDownCard,5,meCard);
+         char temp[5];
+         strcpy(temp,cardUser[0]);
          insertCardToCardCenter(cardUser[0]);
          removeStringInArray(numberDownCard,5,meCard,cardUser[0]);
          break;
@@ -852,11 +855,20 @@ int determiningPointStartCard()
 
   int showCardMeAndScoure(int endCard)
   {
+    char temp [5];
+    int a;
     printf("Me Card:\t" );
     for (int  i = 0; i <endCard; i++) {
       printf("%s ",meCard[i] );
     }
     printf("\tScore Win Me%d",scoreWinMe );
+    if(downerCard==Me )
+    {
+      a=indexCardShowCenter;
+      strcpy(temp,cardCenter[indexCardShowCenter]);
+      printf("\t\t%s\n",cardCenter[indexCardShowCenter] );
+      increaserIndexShowCardCenter();
+    }
     printf("\n");
     printf("\n");
   }
@@ -865,7 +877,7 @@ int determiningPointStartCard()
   {
     printf("Foe2 Card:\t" );
     for (int  i = 0; i <endCard; i++) {
-      printf("%s ",meCard[i] );
+      printf("%s ",foe2Card[i] );
     }
     printf("\tScore Win Foe2%d",scoreWinFoe2 );
     printf("\n");

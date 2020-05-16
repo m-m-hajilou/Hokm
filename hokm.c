@@ -97,6 +97,11 @@
   int scoreWinPal=0;
   int scoreWinFoe1=0;
 
+  int isDownCardMe=0;
+  int isDownCardFoe2=0;
+  int isDownCardPal=0;
+  int isDownCardFoe1=0;
+
 
   int gameManagement()
   {
@@ -116,6 +121,11 @@
       increaserLevelGame();
       for (int i = 0; i < 4; i++)
       {
+          isDownCardMe=0;
+          isDownCardFoe2=0;
+          isDownCardPal=0;
+          isDownCardFoe1=0;
+
         levelGame=3;//because in loop level is ture(0<level<6)
         howDownCardInStartGameAndIncreaseDownCardInGame();//defult in firt == ruler
         increaserLevelGame();
@@ -533,12 +543,13 @@ int determiningPointStartCard()
     }
       else if (numberDownCardInCenter<4)
       {
-        if(downerCard>=0 && downerCard<4)
+        if(downerCard>0 && downerCard<4)
         {
           downerCard++;
         }
           else if ( downerCard==4) {
-            downerCard=0;
+            downerCard=1;
+            return 1;
           }
       }
       else if(numberDownCardInCenter==4)
@@ -793,21 +804,25 @@ int determiningPointStartCard()
          strcpy(temp,cardUser[0]);
          insertCardToCardCenter(cardUser[0]);
          removeStringInArray(numberDownCard,5,meCard,cardUser[0]);
+         isDownCardMe=1;
          break;
        }
        case Foe2:
        {
          artificialIntelligenceCardDown(numberDownCard,5,foe2Card);
+         isDownCardFoe2=1;
          break;
        }
        case Pal:
        {
          artificialIntelligenceCardDown(numberDownCard,5,palCard);
+         isDownCardPal=1;
          break;
        }
        case Foe1:
        {
          artificialIntelligenceCardDown(numberDownCard,5,foe1Card);
+         isDownCardFoe1=1;
          break;
        }
        default:
@@ -857,7 +872,7 @@ int determiningPointStartCard()
 
   int showCardAndScoure()
   {
-    indexCardShowCenter=downerCard-1;
+  //  indexCardShowCenter=downerCard-1;
     printf("\n" );
     int endCard=0;
 
@@ -887,7 +902,8 @@ int determiningPointStartCard()
       printf("%s ",meCard[i] );
     }
     printf("\tScore Win Me :  %d",scoreWinMe );
-    if( levelGame== 5 )
+    a=isDownCardMe;
+    if( levelGame== 5 &&isDownCardMe==1)
     {
       printf("\t\t%s\n",cardCenter[indexCardShowCenter] );
       increaserIndexShowCardCenter();
@@ -903,7 +919,7 @@ int determiningPointStartCard()
       printf("%s ",foe2Card[i] );
     }
     printf("\tScore Win Foe2 :  %d",scoreWinFoe2 );
-    if( levelGame== 5 )
+    if( levelGame== 5 &&isDownCardFoe2==1 )
     {
       printf("\t\t%s\n",cardCenter[indexCardShowCenter] );
       increaserIndexShowCardCenter();
@@ -919,7 +935,7 @@ int determiningPointStartCard()
       printf("%s ",palCard[i] );
     }
     printf("\tScore Win Pal :  %d",scoreWinPal );
-    if( levelGame== 5 )
+    if( levelGame== 5 &&isDownCardPal==1)
     {
       printf("\t\t%s\n",cardCenter[indexCardShowCenter] );
       increaserIndexShowCardCenter();
@@ -935,7 +951,7 @@ int determiningPointStartCard()
       printf("%s ",foe1Card[i] );
     }
     printf("\tScore Win Foe1 :  %d",scoreWinFoe1 );
-    if( levelGame== 5 )
+    if( levelGame== 5 &&isDownCardFoe1==1)
     {
       printf("\t\t%s\n",cardCenter[indexCardShowCenter] );
       increaserIndexShowCardCenter();

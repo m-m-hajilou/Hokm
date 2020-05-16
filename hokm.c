@@ -63,6 +63,11 @@
   int indexInsertCardCenter=0;
   int indexCardShowCenter=0;
 
+  char tempForShowCardMe[5];//for show card center player if that is not downer card
+  char tempForShowCardFoe2[5];
+  char tempForShowCardPal[5];
+  char tempForShowCardFoe1[5];
+
   char foe1Card[13][5];
   char foe2Card[13][5];
   char palCard[13][5];
@@ -900,14 +905,11 @@ int determiningPointStartCard()
 
   int showCardMeAndScoure(int endCard)
   {
-    char temp [5];
-    int a,b;
     printf("Me Card:\t" );
     for (int  i = 0; i <endCard; i++) {
       printf("%s ",meCard[i] );
     }
     printf("\tScore Win Me :  %d",scoreWinMe );
-    a=isDownCardMe;
     if( levelGame== 5 &&isDownCardMe==1)
     {
       printf("\t\t%s\n",cardCenter[indexCardShowCenter] );

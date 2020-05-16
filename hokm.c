@@ -42,6 +42,7 @@
   int increaseIndexInsertCardCenter();
   int increaserLevelGame();
   int isdownCardPlayerEqualZero();
+  int emptytempForShowCardMe();
 
 
 
@@ -125,6 +126,7 @@
       printf("rul= %s\n", rul);
       divideCard();
       increaserLevelGame();
+      emptytempForShowCardMe();//Nothing serious. just for show.
       for (int i = 0; i < 4; i++)
       {
         isdownCardPlayerEqualZero();//Nothing serious. just for show.
@@ -870,6 +872,15 @@ int determiningPointStartCard()
      isDownCardFoe1=0;
    }
 
+   int emptytempForShowCardMe()
+   {
+      tempForShowCardMe[0]='\0';
+      tempForShowCardFoe2[0]='\0';
+      tempForShowCardPal[0]='\0';
+      tempForShowCardFoe1[0]='\0';
+
+   }
+
 
 
   /*This is the section for displaying the game*/
@@ -912,9 +923,10 @@ int determiningPointStartCard()
     printf("\tScore Win Me :  %d",scoreWinMe );
     if( levelGame== 5 &&isDownCardMe==1)
     {
-      printf("\t\t%s\n",cardCenter[indexCardShowCenter] );
+      strcpy(tempForShowCardMe,cardCenter[indexCardShowCenter]);
       increaserIndexShowCardCenter();
     }
+    printf("\t\t%s",tempForShowCardMe );
     printf("\n");
     printf("\n");
   }
@@ -928,9 +940,10 @@ int determiningPointStartCard()
     printf("\tScore Win Foe2 :  %d",scoreWinFoe2 );
     if( levelGame== 5 &&isDownCardFoe2==1 )
     {
-      printf("\t\t%s\n",cardCenter[indexCardShowCenter] );
+      strcpy(tempForShowCardFoe2,cardCenter[indexCardShowCenter]);
       increaserIndexShowCardCenter();
     }
+    printf("\t\t%s",tempForShowCardFoe2 );
     printf("\n");
     printf("\n");
   }
@@ -944,9 +957,10 @@ int determiningPointStartCard()
     printf("\tScore Win Pal :  %d",scoreWinPal );
     if( levelGame== 5 &&isDownCardPal==1)
     {
-      printf("\t\t%s\n",cardCenter[indexCardShowCenter] );
+      strcpy(tempForShowCardPal,cardCenter[indexCardShowCenter]);
       increaserIndexShowCardCenter();
     }
+    printf("\t\t%s",tempForShowCardPal );
     printf("\n");
     printf("\n");
   }
@@ -960,9 +974,10 @@ int determiningPointStartCard()
     printf("\tScore Win Foe1 :  %d",scoreWinFoe1 );
     if( levelGame== 5 &&isDownCardFoe1==1)
     {
-      printf("\t\t%s\n",cardCenter[indexCardShowCenter] );
+      strcpy(tempForShowCardFoe1,cardCenter[indexCardShowCenter]);
       increaserIndexShowCardCenter();
     }
+    printf("\t\t%s",tempForShowCardFoe1 );
     printf("\n");
     printf("\n");
   }

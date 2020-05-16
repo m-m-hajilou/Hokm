@@ -41,6 +41,7 @@
   int artificialIntelligenceCardDown(int,int,char(*)[]);
   int increaseIndexInsertCardCenter();
   int increaserLevelGame();
+  int isdownCardPlayerEqualZero();
 
 
 
@@ -121,11 +122,7 @@
       increaserLevelGame();
       for (int i = 0; i < 4; i++)
       {
-          isDownCardMe=0;
-          isDownCardFoe2=0;
-          isDownCardPal=0;
-          isDownCardFoe1=0;
-
+        isdownCardPlayerEqualZero();//Nothing serious. just for show.
         levelGame=3;//because in loop level is ture(0<level<6)
         howDownCardInStartGameAndIncreaseDownCardInGame();//defult in firt == ruler
         increaserLevelGame();
@@ -858,6 +855,14 @@ int determiningPointStartCard()
    {
      levelGame++;
      return 1;
+   }
+
+   int isdownCardPlayerEqualZero()
+   {
+     isDownCardMe=0;
+     isDownCardFoe2=0;
+     isDownCardPal=0;
+     isDownCardFoe1=0;
    }
 
 

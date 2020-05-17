@@ -11,10 +11,10 @@
   void shuffleCard();
   int showGame();
   int showCardAndScoure();
-  int showCardMeAndScoure(int);
-  int showCardFoe2AndScoure(int);
-  int showCardPalAndScoure(int);
-  int showCardFoe1AndScoure(int);
+  int showCardMeAndScoure();
+  int showCardFoe2AndScoure();
+  int showCardPalAndScoure();
+  int showCardFoe1AndScoure();
   void determiningRuler();
   int determiningRulWithMe();
   int determiningRul();
@@ -85,8 +85,7 @@
   enum player{Me=1,Foe2,Pal,Foe1};
 
   int levelDivideCard=0;//if level = 0   then divide 5 card to all player for select hokm with king and if level =1 divide 13 card to all player and  level =2 means divide all card
-  int numberOfCardsAreDivid
-  int
+  int numberOfCardsAreDivid=0;
 
   int downerCard;//To determine who starts the game for down card .At first the game. It is equal to the ruler.The number can be between 1 and 4(1=me,2=foe2,3=pal,4=foe1)
   int numberDownCard=13;//To determine the number of cards down players. The number can be between 1 and 13(Number of player cards)
@@ -118,7 +117,7 @@
     {
       levelGame=0;
       determiningRuler();
-      ruler=4;
+      ruler=Me;
       increaserLevelGame();
       printf("ruler = %d\n",ruler );
       shuffleCard();
@@ -494,19 +493,8 @@ int determiningPointStartCard()
 
   int divideCard()
   {
-    determingingNumberCardForDivide();
-    if(levelDivideCard==0)
-    {
-      endCard=5;
-      levelDivideCard++;
-    }
-      else if(levelDivideCard==1)
-      {
-        endCard=13;
-        levelDivideCard++;
-      }
-
-      for(int x=0;x<endCard;x++)//divide five card between players
+    determingingNumberOfCardsAreDivided();
+   for(int x=0;x<numberOfCardsAreDivid;x++)//divide five card between players
       {
 
       strcpy(meCard[x],cardCopy[(pointStartCardRuler1 + x)]);
@@ -514,6 +502,8 @@ int determiningPointStartCard()
       strcpy(palCard[x],cardCopy[(pointStartCardRuler3 + x)]);
       strcpy(foe1Card[x],cardCopy[(pointStartCardRuler4 + x)]);
       }
+      levelDivideCard++;
+      return 1;
   }
 
   void shuffleCard()
@@ -882,6 +872,20 @@ int determiningPointStartCard()
       tempForShowCardFoe1[0]='\0';
 
    }
+   int determingingNumberOfCardsAreDivided()
+   {
+     if (levelDivideCard==0)
+     {
+       numberOfCardsAreDivid=5;
+       return 1;
+     }
+       else if (levelDivideCard==1)
+       {
+         numberOfCardsAreDivid=13;
+         return 1;
+       }
+     return 102;
+   }
 
 
 
@@ -900,29 +904,20 @@ int determiningPointStartCard()
   int showCardAndScoure()
   {
     printf("\n" );
-    int endCard=0;
 
-    if(levelDivideCard==1)
-    {
-      endCard=5;
-    }
-      else if(levelDivideCard==2)
-      {
-        endCard=13;
-      }
 
-        showCardMeAndScoure(endCard);
-        showCardFoe2AndScoure(endCard);
-        showCardPalAndScoure(endCard);
-        showCardFoe1AndScoure(endCard);
+        showCardMeAndScoure();
+        showCardFoe2AndScoure();
+        showCardPalAndScoure();
+        showCardFoe1AndScoure();
 
 
   }
 
-  int showCardMeAndScoure(int endCard)
+  int showCardMeAndScoure()
   {
     printf("Me Card:\t" );
-    for (int  i = 0; i <endCard; i++) {
+    for (int  i = 0; i <numberOfCardsAreDivid; i++) {
       printf("%s ",meCard[i] );
     }
     printf("\tScore Win Me :  %d",scoreWinMe );
@@ -936,10 +931,10 @@ int determiningPointStartCard()
     printf("\n");
   }
 
-  int showCardFoe2AndScoure(int endCard)
+  int showCardFoe2AndScoure()
   {
     printf("Foe2 Card:\t" );
-    for (int  i = 0; i <endCard; i++) {
+    for (int  i = 0; i <numberOfCardsAreDivid; i++) {
       printf("%s ",foe2Card[i] );
     }
     printf("\tScore Win Foe2 :  %d",scoreWinFoe2 );
@@ -953,11 +948,11 @@ int determiningPointStartCard()
     printf("\n");
   }
 
-  int showCardPalAndScoure(int endCard)
+  int showCardPalAndScoure()
   {
     char temp [5];
     printf("Pal Card:\t" );
-    for (int  i = 0; i <endCard; i++) {
+    for (int  i = 0; i <numberOfCardsAreDivid; i++) {
       strcpy(temp,palCard[i]);
       printf("%s ",palCard[i] );
     }
@@ -972,10 +967,10 @@ int determiningPointStartCard()
     printf("\n");
   }
 
-  int showCardFoe1AndScoure(int endCard)
+  int showCardFoe1AndScoure()
   {
     printf("Foe1 Card:\t" );
-    for (int  i = 0; i <endCard; i++) {
+    for (int  i = 0; i <numberOfCardsAreDivid; i++) {
       printf("%s ",foe1Card[i] );
     }
     printf("\tScore Win Foe1 :  %d",scoreWinFoe1 );

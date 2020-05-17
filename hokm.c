@@ -43,6 +43,7 @@
   int increaserLevelGame();
   int isdownCardPlayerEqualZero();
   int emptytempForShowCardMe();
+  int determingingNumberOfCardsAreDivided();
 
 
 
@@ -83,8 +84,9 @@
   int ruler;//To determine who starts the game and sets the rules of the game.The number can be between 1 and 4(1=me,2=foe2,3=pal,4=foe1)
   enum player{Me=1,Foe2,Pal,Foe1};
 
-  int levelDivideCard=0;//if level = 0   then divide 5 card to all player for select hokm with king and if level =1 divide 13 card to all player and  level =2 means divide all card 
-
+  int levelDivideCard=0;//if level = 0   then divide 5 card to all player for select hokm with king and if level =1 divide 13 card to all player and  level =2 means divide all card
+  int numberOfCardsAreDivid
+  int
 
   int downerCard;//To determine who starts the game for down card .At first the game. It is equal to the ruler.The number can be between 1 and 4(1=me,2=foe2,3=pal,4=foe1)
   int numberDownCard=13;//To determine the number of cards down players. The number can be between 1 and 13(Number of player cards)
@@ -492,8 +494,7 @@ int determiningPointStartCard()
 
   int divideCard()
   {
-    char data1;
-    int endCard=0;
+    determingingNumberCardForDivide();
     if(levelDivideCard==0)
     {
       endCard=5;
@@ -901,11 +902,11 @@ int determiningPointStartCard()
     printf("\n" );
     int endCard=0;
 
-    if(levelDivideCard==0)
+    if(levelDivideCard==1)
     {
       endCard=5;
     }
-      else if(levelDivideCard==1)
+      else if(levelDivideCard==2)
       {
         endCard=13;
       }

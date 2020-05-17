@@ -83,7 +83,7 @@
   int ruler;//To determine who starts the game and sets the rules of the game.The number can be between 1 and 4(1=me,2=foe2,3=pal,4=foe1)
   enum player{Me=1,Foe2,Pal,Foe1};
 
-  int levelDivideCard=0;//for select hokm by king
+  int levelDivideCard=0;//if level = 0   then divide 5 card to all player for select hokm with king and if level =1 divide 13 card to all player and  level =2 means divide all card 
 
 
   int downerCard;//To determine who starts the game for down card .At first the game. It is equal to the ruler.The number can be between 1 and 4(1=me,2=foe2,3=pal,4=foe1)
@@ -502,6 +502,7 @@ int determiningPointStartCard()
       else if(levelDivideCard==1)
       {
         endCard=13;
+        levelDivideCard++;
       }
 
       for(int x=0;x<endCard;x++)//divide five card between players
@@ -953,8 +954,10 @@ int determiningPointStartCard()
 
   int showCardPalAndScoure(int endCard)
   {
+    char temp [5];
     printf("Pal Card:\t" );
     for (int  i = 0; i <endCard; i++) {
+      strcpy(temp,palCard[i]);
       printf("%s ",palCard[i] );
     }
     printf("\tScore Win Pal :  %d",scoreWinPal );

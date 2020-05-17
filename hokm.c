@@ -119,6 +119,7 @@
       ruler=4;
       increaserLevelGame();
       printf("ruler = %d\n",ruler );
+      shuffleCard();
       divideCard();
       showGame();
       determiningRul();
@@ -492,7 +493,6 @@ int determiningPointStartCard()
   int divideCard()
   {
     char data1;
-    shuffleCard();
     int endCard=0;
     if(levelDivideCard==0)
     {
@@ -532,10 +532,10 @@ int determiningPointStartCard()
       strcpy(cardCopy[randLoc2],temp1);
     }
 
-    for (int x = 0; x < 52; x++)
-    {
+//    for (int x = 0; x < 52; x++)
+//    {
       //printf("%s  %d \n",cardCopy[x],x+1 );
-    }
+//    }
   }
 
   int howDownCardInStartGameAndIncreaseDownCardInGame()
@@ -893,7 +893,6 @@ int determiningPointStartCard()
 
   int showCardAndScoure()
   {
-  //  indexCardShowCenter=downerCard-1;
     printf("\n" );
     int endCard=0;
 

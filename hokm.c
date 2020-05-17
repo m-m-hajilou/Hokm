@@ -47,6 +47,7 @@
 
 
 
+
   int levelGame=0;//for  determinging is ruler (level =1) , determinging is rul (level =2),divivide card (level =3),determinging Downer card(level =4),player downing card (level=5)
 
 
@@ -113,11 +114,11 @@
 
   int gameManagement()
   {
+    srand(time(0));
     while(scoreWinMe!=7 ||scoreWinFoe2!=7 ||scoreWinPal!=7 ||scoreWinFoe1!=7 )
     {
       levelGame=0;
       determiningRuler();
-      ruler=Me;
       increaserLevelGame();
       printf("ruler = %d\n",ruler );
       shuffleCard();

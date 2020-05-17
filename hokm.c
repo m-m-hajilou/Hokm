@@ -886,7 +886,11 @@ int determiningPointStartCard()
   /*This is the section for displaying the game*/
   int showGame()
   {
-  //  system("clear");
+    system("clear");
+    printf("rul = %s\n",rul );
+    printf("ruler = %d \n",ruler  );
+    printf("downerCard = %d \n",downerCard  );
+
     showCardAndScoure();
 
   }

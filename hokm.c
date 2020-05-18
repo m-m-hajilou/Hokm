@@ -42,7 +42,7 @@
   int increaseIndexInsertCardCenter();
   int increaserLevelGame();
   int isdownCardPlayerEqualZero();
-  int emptytempForShowCardMe();
+  int emptyTempForShowCardInCenter();
   int determingingNumberOfCardsAreDivided();
 
 
@@ -115,35 +115,43 @@
   int gameManagement()
   {
     srand(time(0));
+    determiningRuler();
+    increaserLevelGame();
+    printf("Ruler = %d\n",ruler );
+    showGame();
+    delay(1);
+    shuffleCard();
+    divideCard();
+    showGame();
+    delay(1);
+    determiningRul();
+    printf("Rul = %s\n",rul );
+    increaserLevelGame();
+    showGame();
+    delay(1);
+    divideCard();
+    increaserLevelGame();
+    showGame();
+    delay(1);
     while(scoreWinMe!=7 ||scoreWinFoe2!=7 ||scoreWinPal!=7 ||scoreWinFoe1!=7 )
     {
-      determiningRuler();
-      showGame();
-      delay(5);
-      increaserLevelGame();
-      printf("ruler = %d\n",ruler );
-      delay(5);
-      shuffleCard();
-      divideCard();
-      showGame();
-      determiningRul();
-      increaserLevelGame();
-      printf("rul= %s\n", rul);
-      divideCard();
-      increaserLevelGame();
-      emptytempForShowCardMe();//Nothing serious. just for show.
+      emptyTempForShowCardInCenter();//Nothing serious. just for show.
+      isdownCardPlayerEqualZero();//Nothing serious. just for show.
       for (int i = 0; i < 4; i++)
       {
-        isdownCardPlayerEqualZero();//Nothing serious. just for show.
         levelGame=3;//because in loop level is ture(0<level<6)
+
         howDownCardInStartGameAndIncreaseDownCardInGame();//defult in firt == ruler
         increaserLevelGame();
         showGame();
+        delay(1);
         playerCardDowns();
         increaserLevelGame();
         showGame();
+        delay(1);
         increaserNumberDownCardInCenter();
         whoGetCardMax();
+        delay(1);
 
       }
       minusMinusNumberDownCard();//*مکانش  انتهای هر پایین گذاشتن 4 برگه شود
@@ -868,7 +876,7 @@ int determiningPointStartCard()
      isDownCardFoe1=0;
    }
 
-   int emptytempForShowCardMe()
+   int emptyTempForShowCardInCenter()
    {
       tempForShowCardMe[0]='\0';
       tempForShowCardFoe2[0]='\0';

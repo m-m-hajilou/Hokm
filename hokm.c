@@ -26,7 +26,7 @@
   int determiningRulByCountCardOrTotalRank(char(*)[5] );
   int howDownCardInStartGameAndIncreaseDownCardInGame();
   int minusMinusNumberDownCard();
-  int addScoreWinPlayr(int);
+  int addScoreWinPlayr(int);//سلام احتمالاب باید حذف شود
   int insertCardToCardCenter(char*);// And  this card is  down  then removed from the player's cards by decreaseCardPlayer()
   int decreaseCardPlayer();// read above comment
   int increaserIndexShowCardCenter();

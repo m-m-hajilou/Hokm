@@ -117,10 +117,12 @@
     srand(time(0));
     while(scoreWinMe!=7 ||scoreWinFoe2!=7 ||scoreWinPal!=7 ||scoreWinFoe1!=7 )
     {
-      levelGame=0;
       determiningRuler();
+      showGame();
+      delay(5);
       increaserLevelGame();
       printf("ruler = %d\n",ruler );
+      delay(5);
       shuffleCard();
       divideCard();
       showGame();
@@ -146,7 +148,7 @@
       }
       minusMinusNumberDownCard();//*مکانش  انتهای هر پایین گذاشتن 4 برگه شود
       increaserScoreWiner();//
-      break;
+    //  break;
     }
     determiningFinalWinner();
   }
@@ -279,6 +281,7 @@
     if(determiningRulByCountNumberCard(arr)==0)// Determine the number of cards. If not, then the verdict will be determined by the total rank of the cards
     {
       determiningRulByCalculateTotalCardRank(arr);
+      return 1;
     }
     return 0;
   }
@@ -441,7 +444,7 @@ int determiningPointStartCard()
       strcpy(tempCard,arr[i]);
       cardSeparatorAndRank(tempCard );
 
-      switch (tempCard[0])
+      switch (*orginalCard)
       {
         case 'D':
         {
@@ -478,7 +481,7 @@ int determiningPointStartCard()
 
       }
     }
-    return 0;
+    return 1;
  }
 
  int cardSeparatorAndRank(char cards [5])  // d.1 ===>  d  ,   1
@@ -526,9 +529,9 @@ int determiningPointStartCard()
     }
 
 //    for (int x = 0; x < 52; x++)
-//    {
+    {
       //printf("%s  %d \n",cardCopy[x],x+1 );
-//    }
+    }
   }
 
   int howDownCardInStartGameAndIncreaseDownCardInGame()

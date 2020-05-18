@@ -2,6 +2,7 @@
 #include <time.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 float inputNumber;
 float getNumberConfine(int low,int hi)
 {
@@ -74,16 +75,30 @@ int searchInArrayString2D(int countArray,int lengthChar,char arr[][lengthChar],c
 
 int removeStringInArray(int numberOfString,int maxSringSize,char  array[numberOfString][maxSringSize], char *string )
 {
+  char temp1[5],temp2[5];
   for (int n=0;n<numberOfString;n++)
   {
     if(strcmp(array[n],string)==0)
     {
       for(int x=n;x<numberOfString;x++)
       {
+        strcpy(temp1,array[x+1]);
+        strcpy(temp2,array[x]);
         strcpy(array[x],array[x+1]);
       }
       return 1;
     }
   }
   return 0;
+}
+void delay(int milliSconds)
+{
+  long pause;
+  pause=milliSconds * CLOCKS_PER_SEC; //convert to second
+  clock_t now , then;
+  now=then=clock();
+  while( (now-then)< pause )
+  {
+    now=clock();
+  }
 }

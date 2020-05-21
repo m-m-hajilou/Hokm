@@ -116,23 +116,24 @@
   {
     srand(time(0));
     determiningRuler();
+    //ruler=4;
     increaserLevelGame();
     printf("Ruler = %d\n",ruler );
     showGame();
-    delay(1);
+    //delay(1);
     shuffleCard();
     divideCard();
     showGame();
-    delay(1);
+    //delay(1);
     determiningRul();
     printf("Rul = %s\n",rul );
     increaserLevelGame();
     showGame();
-    delay(1);
+    //delay(1);
     divideCard();
     increaserLevelGame();
     showGame();
-    delay(1);
+    //delay(1);
     while(scoreWinMe!=7 ||scoreWinFoe2!=7 ||scoreWinPal!=7 ||scoreWinFoe1!=7 )
     {
       emptyTempForShowCardInCenter();//Nothing serious. just for show.
@@ -144,18 +145,20 @@
         howDownCardInStartGameAndIncreaseDownCardInGame();//defult in firt == ruler
         increaserLevelGame();
         showGame();
-        delay(1);
+        //delay(1);
         playerCardDowns();
         increaserLevelGame();
         showGame();
-        delay(1);
+        //delay(1);
         increaserNumberDownCardInCenter();
         whoGetCardMax();
-        delay(1);
+        //delay(1);
 
       }
       minusMinusNumberDownCard();//*مکانش  انتهای هر پایین گذاشتن 4 برگه شود
       increaserScoreWiner();//
+      showGame();
+      //delay(1);
     //  break;
     }
     determiningFinalWinner();
@@ -609,6 +612,7 @@ int determiningPointStartCard()
 
   int insertCardToCardCenter(char *cardPlayer)
   {
+    int a= indexInsertCardCenter;
       strcpy(cardCenter[indexInsertCardCenter],cardPlayer);
       increaseIndexInsertCardCenter();
       return 1;
@@ -668,14 +672,28 @@ int determiningPointStartCard()
   int whoGetCardMax()
   {
     char baseCard[5];//first card is down with card downer. That other players should follow as this card But If possible
-
     char temp[5];//because cardSeparatorAndRank changes valuse. and this is temp that if valuses change not problem
     strcpy(temp,cardCenter[0]);
     cardSeparatorAndRank(temp);
-    strcpy(baseCard,orginalCard);
-    strcpy(temp,cardCenter[indexInsertCardCenter-1]);
-    cardSeparatorAndRank(temp);
-    convertIntToChar(downerCard);//out put in intToChar
+    int a=numberDownCardInCenter;
+    if(numberDownCardInCenter>1)//That is mean when it becomes the second card is down, it starts to find the max card
+    {
+      strcpy(baseCard,orginalCard);
+
+
+      if(indexInsertCardCenter==0)// because indexInsertCardCenter-1 =-1 and this is error for cardSeparatorAndRank(cardCenter(-1))
+      {
+        strcpy(temp,cardCenter[3]);
+      }
+        else if (indexInsertCardCenter>0)
+        {
+          strcpy(temp,cardCenter[indexInsertCardCenter-1]);
+        }
+
+      cardSeparatorAndRank(temp);
+      convertIntToChar(downerCard);//out put in intToChar
+    }
+
 
     if(numberDownCardInCenter==1)
     {
@@ -849,12 +867,12 @@ int determiningPointStartCard()
 
    int increaseIndexInsertCardCenter()
    {
-     if(indexInsertCardCenter>=0  && indexInsertCardCenter<4)
+     if(indexInsertCardCenter>=0  && indexInsertCardCenter<3)
      {
        indexInsertCardCenter++;
        return 1;
      }
-       else if(indexInsertCardCenter==4)
+       else if(indexInsertCardCenter==3)
        {
          indexInsertCardCenter=0;
          return 1;
@@ -937,6 +955,7 @@ int determiningPointStartCard()
     {
       strcpy(tempForShowCardMe,cardCenter[indexCardShowCenter]);
       increaserIndexShowCardCenter();
+      isDownCardMe=0;
     }
     printf("\t\t%s",tempForShowCardMe );
     printf("\n");
@@ -954,6 +973,7 @@ int determiningPointStartCard()
     {
       strcpy(tempForShowCardFoe2,cardCenter[indexCardShowCenter]);
       increaserIndexShowCardCenter();
+      isDownCardFoe2=0;
     }
     printf("\t\t%s",tempForShowCardFoe2 );
     printf("\n");
@@ -973,6 +993,7 @@ int determiningPointStartCard()
     {
       strcpy(tempForShowCardPal,cardCenter[indexCardShowCenter]);
       increaserIndexShowCardCenter();
+      isDownCardPal=0;
     }
     printf("\t\t%s",tempForShowCardPal );
     printf("\n");
@@ -990,6 +1011,7 @@ int determiningPointStartCard()
     {
       strcpy(tempForShowCardFoe1,cardCenter[indexCardShowCenter]);
       increaserIndexShowCardCenter();
+      isDownCardFoe1=0;
     }
     printf("\t\t%s",tempForShowCardFoe1 );
     printf("\n");

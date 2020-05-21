@@ -160,6 +160,7 @@
       showGame();
       //delay(1);
     //  break;
+    int a=2;
     }
     determiningFinalWinner();
   }
@@ -634,12 +635,12 @@ int determiningPointStartCard()
   int increaserIndexShowCardCenter()
   {
     int temp=indexInsertCardCenter;
-    if(indexCardShowCenter>=0  && indexCardShowCenter<4)
+    if(indexCardShowCenter>=0  && indexCardShowCenter<3)
     {
       indexCardShowCenter++;
       return 1;
     }
-    else if(indexInsertCardCenter==4)
+    else if(indexInsertCardCenter==3)
     {
       indexCardShowCenter=0;
       return 1;

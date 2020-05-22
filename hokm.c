@@ -44,6 +44,7 @@
   int isdownCardPlayerEqualZero();
   int emptyTempForShowCardInCenter();
   int determingingNumberOfCardsAreDivided();
+  int variableEmptyer();
 
 
 
@@ -137,6 +138,7 @@
     delay(1);
     while(scoreWinMe!=7 ||scoreWinFoe2!=7 ||scoreWinPal!=7 ||scoreWinFoe1!=7 )
     {
+      indexCardShowCenter=indexInsertCardCenter=numberDownCardInCenter=0;
       emptyTempForShowCardInCenter();//Nothing serious. just for show.
       isdownCardPlayerEqualZero();//Nothing serious. just for show.
       for (int i = 0; i < 4; i++)
@@ -672,6 +674,7 @@ int determiningPointStartCard()
     return 102;
   }
   int max;//for save value when repet cakk whoGetCardMax()
+  int test;
   int whoGetCardMax()
   {
     char baseCard[5];//first card is down with card downer. That other players should follow as this card But If possible
@@ -679,10 +682,7 @@ int determiningPointStartCard()
     strcpy(temp,cardCenter[0]);
     cardSeparatorAndRank(temp);
     int a=numberDownCardInCenter;
-    if(numberDownCardInCenter>1)//That is mean when it becomes the second card is down, it starts to find the max card
-    {
-      strcpy(baseCard,orginalCard);
-
+    strcpy(baseCard,orginalCard);
 
       if(indexInsertCardCenter==0)// because indexInsertCardCenter-1 =-1 and this is error for cardSeparatorAndRank(cardCenter(-1))
       {
@@ -692,10 +692,8 @@ int determiningPointStartCard()
         {
           strcpy(temp,cardCenter[indexInsertCardCenter-1]);
         }
-
       cardSeparatorAndRank(temp);
       convertIntToChar(downerCard);//out put in intToChar
-    }
 
 
     if(numberDownCardInCenter==1)
@@ -704,6 +702,8 @@ int determiningPointStartCard()
       strcpy(cardMax[1],orginalCard);//because array start an 0  but downerCard statrt an 1
       strcpy(cardMax[2],orginalRank);
       max=charToint(orginalRank);
+      printf("in first max card = %s\n", intToChar);
+      return 1;
     }
       else if (numberDownCardInCenter > 0 && strcmp(baseCard,rul)==0 && strcmp (orginalCard,rul)==0)//strcmp if is true then return 0
       {
@@ -713,6 +713,9 @@ int determiningPointStartCard()
           strcpy(cardMax[1],orginalCard);//because array start an 0  but downerCard statrt an 1
           strcpy(cardMax[2],orginalRank);
           max=charToint(orginalRank);
+          printf("in two card is hokm and base is hokm max card = %s\n", intToChar);
+          delay(1);
+          return 1;
         }
       }
       else if (numberDownCardInCenter > 0 && strcmp(baseCard,rul)!=0 && strcmp(orginalCard,rul)!=0 && strcmp(orginalCard,baseCard)==0 )
@@ -723,10 +726,14 @@ int determiningPointStartCard()
           strcpy(cardMax[1],orginalCard);//because array start an 0  but downerCard statrt an 1
           strcpy(cardMax[2],orginalRank);
           max=charToint(orginalRank);
+          printf("in two card nist hokm and base nist hokm max card = %s\n", intToChar);
+          delay(1);
+          return 1;
         }
       }
       else if (numberDownCardInCenter > 0 && strcmp(baseCard,rul)!=0 && strcmp(orginalCard,rul)==0)
       {
+      int   stest=numberDownCardInCenter;
         strcpy(cardMax[0],intToChar);
         strcpy(cardMax[1],orginalCard);//because array start an 0  but downerCard statrt an 1
         strcpy(cardMax[2],orginalRank);
@@ -734,15 +741,19 @@ int determiningPointStartCard()
         for (int  i = numberDownCardInCenter - 1; i != 0; i--) {
           strcpy(temp,cardCenter[i]);
           cardSeparatorAndRank(temp);
-          if (max < charToint(orginalRank))
+          if ((orginalCard,rul)==0 && max < charToint(orginalRank))
           {
             strcpy(cardMax[0],intToChar);
             strcpy(cardMax[1],orginalCard);//because array start an 0  but downerCard statrt an 1
             strcpy(cardMax[2],orginalRank);
             max=charToint(orginalRank);
+            printf("in two card is hokm and base nist hokm max card = %s\n", intToChar);
+            delay(1);
+            return 1;
           }
         }
       }
+      return 102;
 
   }
 
@@ -764,10 +775,11 @@ int determiningPointStartCard()
     if (numberDownCardInCenter>= 0 && numberDownCardInCenter<4)
     {
       numberDownCardInCenter++;
-      if (numberDownCardInCenter==4)
+      return 1;
+    }
+      else if (numberDownCardInCenter==4)
       {
         numberDownCardInCenter=1;
-      }
         return 1;
       }
     return 102;
@@ -807,6 +819,7 @@ int determiningPointStartCard()
         return 102;
       }
     }
+    return 1;
   }
 
   int determiningFinalWinner()
@@ -872,13 +885,14 @@ int determiningPointStartCard()
      if(indexInsertCardCenter>=0  && indexInsertCardCenter<4)
      {
        indexInsertCardCenter++;
-
-       if(indexInsertCardCenter==4)
-       {
-         indexInsertCardCenter=0;
-       }
        return 1;
      }
+
+       else if(indexInsertCardCenter==4)
+       {
+         indexInsertCardCenter=0;
+         return 1;
+       }
 
      return 102;
    }

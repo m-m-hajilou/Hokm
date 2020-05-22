@@ -29,7 +29,7 @@
   int addScoreWinPlayr(int);//سلام احتمالاب باید حذف شود
   int insertCardToCardCenter(char*);// And  this card is  down  then removed from the player's cards by decreaseCardPlayer()
   int decreaseCardPlayer();// read above comment
-  int increaserIndexShowCardCenter();
+  int increaserIndexCardShowCenter();
   int getCardUser(int,int,char (*)[]);
   int whoGetCardMax();
   int convertIntToChar(int);
@@ -114,26 +114,27 @@
 
   int gameManagement()
   {
+    int a;
     srand(time(0));
     determiningRuler();
-    //ruler=4;
+    ruler=1;
     increaserLevelGame();
     printf("Ruler = %d\n",ruler );
     showGame();
-    //delay(1);
+    delay(1);
     shuffleCard();
     divideCard();
     showGame();
-    //delay(1);
+    delay(1);
     determiningRul();
     printf("Rul = %s\n",rul );
     increaserLevelGame();
     showGame();
-    //delay(1);
+    delay(1);
     divideCard();
     increaserLevelGame();
     showGame();
-    //delay(1);
+    delay(1);
     while(scoreWinMe!=7 ||scoreWinFoe2!=7 ||scoreWinPal!=7 ||scoreWinFoe1!=7 )
     {
       emptyTempForShowCardInCenter();//Nothing serious. just for show.
@@ -145,22 +146,23 @@
         howDownCardInStartGameAndIncreaseDownCardInGame();//defult in firt == ruler
         increaserLevelGame();
         showGame();
-        //delay(1);
+        delay(1);
         playerCardDowns();
         increaserLevelGame();
         showGame();
-        //delay(1);
+        delay(1);
         increaserNumberDownCardInCenter();
         whoGetCardMax();
-        //delay(1);
+        delay(1);
 
       }
       minusMinusNumberDownCard();//*مکانش  انتهای هر پایین گذاشتن 4 برگه شود
       increaserScoreWiner();//
       showGame();
-      //delay(1);
+      delay(1);
     //  break;
-    int a=2;
+     a=indexCardShowCenter;
+     int ab=indexCardShowCenter;
     }
     determiningFinalWinner();
   }
@@ -632,17 +634,17 @@ int determiningPointStartCard()
     }
   }
 
-  int increaserIndexShowCardCenter()
+  int increaserIndexCardShowCenter()
   {
-    int temp=indexInsertCardCenter;
-    if(indexCardShowCenter>=0  && indexCardShowCenter<3)
+    int temp=indexCardShowCenter;
+    if(indexCardShowCenter>=0  && indexCardShowCenter<4)
     {
       indexCardShowCenter++;
-      return 1;
-    }
-    else if(indexInsertCardCenter==3)
-    {
-      indexCardShowCenter=0;
+      if(indexCardShowCenter==4)
+      {
+        indexCardShowCenter=0;
+      }
+      temp=indexCardShowCenter;
       return 1;
     }
     return 102;
@@ -762,11 +764,10 @@ int determiningPointStartCard()
     if (numberDownCardInCenter>= 0 && numberDownCardInCenter<4)
     {
       numberDownCardInCenter++;
-      return 1;
-    }
-      else if (numberDownCardInCenter==4)
+      if (numberDownCardInCenter==4)
       {
         numberDownCardInCenter=1;
+      }
         return 1;
       }
     return 102;
@@ -868,16 +869,17 @@ int determiningPointStartCard()
 
    int increaseIndexInsertCardCenter()
    {
-     if(indexInsertCardCenter>=0  && indexInsertCardCenter<3)
+     if(indexInsertCardCenter>=0  && indexInsertCardCenter<4)
      {
        indexInsertCardCenter++;
-       return 1;
-     }
-       else if(indexInsertCardCenter==3)
+
+       if(indexInsertCardCenter==4)
        {
          indexInsertCardCenter=0;
-         return 1;
        }
+       return 1;
+     }
+
      return 102;
    }
 
@@ -954,8 +956,10 @@ int determiningPointStartCard()
     printf("\tScore Win Me :  %d",scoreWinMe );
     if( levelGame== 5 &&isDownCardMe==1)
     {
+      int a=indexCardShowCenter;
       strcpy(tempForShowCardMe,cardCenter[indexCardShowCenter]);
-      increaserIndexShowCardCenter();
+      increaserIndexCardShowCenter();
+      int ab=indexCardShowCenter;
       isDownCardMe=0;
     }
     printf("\t\t%s",tempForShowCardMe );
@@ -972,8 +976,10 @@ int determiningPointStartCard()
     printf("\tScore Win Foe2 :  %d",scoreWinFoe2 );
     if( levelGame== 5 &&isDownCardFoe2==1 )
     {
+      int a=indexCardShowCenter;
       strcpy(tempForShowCardFoe2,cardCenter[indexCardShowCenter]);
-      increaserIndexShowCardCenter();
+      increaserIndexCardShowCenter();
+      int ab=indexCardShowCenter;
       isDownCardFoe2=0;
     }
     printf("\t\t%s",tempForShowCardFoe2 );
@@ -992,8 +998,10 @@ int determiningPointStartCard()
     printf("\tScore Win Pal :  %d",scoreWinPal );
     if( levelGame== 5 &&isDownCardPal==1)
     {
+      int a=indexCardShowCenter;
       strcpy(tempForShowCardPal,cardCenter[indexCardShowCenter]);
-      increaserIndexShowCardCenter();
+      increaserIndexCardShowCenter();
+      int ab=indexCardShowCenter;
       isDownCardPal=0;
     }
     printf("\t\t%s",tempForShowCardPal );
@@ -1010,8 +1018,10 @@ int determiningPointStartCard()
     printf("\tScore Win Foe1 :  %d",scoreWinFoe1 );
     if( levelGame== 5 &&isDownCardFoe1==1)
     {
+      int a=indexCardShowCenter;
       strcpy(tempForShowCardFoe1,cardCenter[indexCardShowCenter]);
-      increaserIndexShowCardCenter();
+      increaserIndexCardShowCenter();
+      int ab=indexCardShowCenter;
       isDownCardFoe1=0;
     }
     printf("\t\t%s",tempForShowCardFoe1 );

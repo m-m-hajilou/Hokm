@@ -738,11 +738,15 @@ int determiningPointStartCard()
         strcpy(cardMax[1],orginalCard);//because array start an 0  but downerCard statrt an 1
         strcpy(cardMax[2],orginalRank);
         max=charToint(orginalRank);
-        for (int  i = numberDownCardInCenter - 2; i != 0; i--) {
+        for (int  i = numberDownCardInCenter - 2; i > 0; i--) {
           strcpy(temp,cardCenter[i]);
           cardSeparatorAndRank(temp);
-          if (strcmp(orginalCard,rul)==0 && max < charToint(orginalRank))
+          char test[5];
+          if (strcmp(orginalCard,rul)==0 )
+          if( max < charToint(orginalRank))
           {
+            stest=21;
+            convertIntToChar(i+1);//out put in intToChar
             strcpy(cardMax[0],intToChar);
             strcpy(cardMax[1],orginalCard);//because array start an 0  but downerCard statrt an 1
             strcpy(cardMax[2],orginalRank);
@@ -850,19 +854,25 @@ int determiningPointStartCard()
        }
        case Foe2:
        {
-         artificialIntelligenceCardDown(numberDownCard,5,foe2Card);
+  //       artificialIntelligenceCardDown(numberDownCard,5,foe2Card);
+         getCardUser(numberDownCard,5,foe2Card);
+         insertCardToCardCenter(cardUser[0]);
          isDownCardFoe2=1;
          break;
        }
        case Pal:
        {
-         artificialIntelligenceCardDown(numberDownCard,5,palCard);
+      //   artificialIntelligenceCardDown(numberDownCard,5,palCard);
+         getCardUser(numberDownCard,5,palCard);
+         insertCardToCardCenter(cardUser[0]);
          isDownCardPal=1;
          break;
        }
        case Foe1:
        {
-         artificialIntelligenceCardDown(numberDownCard,5,foe1Card);
+    //     artificialIntelligenceCardDown(numberDownCard,5,foe1Card);
+         getCardUser(numberDownCard,5,foe1Card);
+         insertCardToCardCenter(cardUser[0]);
          isDownCardFoe1=1;
          break;
        }

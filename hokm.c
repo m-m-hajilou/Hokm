@@ -137,13 +137,8 @@
     increaserLevelGame();
     showGame();
     //delay(1);
-    while(scoreWe < 7 || scoreFoe < 7 )
+    while(scoreWe < 7 && scoreFoe < 7 )
     {
-      int abc =scoreWe;
-      if(scoreWe==7)
-      {
-        int a=scoreWe;
-      }
       indexCardShowCenter=indexInsertCardCenter=numberDownCardInCenter=0;
       emptyTempForShowCardInCenter();//Nothing serious. just for show.
       isdownCardPlayerEqualZero();//Nothing serious. just for show.

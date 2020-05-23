@@ -854,25 +854,21 @@ int determiningPointStartCard()
        }
        case Foe2:
        {
-  //       artificialIntelligenceCardDown(numberDownCard,5,foe2Card);
-         getCardUser(numberDownCard,5,foe2Card);
-         insertCardToCardCenter(cardUser[0]);
+         artificialIntelligenceCardDown(numberDownCard,5,foe2Card);
          isDownCardFoe2=1;
          break;
        }
        case Pal:
        {
-      //   artificialIntelligenceCardDown(numberDownCard,5,palCard);
-         getCardUser(numberDownCard,5,palCard);
-         insertCardToCardCenter(cardUser[0]);
+        artificialIntelligenceCardDown(numberDownCard,5,palCard);
+
          isDownCardPal=1;
          break;
        }
        case Foe1:
        {
-    //     artificialIntelligenceCardDown(numberDownCard,5,foe1Card);
-         getCardUser(numberDownCard,5,foe1Card);
-         insertCardToCardCenter(cardUser[0]);
+         artificialIntelligenceCardDown(numberDownCard,5,foe1Card);
+
          isDownCardFoe1=1;
          break;
        }

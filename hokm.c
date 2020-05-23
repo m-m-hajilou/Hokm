@@ -93,9 +93,6 @@
   int numberDownCard=13;//To determine the number of cards down players. The number can be between 1 and 13(Number of player cards)
   int numberDownCardInCenter=0;//To determine the number of cards down in center for win.in Start each game starts at zero The number can be between 1 and 4(Number of player cards)
 
-  int scoreFoe=0;//sum score foe 1+foe 2
-  int scoreWe=0;// sum score me + pal
-  char finalWinner[4];
 
   int pointStartCardRuler1=0;//me
   int pointStartCardRuler2=13;//foe2
@@ -106,6 +103,10 @@
   int scoreWinFoe2=0;
   int scoreWinPal=0;
   int scoreWinFoe1=0;
+
+  int scoreFoe=0;//sum score foe 1+foe 2
+  int scoreWe=0;// sum score me + pal
+  char finalWinner[4];
 
   int isDownCardMe=0;
   int isDownCardFoe2=0;
@@ -122,22 +123,27 @@
     increaserLevelGame();
     printf("Ruler = %d\n",ruler );
     showGame();
-    delay(1);
+    //delay(1);
     shuffleCard();
     divideCard();
     showGame();
-    delay(1);
+    //delay(1);
     determiningRul();
     printf("Rul = %s\n",rul );
     increaserLevelGame();
     showGame();
-    delay(1);
+    //delay(1);
     divideCard();
     increaserLevelGame();
     showGame();
-    delay(1);
-    while(scoreWinMe!=7 ||scoreWinFoe2!=7 ||scoreWinPal!=7 ||scoreWinFoe1!=7 )
+    //delay(1);
+    while(scoreWe < 7 || scoreFoe < 7 )
     {
+      int abc =scoreWe;
+      if(scoreWe==7)
+      {
+        int a=scoreWe;
+      }
       indexCardShowCenter=indexInsertCardCenter=numberDownCardInCenter=0;
       emptyTempForShowCardInCenter();//Nothing serious. just for show.
       isdownCardPlayerEqualZero();//Nothing serious. just for show.
@@ -148,20 +154,19 @@
         howDownCardInStartGameAndIncreaseDownCardInGame();//defult in firt == ruler
         increaserLevelGame();
         showGame();
-        delay(1);
+        //delay(1);
         playerCardDowns();
         increaserLevelGame();
         showGame();
-        delay(1);
+        //delay(1);
         increaserNumberDownCardInCenter();
         whoGetCardMax();
-        delay(1);
-
+        //delay(1);
       }
       minusMinusNumberDownCard();//*مکانش  انتهای هر پایین گذاشتن 4 برگه شود
       increaserScoreWiner();//
       showGame();
-      delay(1);
+      //delay(1);
     //  break;
      a=indexCardShowCenter;
      int ab=indexCardShowCenter;
@@ -714,7 +719,7 @@ int determiningPointStartCard()
           strcpy(cardMax[2],orginalRank);
           max=charToint(orginalRank);
           printf("in two card is hokm and base is hokm max card = %s\n", intToChar);
-          delay(1);
+          //delay(1);
           return 1;
         }
       }
@@ -727,7 +732,7 @@ int determiningPointStartCard()
           strcpy(cardMax[2],orginalRank);
           max=charToint(orginalRank);
           printf("in two card nist hokm and base nist hokm max card = %s\n", intToChar);
-          delay(1);
+          //delay(1);
           return 1;
         }
       }
@@ -752,7 +757,7 @@ int determiningPointStartCard()
             strcpy(cardMax[2],orginalRank);
             max=charToint(orginalRank);
             printf("in two card is hokm and base nist hokm max card = %s\n", intToChar);
-            delay(1);
+            //delay(1);
             return 1;
           }
         }

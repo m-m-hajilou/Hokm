@@ -123,23 +123,23 @@
     increaserLevelGame();
     printf("Ruler = %d\n",ruler );
     showGame();
-    //delay(1);
+    delay(1);
     shuffleCard();
     divideCard();
     showGame();
-    //delay(1);
+    delay(1);
     determiningRul();
     printf("Rul = %s\n",rul );
     increaserLevelGame();
     showGame();
-    //delay(1);
+    delay(1);
     divideCard();
     increaserLevelGame();
     showGame();
-    //delay(1);
+    delay(1);
     while(scoreWe < 7 && scoreFoe < 7 )
     {
-      indexCardShowCenter=indexInsertCardCenter=numberDownCardInCenter=0;
+      indexCardShowCenter=indexInsertCardCenter=0;
       emptyTempForShowCardInCenter();//Nothing serious. just for show.
       isdownCardPlayerEqualZero();//Nothing serious. just for show.
       for (int i = 0; i < 4; i++)
@@ -149,19 +149,19 @@
         howDownCardInStartGameAndIncreaseDownCardInGame();//defult in firt == ruler
         increaserLevelGame();
         showGame();
-        //delay(1);
+        delay(1);
         playerCardDowns();
         increaserLevelGame();
         showGame();
-        //delay(1);
+        delay(1);
         increaserNumberDownCardInCenter();
         whoGetCardMax();
-        //delay(1);
+        delay(1);
       }
       minusMinusNumberDownCard();//*مکانش  انتهای هر پایین گذاشتن 4 برگه شود
       increaserScoreWiner();//
       showGame();
-      //delay(1);
+      delay(1);
     //  break;
      a=indexCardShowCenter;
      int ab=indexCardShowCenter;
@@ -557,22 +557,24 @@ int determiningPointStartCard()
       downerCard=ruler;
       return 1;
     }
-      else if (numberDownCardInCenter<4)
+      if (numberDownCardInCenter<4)
       {
         if(downerCard>0 && downerCard<4)
         {
           downerCard++;
+          return 1;
         }
-          else if ( downerCard==4) {
+          else if ( downerCard==4)
+          {
             downerCard=1;
             return 1;
           }
       }
-      else if(numberDownCardInCenter==4)
-      {
-        downerCard=charToint(cardMax[0]);
-        return 1;
-      }
+        else if(numberDownCardInCenter==4)
+        {
+          downerCard=charToint(cardMax[0]);
+          return 1;
+        }
     return 102;
 
   }
@@ -714,7 +716,7 @@ int determiningPointStartCard()
           strcpy(cardMax[2],orginalRank);
           max=charToint(orginalRank);
           printf("in two card is hokm and base is hokm max card = %s\n", intToChar);
-          //delay(1);
+          delay(1);
           return 1;
         }
       }
@@ -727,7 +729,7 @@ int determiningPointStartCard()
           strcpy(cardMax[2],orginalRank);
           max=charToint(orginalRank);
           printf("in two card nist hokm and base nist hokm max card = %s\n", intToChar);
-          //delay(1);
+          delay(1);
           return 1;
         }
       }
@@ -752,7 +754,7 @@ int determiningPointStartCard()
             strcpy(cardMax[2],orginalRank);
             max=charToint(orginalRank);
             printf("in two card is hokm and base nist hokm max card = %s\n", intToChar);
-            //delay(1);
+            delay(1);
             return 1;
           }
         }

@@ -738,10 +738,10 @@ int determiningPointStartCard()
         strcpy(cardMax[1],orginalCard);//because array start an 0  but downerCard statrt an 1
         strcpy(cardMax[2],orginalRank);
         max=charToint(orginalRank);
-        for (int  i = numberDownCardInCenter - 1; i != 0; i--) {
+        for (int  i = numberDownCardInCenter - 2; i != 0; i--) {
           strcpy(temp,cardCenter[i]);
           cardSeparatorAndRank(temp);
-          if ((orginalCard,rul)==0 && max < charToint(orginalRank))
+          if (strcmp(orginalCard,rul)==0 && max < charToint(orginalRank))
           {
             strcpy(cardMax[0],intToChar);
             strcpy(cardMax[1],orginalCard);//because array start an 0  but downerCard statrt an 1

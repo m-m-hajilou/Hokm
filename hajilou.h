@@ -91,7 +91,7 @@ int removeStringInArray(int numberOfString,int maxSringSize,char  array[numberOf
   }
   return 0;
 }
-void delay(int milliSconds)
+void delay(float milliSconds)
 {
   long pause;
   pause=milliSconds * CLOCKS_PER_SEC; //convert to second

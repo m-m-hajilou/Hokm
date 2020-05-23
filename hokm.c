@@ -1054,7 +1054,8 @@ int determiningPointStartCard()
     printf("\n");
   }
 
-  int main(int argc, char const *argv[]) {
+  int main(int argc, char const *argv[])
+  {
     gameManagement();
     return 0;
   }

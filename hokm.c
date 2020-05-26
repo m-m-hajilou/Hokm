@@ -45,6 +45,7 @@
   int emptyTempForShowCardInCenter();
   int determingingNumberOfCardsAreDivided();
   int variableEmptyer();
+  int addToCardDowned();
 
 
 
@@ -80,6 +81,7 @@
 
   char cardUser[1][5];//Contains card player Me
   char cardMax[4][5];//Whoever owns this card is the winner
+  char cardDowned[52][6];
 
   char intToChar[5];
 
@@ -116,7 +118,7 @@
 
   int gameManagement()
   {
-    int a;
+    int a=0;
     srand(time(0));
     determiningRuler();
     ruler=1;
@@ -850,6 +852,7 @@ int determiningPointStartCard()
          char temp[5];
          strcpy(temp,cardUser[0]);
          insertCardToCardCenter(cardUser[0]);
+         addToCardDowned(cardUser[0]);
          removeStringInArray(numberDownCard,5,meCard,cardUser[0]);
          isDownCardMe=1;
          break;
@@ -885,6 +888,7 @@ int determiningPointStartCard()
    int artificialIntelligenceCardDown(int lengthArray,int maxSringSize,char arr [lengthArray][maxSringSize])
    {
      insertCardToCardCenter(arr[0]);
+     addToCardDowned(arr[0]);
      removeStringInArray(lengthArray,maxSringSize,arr,arr[0]);
    }
 
@@ -940,6 +944,15 @@ int determiningPointStartCard()
          return 1;
        }
      return 102;
+   }
+
+   int addToCardDowned(char *cardIsDown)
+   {
+     static int indexInsertToCardDowned=0;
+     strcpy(cardDowned[indexInsertToCardDowned],cardIsDown);
+     indexInsertToCardDowned++;
+     printf("%s\n",cardDowned[indexInsertToCardDowned-1] );
+
    }
 
 

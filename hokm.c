@@ -45,6 +45,7 @@
   int emptyTempForShowCardInCenter();
   int determingingNumberOfCardsAreDivided();
   int variableEmptyer();
+  int isGameCountinue();
 
 
 
@@ -113,6 +114,8 @@
   int isDownCardPal=0;
   int isDownCardFoe1=0;
 
+  float timeDelay=0;
+
 
   int gameManagement()
   {
@@ -123,20 +126,20 @@
     increaserLevelGame();
     printf("Ruler = %d\n",ruler );
     showGame();
-    delay(1);
+    delay(timeDelay);
     shuffleCard();
     divideCard();
     showGame();
-    delay(1);
+    delay(timeDelay);
     determiningRul();
     printf("Rul = %s\n",rul );
     increaserLevelGame();
     showGame();
-    delay(1);
+    delay(timeDelay);
     divideCard();
     increaserLevelGame();
     showGame();
-    delay(1);
+    delay(timeDelay);
     while(scoreWe < 7 && scoreFoe < 7 )
     {
       indexCardShowCenter=indexInsertCardCenter=0;
@@ -149,19 +152,19 @@
         howDownCardInStartGameAndIncreaseDownCardInGame();//defult in firt == ruler
         increaserLevelGame();
         showGame();
-        delay(1);
+        delay(timeDelay);
         playerCardDowns();
         increaserLevelGame();
         showGame();
-        delay(1);
+        delay(timeDelay);
         increaserNumberDownCardInCenter();
         whoGetCardMax();
-        delay(1);
+        delay(timeDelay);
       }
       minusMinusNumberDownCard();//*مکانش  انتهای هر پایین گذاشتن 4 برگه شود
       increaserScoreWiner();//
       showGame();
-      delay(1);
+      delay(timeDelay);
     //  break;
      a=indexCardShowCenter;
      int ab=indexCardShowCenter;
@@ -716,7 +719,7 @@ int determiningPointStartCard()
           strcpy(cardMax[2],orginalRank);
           max=charToint(orginalRank);
           printf("in two card is hokm and base is hokm max card = %s\n", intToChar);
-          delay(1);
+          delay(timeDelay);
           return 1;
         }
       }
@@ -729,7 +732,7 @@ int determiningPointStartCard()
           strcpy(cardMax[2],orginalRank);
           max=charToint(orginalRank);
           printf("in two card nist hokm and base nist hokm max card = %s\n", intToChar);
-          delay(1);
+          delay(timeDelay);
           return 1;
         }
       }
@@ -754,7 +757,7 @@ int determiningPointStartCard()
             strcpy(cardMax[2],orginalRank);
             max=charToint(orginalRank);
             printf("in two card is hokm and base nist hokm max card = %s\n", intToChar);
-            delay(1);
+            delay(timeDelay);
             return 1;
           }
         }

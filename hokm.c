@@ -121,7 +121,7 @@
 
   int gameManagement()
   {
-    while (isDetermineFinalWin()==1)
+    while (isDetermineFinalWin()==0)
     {
     int a;
     srand(time(0));
@@ -980,7 +980,7 @@ int determiningPointStartCard()
      {
        temp=scoreWe-7;
        scoreWe=7-temp;
-       scoreFoe=temp
+       scoreFoe=temp;
      }
     else if (scoreFoe > 7)
             {

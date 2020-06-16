@@ -45,6 +45,7 @@
   int emptyTempForShowCardInCenter();
   int determingingNumberOfCardsAreDivided();
   int variableEmptyer();
+  int allCardIsTop();
   int isGameCountinue();
 
 
@@ -943,6 +944,16 @@ int determiningPointStartCard()
          return 1;
        }
      return 102;
+   }
+
+   int allCardIsTop()
+   {
+     return 0;
+   }
+
+   int isGameCountinue()
+   {
+     if()
    }
 
 

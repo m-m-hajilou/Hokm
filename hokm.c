@@ -953,7 +953,7 @@ int determiningPointStartCard()
 
    int isGameCountinue()
    {
-     if()
+     if((scoreWinMe==7 &scoreFoe==0)||(scoreWinMe== &scoreFoe==0))
    }
 
 

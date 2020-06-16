@@ -954,12 +954,18 @@ int determiningPointStartCard()
      return 0;
    }
 
-   int isFinalWin()
+   int isDetermineFinalWin()
    {
-     if()
+     if(scoreWinMe==7 || scoreFoe==7)
      {
-
+       return 1;
      }
+     if (scoreWinMe > 7 || scoreFoe > 7) //  for exampel score = 6,6 next a team have cot
+     {
+       computScorePlayerIfScoreMoreThan7();
+       return 0;
+     }
+     return 0;
      //if((scoreWinMe==7 &scoreFoe==0)||(scoreWinMe== &scoreFoe==0))
    }
 

@@ -47,6 +47,7 @@
   int variableEmptyer();
   int allCardIsTop();
   int isDetermineFinalWin();
+  void computScorePlayerIfScoreMoreThan7();
 
 
 
@@ -956,11 +957,11 @@ int determiningPointStartCard()
 
    int isDetermineFinalWin()
    {
-     if(scoreWinMe==7 || scoreFoe==7)
+     if(scoreWe==7 || scoreFoe==7)
      {
        return 1;
      }
-     if (scoreWinMe > 7 || scoreFoe > 7) //  for exampel score = 6,6 next a team have cot
+     if (scoreWe > 7 || scoreFoe > 7) //  for exampel score = 6,6 next a team have cot
      {
        computScorePlayerIfScoreMoreThan7();
 
@@ -970,6 +971,24 @@ int determiningPointStartCard()
      }
      return 0;
      //if((scoreWinMe==7 &scoreFoe==0)||(scoreWinMe== &scoreFoe==0))
+   }
+
+   void computScorePlayerIfScoreMoreThan7()
+   {
+     int temp;
+     if (scoreWe > 7)
+     {
+       temp=scoreWe-7;
+       scoreWe=7-temp;
+       scoreFoe=temp
+     }
+    else if (scoreFoe > 7)
+            {
+              temp=scoreFoe-7;
+              scoreFoe= 7-temp;
+              scoreWe=temp;
+            }
+
    }
 
 

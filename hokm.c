@@ -46,7 +46,7 @@
   int determingingNumberOfCardsAreDivided();
   int variableEmptyer();
   int allCardIsTop();
-  int isGameCountinue();
+  int isFinalWin();
 
 
 
@@ -120,6 +120,8 @@
 
   int gameManagement()
   {
+    while (isFinalWin()==1)
+    {
     int a;
     srand(time(0));
     determiningRuler();
@@ -172,6 +174,7 @@
     }
     determiningFinalWinner();
   }
+}
 
   int determiningRulWithMe()
   {
@@ -951,9 +954,13 @@ int determiningPointStartCard()
      return 0;
    }
 
-   int isGameCountinue()
+   int isFinalWin()
    {
-     if((scoreWinMe==7 &scoreFoe==0)||(scoreWinMe== &scoreFoe==0))
+     if()
+     {
+
+     }
+     //if((scoreWinMe==7 &scoreFoe==0)||(scoreWinMe== &scoreFoe==0))
    }
 
 

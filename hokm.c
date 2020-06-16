@@ -963,6 +963,9 @@ int determiningPointStartCard()
      if (scoreWinMe > 7 || scoreFoe > 7) //  for exampel score = 6,6 next a team have cot
      {
        computScorePlayerIfScoreMoreThan7();
+
+       printf("\n The game continues because the score of a team is more than 7. If the score of each team is higher than 7, the score of each team is higher than 7, and they are deducted from 7. As for the difference in points with 7, the loser's score becomes equal to it \n" );
+       delay(3);
        return 0;
      }
      return 0;

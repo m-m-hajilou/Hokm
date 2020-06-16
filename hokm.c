@@ -36,7 +36,7 @@
   int charToint(char []);
   int increaserNumberDownCardInCenter();
   int increaserScoreWiner();
-  int determiningFinalWinner();
+  int determiningWinner();
   int playerCardDowns();
   int artificialIntelligenceCardDown(int,int,char(*)[]);
   int increaseIndexInsertCardCenter();
@@ -109,7 +109,10 @@
 
   int scoreFoe=0;//sum score foe 1+foe 2
   int scoreWe=0;// sum score me + pal
-  char finalWinner[4];
+  char winner[4];
+
+  int numberWinMe=0;//number win final
+  int numberWinFoe=0;
 
   int isDownCardMe=0;
   int isDownCardFoe2=0;
@@ -173,7 +176,7 @@
      a=indexCardShowCenter;
      int ab=indexCardShowCenter;
     }
-    determiningFinalWinner();
+    determiningWinner();
   }
 }
 
@@ -836,15 +839,17 @@ int determiningPointStartCard()
     return 1;
   }
 
-  int determiningFinalWinner()
+  int determiningWinner()
   {
     if(scoreWe==7)
     {
-      strcpy(finalWinner,"Me");
+      numberWinMe++;
+      strcpy(winner,"Me");
     }
       else if(scoreFoe==7)
         {
-          strcpy(finalWinner,"Foe");
+          numberWinFoe++;
+          strcpy(winner,"Foe");
         }
    }
 

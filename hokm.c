@@ -46,7 +46,7 @@
   int determingingNumberOfCardsAreDivided();
   int variableEmptyer();
   int allCardIsTop();
-  int isFinalWin();
+  int isDetermineFinalWin();
 
 
 
@@ -120,7 +120,7 @@
 
   int gameManagement()
   {
-    while (isFinalWin()==1)
+    while (isDetermineFinalWin()==1)
     {
     int a;
     srand(time(0));

@@ -1,4 +1,4 @@
-  #include<stdio.h>
+    #include<stdio.h>
   #include<stdlib.h>
   #include<time.h>
   #include<limits.h>
@@ -109,7 +109,7 @@
 
   int scoreFoe=0;//sum score foe 1+foe 2
   int scoreWe=0;// sum score me + pal
-  char winner[4];
+  char winner[5];
 
   int numberWinMe=0;//number win final
   int numberWinFoe=0;
@@ -124,8 +124,7 @@
 
   int gameManagement()
   {
-    while (isDetermineFinalWin()==0)
-    {
+
     int a;
     srand(time(0));
     determiningRuler();
@@ -177,7 +176,8 @@
      int ab=indexCardShowCenter;
     }
     determiningWinner();
-  }
+    printf("%s\n", winner);
+    delay(5);
 }
 
   int determiningRulWithMe()
@@ -962,11 +962,11 @@ int determiningPointStartCard()
 
    int isDetermineFinalWin()
    {
-     if(scoreWe==7 || scoreFoe==7)
+     if(numberWinMe==7 || numberWinFoe==7)
      {
        return 1;
      }
-     if (scoreWe > 7 || scoreFoe > 7) //  for exampel score = 6,6 next a team have cot
+     else if (numberWinMe > 7 || numberWinFoe > 7) //  for exampel score = 6,6 next a team have cot
      {
        computScorePlayerIfScoreMoreThan7();
 
@@ -981,17 +981,21 @@ int determiningPointStartCard()
    void computScorePlayerIfScoreMoreThan7()
    {
      int temp;
-     if (scoreWe > 7)
+     if (numberWinMe > 7)
      {
-       temp=scoreWe-7;
-       scoreWe=7-temp;
-       scoreFoe=temp;
+       temp=numberWinMe-7;
+       numberWinMe=7-temp;
+       numberWinFoe=temp;
+       int temp1=numberWinMe;
+       int temp2=numberWinFoe;
      }
-    else if (scoreFoe > 7)
+    else if (numberWinFoe > 7)
             {
-              temp=scoreFoe-7;
-              scoreFoe= 7-temp;
-              scoreWe=temp;
+              temp=numberWinFoe-7;
+              numberWinFoe= 7-temp;
+              numberWinMe=temp;
+              int temp1=numberWinMe;
+              int temp2=numberWinFoe;
             }
 
    }

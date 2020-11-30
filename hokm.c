@@ -124,7 +124,9 @@
 
   int gameManagement()
   {
-
+    numberWinMe=7;
+    while (isDetermineFinalWin()==0)
+    {
     int a;
     srand(time(0));
     determiningRuler();
@@ -178,6 +180,9 @@
     determiningWinner();
     printf("%s\n", winner);
     delay(5);
+  }
+    printf("fainal winer = %s\n", winner); //just for test
+    delay(5);//just for test
 }
 
   int determiningRulWithMe()

@@ -124,6 +124,7 @@
 
   int gameManagement()
   {
+
     while (isDetermineFinalWin()==0)
     {
     int a;
